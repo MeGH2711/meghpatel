@@ -1,0 +1,101 @@
+.project-card {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.project-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    min-height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid #ddd;
+}
+
+.card-content-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+    color: white;
+    transition: opacity 0.4s;
+    opacity: 0;
+}
+
+.project-card:hover .project-img{
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.project-card:hover .card-content-overlay {
+    opacity: 1;
+}
+
+.card-content-overlay h5,
+.card-content-overlay p,
+.card-content-overlay .badge {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.projectCardTitle{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+}
+
+/* Modal */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}
+
+.modal-content {
+    background: #fff !important;
+    padding: 2rem;
+    border-radius: 1.25rem !important;
+    max-width: 640px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.4);
+}
+
+.modal-img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.modal-buttons .btn {
+    flex: 1;
+    min-width: 120px;
+}
+
+.bg-purple{
+    background-color: #702CF6;
+}

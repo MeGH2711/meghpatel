@@ -1,0 +1,46 @@
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    margin: 10px auto;
+    width: calc(100% - 40px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    padding: 0.8rem 1rem;
+    min-height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.custom-navbar .nav-link {
+    color: #333333;
+    font-weight: 500;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: rgb(28, 93, 153);
+    font-weight: 600;
+}
+
+.nav-link.active {
+    color: #1c5d99 !important;
+    font-weight: 600;
+}
+
+.navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: transform 0.4s ease;
+}
+
+.navbar-hidden {
+    transform: translateY(-100%);
+}

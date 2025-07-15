@@ -1,0 +1,54 @@
+.home-hero {
+    display: flex;
+    height: 80vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #1e1e1e;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.highlight {
+    background: linear-gradient(to right, #1c5d99, #3e8ed0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tagline {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.roles {
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    background-color: #1c5d99;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 20px rgba(28, 93, 153, 0.2);
+}
+
+.hero-btn:hover {
+    background-color: #164a7a;
+}

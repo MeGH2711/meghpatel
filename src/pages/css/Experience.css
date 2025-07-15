@@ -1,0 +1,29 @@
+.experience-hero {
+    padding-top: 70px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.hero-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    color: rgb(28, 93, 153);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-subtext {
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.85;
+}
+
+.custom-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}

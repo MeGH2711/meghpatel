@@ -1,0 +1,97 @@
+/* src/components/SocialSidebar.css */
+
+.left-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+.left-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-sidebar li {
+    margin: 10px 0;
+}
+
+.left-sidebar a {
+    color: #676e84;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.left-sidebar a:hover {
+    color: #1c5d99;
+}
+
+.left-sidebar::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 90px;
+    background-color: #676e84;
+    margin-top: 20px;
+}
+
+/* Right */
+
+.right-sidebar {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 100;
+}
+
+.right-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.right-sidebar li {
+    margin: 10px 0;
+}
+
+.right-sidebar a {
+    font-family: 'Montserrat', sans-serif;
+    color: #676e84;
+    font-size: 1rem;
+    font-weight: 450;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    transition: 0.3s;
+}
+
+.right-sidebar a:hover {
+    color: #1c5d99;
+}
+
+.right-sidebar::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 110px;
+    background-color: #676e84;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .left-sidebar {
+        display: none;
+    }
+
+    .right-sidebar {
+        display: none;
+    }
+    
+}

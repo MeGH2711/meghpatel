@@ -1,0 +1,101 @@
+.about-section,
+.skills-section,
+.education-section {
+    color: #000000;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2rem;
+    color: #000000;
+    border-left: 4px solid #0dcaf0;
+    padding-left: 12px;
+}
+
+.highlightedText {
+    color: #3e3f83;
+    font-weight: 600;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.bio-box ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.bio-box ul li {
+    padding: 6px 0;
+    font-size: 1rem;
+}
+
+.detail-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.profile-image {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #efefef;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+    transform: scale(1.025);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills Section */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: #0dcaf0;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.2);
+    color: #1c5d99;
+}
+
+/* Tooltip */
+
+.tooltip-inner {
+    background-color: #0dcaf0 !important;
+    color: #000 !important;
+    font-weight: 500 !important;
+    padding: 6px 12px !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+}
+
+.tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: #0dcaf0 !important;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        width: 75vw;
+        height: 75vw;
+    }
+}

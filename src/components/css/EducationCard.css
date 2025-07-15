@@ -1,0 +1,49 @@
+.education-modern-card {
+    max-width: 100%;
+    padding: 30px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-modern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.edu-logo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edu-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 6px;
+}
+
+.edu-degree {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #00012e;
+}
+
+.edu-duration {
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+.edu-desc {
+    font-size: 1rem;
+    margin-top: 12px;
+    line-height: 1.6;
+}
