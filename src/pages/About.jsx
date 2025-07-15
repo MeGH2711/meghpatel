@@ -60,7 +60,7 @@ const About = () => {
                 <div className="row align-items-center">
                     <div className="col-md-7">
                         <h2 className="section-title">About Me</h2>
-                        <p className="intro-text">
+                        <p className="intro-text text-justify">
                             Hi! I am <span className="highlightedText">Megh Patel</span>, currently pursuing my bachelor's degree in Computer Engineering at <strong>Gandhinagar Institute of Technology</strong> (Gandhinagar University) Affiliated with <strong>Gujarat Technological University</strong>.
                             I’m passionate about <strong>UI/UX design, web development</strong> and exploring the world of <strong>AI</strong>.
                         </p>
@@ -81,10 +81,10 @@ const About = () => {
                                 </div>
                             </div>
                         </div>
-                        <p className="detail-text mt-2">
+                        <p className="detail-text text-justify mt-2">
                             I immerse myself in diverse fields—from coding and software architecture to design and innovation. I’ve actively participated in lab work, internships, and team projects...
                         </p>
-                        <p className="detail-text">
+                        <p className="detail-text text-justify">
                             On top of all this, I love hosting events, connecting with people, and contributing to experiences that bring joy and creativity—adding excitement to my professional journey.
                         </p>
                     </div>

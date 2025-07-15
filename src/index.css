@@ -77,6 +77,12 @@ body {
   scrollbar-color: #888 #f1f1f1;
 }
 
+/* Text Justify */
+
+.text-justify {
+  text-align: justify;
+}
+
 /* Section Title */
 
 .section-title {

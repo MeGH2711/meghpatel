@@ -8,34 +8,34 @@ import Footer from '../components/Footer';
 
 const experiences = [
     {
-        title: "Web Developer & Designer Intern",
         icon: <FaLaptopCode />,
-        date: "February 2025 – April 2025",
         company: "Ellkay Software Pvt. Ltd.",
+        title: "Web Developer & Designer Intern",
+        date: "February 2025 – April 2025",
         description: "Built responsive UI using HTML, CSS, JS & Bootstrap, improving load time by 30%. Led integration of APIs for accurate data display. Collaborated in Agile sprints, ensuring 100% on-time delivery. Learnt WCAG 3.0 compaliance to support health-tech tasks, accelerating onboarding by 50%.",
         tech: ["Figma", "React", "Node.js", "Bootstrap", "Git"]
     },
     {
-        title: "Web Developer Intern",
         icon: <FaPaintBrush />,
-        date: "June 2024 - July 2024",
         company: "360 Design",
+        title: "Web Developer Intern",
+        date: "June 2024 - July 2024",
         description: "During my internship, I worked on web design using React.js, focusing on building interactive UIs and managing state with hooks. I developed CLOTHIFY, an online clothing store using the MERN stack, featuring product categorization and CRUD operations via RESTful APIs. I gained experience integrating APIs with Axios and enhancing app scalability. Future improvements include adding user authentication, a shopping cart, and payment integration.",
         tech: ["Figma", "React", "Node.js", "MongoDB", "Bootstrap"]
     },
     {
-        title: "TechFest Organizer & Host",
         icon: <FaMicrophone />,
-        date: "March 2024",
         company: "Gandhinagar University",
+        title: "TechFest Organizer & Host",
+        date: "January 2024 - March 2024",
         description: "Led end-to-end coordination for large-scale campus tech events, engaging over 3,000 attendees. Took charge of event planning, logistics, and execution to ensure smooth operations. Hosted multiple coding competitions and workshops, driving active participation. Also contributed to event branding, marketing strategy, and enhancing the overall attendee experience.",
         tech: ["Event Hosting", "Leadership", "Team Coordination", "Public Speaking"]
     },
     {
-        title: "Web Development & Designing Intern",
         icon: <FaLaptopCode />,
-        date: "March 2023 - April 2023",
         company: "Oasis Infobyte",
+        title: "Web Development & Designing Intern",
+        date: "March 2023 - April 2023",
         description: "During my internship at Oasis Infobyte, I gained hands-on experience in web development by working on real-world projects. I quickly adapted to using modern frameworks like Bootstrap enhancing both my technical skills and understanding of front-end development. One of the highlights was learning how to build a professional portfolio, showcasing my projects and skills effectively. Oasis Infobyte made my internship a highly rewarding and educational experience.",
         tech: ["HTML5", "CSS3", "JavaScript"]
     }

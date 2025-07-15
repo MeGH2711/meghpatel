@@ -19,8 +19,8 @@ const ExperienceCard = ({ exp, isLeft }) => {
                 {exp.icon}
             </div>
             <div className={`timeline-card ${isLeft ? '' : 'align-right'}`}>
-                <h3 className="exp-title">{exp.title}</h3>
-                <h5 className="exp-subtitle">{exp.company} | {exp.date}</h5>
+                <h3 className="exp-title">{exp.company}</h3>
+                <h5 className="exp-subtitle">{exp.title} | {exp.date}</h5>
                 <p className="exp-description">{exp.description}</p>
                 <div className="exp-tags">
                     {exp.tech.map((tech, i) => (
