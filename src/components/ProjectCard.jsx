@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Card, Button, Row } from "react-bootstrap";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import './css/ProjectCard.css';
 
@@ -49,8 +49,8 @@ const ProjectCard = ({ title, description, tech, image, github, demo }) => {
                                         <FaGithub className="me-1" /> Code
                                     </Button>
                                     {demo && (
-                                        <Button variant="outline-light" size="sm" href={demo} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
-                                            <FaExternalLinkAlt className="me-1" /> Live
+                                        <Button className="d-flex align-items-center justify-content-center" variant="outline-light" size="sm" href={demo} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+                                            <span className="blinking-dot me-2"></span> Live
                                         </Button>
                                     )}
                                 </div>
@@ -93,9 +93,8 @@ const ProjectCard = ({ title, description, tech, image, github, demo }) => {
                                     Code
                                 </Button>
                                 {demo && (
-                                    <Button variant="outline-primary" href={demo} target="_blank" rel="noreferrer">
-                                        <FaExternalLinkAlt className="me-1" />
-                                        Live
+                                    <Button variant="outline-primary d-flex align-items-center justify-content-center" href={demo} target="_blank" rel="noreferrer">
+                                        <span className="blinking-dot me-2"></span> Live
                                     </Button>
                                 )}
                             </div>

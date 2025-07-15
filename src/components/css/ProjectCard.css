@@ -33,7 +33,7 @@
     opacity: 0;
 }
 
-.project-card:hover .project-img{
+.project-card:hover .project-img {
     filter: blur(2px);
     -webkit-filter: blur(2px);
 }
@@ -48,7 +48,7 @@
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.projectCardTitle{
+.projectCardTitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
 }
@@ -96,6 +96,28 @@
     min-width: 120px;
 }
 
-.bg-purple{
+.bg-purple {
     background-color: #702CF6;
+}
+
+.blinking-dot {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1s infinite;
+    vertical-align: middle;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }

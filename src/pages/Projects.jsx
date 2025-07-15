@@ -37,7 +37,7 @@ const projects = [
             "Personal website showcasing hosting experience, event highlights, and booking contact with an elegant UI.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "SMTP API"],
         image: anchorMegh,
-        github: "https://github.com/your-username/anchorpro",
+        github: "https://github.com/MeGH2711/anchormegh",
         demo: "https://anchormegh.vercel.app/"
     },
     {
