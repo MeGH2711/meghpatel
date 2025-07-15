@@ -2,12 +2,6 @@
     height: 75vh;
 }
 
-.section-title {
-    font-weight: 600;
-    font-size: 2rem;
-    color: #1f1f1f;
-}
-
 .social-link {
     color: #1f1f1f;
     text-decoration: none;
@@ -41,15 +35,15 @@
 }
 
 .email-loader-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(6px);
-  background-color: rgba(255, 255, 255, 0.4);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
