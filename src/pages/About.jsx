@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/About.css';
-import { Tooltip } from 'bootstrap';
 import { motion, useInView } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaBootstrap, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
 import { SiMongodb, SiFigma, SiPython, SiAdobephotoshop, SiAdobepremierepro } from 'react-icons/si';
@@ -17,13 +16,6 @@ const fadeInUp = {
 };
 
 const About = () => {
-
-    useEffect(() => {
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        tooltipTriggerList.forEach(tooltipTriggerEl => {
-            new Tooltip(tooltipTriggerEl);
-        });
-    }, []);
 
     // Refs and inView hooks
     const aboutRef = useRef(null);
@@ -48,6 +40,50 @@ const About = () => {
         { Icon: SiAdobephotoshop, label: "Photoshop" },
         { Icon: SiAdobepremierepro, label: "Premiere Pro" }
     ];
+
+    let hideTimeout = null;
+
+    useEffect(() => {
+        const tooltip = document.createElement("div");
+        tooltip.id = "custom-tooltip";
+        document.body.appendChild(tooltip);
+
+        return () => {
+            tooltip.remove();
+        };
+    }, []);
+
+    const showTooltip = (e, label) => {
+        const tooltip = document.getElementById("custom-tooltip");
+        tooltip.textContent = label;
+
+        if (hideTimeout) {
+            clearTimeout(hideTimeout);
+            hideTimeout = null;
+        }
+
+        tooltip.style.display = "block";
+        tooltip.style.opacity = "1";
+        moveTooltip(e);
+    };
+
+    const moveTooltip = (e) => {
+        const tooltip = document.getElementById("custom-tooltip");
+        if (tooltip) {
+            tooltip.style.left = e.clientX + 15 + "px";
+            tooltip.style.top = e.clientY + 15 + "px";
+        }
+    };
+
+    const hideTooltip = () => {
+        const tooltip = document.getElementById("custom-tooltip");
+        tooltip.style.opacity = "0";
+
+        hideTimeout = setTimeout(() => {
+            tooltip.style.display = "none";
+        }, 200);
+    };
+
 
     const navigate = useNavigate();
 
@@ -117,8 +153,9 @@ const About = () => {
                         <motion.div
                             key={index}
                             className="skill-icon"
-                            data-bs-toggle="tooltip"
-                            title={label}
+                            onMouseEnter={(e) => showTooltip(e, label)}
+                            onMouseMove={(e) => moveTooltip(e)}
+                            onMouseLeave={hideTooltip}
                             initial={{ opacity: 0, scale: 0.8 }}
                             animate={isSkillsInView ? { opacity: 1, scale: 1 } : {}}
                             transition={{ delay: index * 0.05 }}

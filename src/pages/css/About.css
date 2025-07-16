@@ -92,13 +92,19 @@
 
 /* Tooltip */
 
-.tooltip-inner {
-    background-color: #0dcaf0 !important;
-    color: #000 !important;
-    font-weight: 500 !important;
-    padding: 6px 12px !important;
-    font-size: 0.9rem !important;
-    border-radius: 8px !important;
+#custom-tooltip {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    padding: 6px 12px;
+    background-color: #0dcaf0;
+    color: #000;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
 .tooltip.bs-tooltip-top .tooltip-arrow::before {
