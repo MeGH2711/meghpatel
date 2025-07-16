@@ -121,3 +121,16 @@
         opacity: 0;
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .project-img-wrapper {
+        height: 50vh !important;
+    }
+
+    .project-img {
+        height: 100%;
+        object-fit: cover;
+        border-bottom: 3px solid #ddd;
+    }
+}
