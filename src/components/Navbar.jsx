@@ -89,7 +89,7 @@ const MyNavbar = () => {
                             />
                             <motion.span
                                 className="bar"
-                                animate={isExpanded ? { rotate: -45, y: -6.5 } : { rotate: 0, y: 0 }}
+                                animate={isExpanded ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
                                 transition={{ duration: 0.3 }}
                             />
                         </motion.button>

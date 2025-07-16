@@ -67,19 +67,19 @@ const About = () => {
                             Hi! I am <span className="highlightedText">Megh Patel</span>, currently pursuing my bachelor's degree in Computer Engineering at <strong>Gandhinagar Institute of Technology</strong> (Gandhinagar University) Affiliated with <strong>Gujarat Technological University</strong>.
                             I’m passionate about <strong>UI/UX design, web development</strong> and exploring the world of <strong>AI</strong>.
                         </p>
-                        <div className="bio-box mt-3">
-                            <div className="row">
-                                <div className="col-sm-6">
-                                    <ul>
-                                        <li><strong>Qualification:</strong> Bachelors in Engineering</li>
-                                        <li><strong>Email:</strong> patelmeghmahesh2701@gmail.com</li>
-                                        <li><strong>Freelance:</strong> Available</li>
+                        <div className="bio-box my-4 p-4 rounded shadow-sm">
+                            <div className="row row-cols-1 row-cols-md-2 g-3 g-md-4">
+                                <div className="col">
+                                    <ul className="bio-list">
+                                        <li><span>Qualification:</span> Bachelors in Engineering</li>
+                                        <li><span>Email:</span> patelmeghmahesh2701@gmail.com</li>
+                                        <li><span>Freelance:</span> Available</li>
                                     </ul>
                                 </div>
-                                <div className="col-sm-6">
-                                    <ul>
-                                        <li><strong>City:</strong> Ahmedabad, Gujarat</li>
-                                        <li><strong>Age:</strong> 22</li>
+                                <div className="col secondCol">
+                                    <ul className="bio-list">
+                                        <li><span>City:</span> Ahmedabad, Gujarat</li>
+                                        <li><span>Age:</span> 22</li>
                                     </ul>
                                 </div>
                             </div>
@@ -165,6 +165,7 @@ const About = () => {
                     <motion.div
                         whileHover={{ x: -5 }}
                         style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        className="navigationLeftArrow"
                         onClick={() => navigate('/')}
                     >
                         Home ←
@@ -173,6 +174,7 @@ const About = () => {
                     <motion.div
                         whileHover={{ x: 5 }}
                         style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        className="navigationRightArrow"
                         onClick={() => navigate('/experience')}
                     >
                         → View My Experience

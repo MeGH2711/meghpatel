@@ -64,7 +64,7 @@ const Contact = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="section-title mb-4">Let's Connect</h2>
-                    <p className="mb-4">You can find me on the platforms below — feel free to reach out!</p>
+                    <p className="mb-4 socialMediaSubtext">You can find me on the platforms below — feel free to reach out!</p>
                     <div className="d-flex flex-column gap-3">
                         {socialLinks.map(({ icon: Icon, link, label }, index) => (
                             <motion.a
@@ -128,7 +128,7 @@ const Contact = () => {
 
                         <motion.button
                             type="submit"
-                            className="btn btn-dark mt-2"
+                            className="btn btn-dark submitBtn mt-2"
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.95 }}
                         >

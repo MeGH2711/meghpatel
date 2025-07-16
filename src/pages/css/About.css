@@ -16,14 +16,36 @@
     line-height: 1.6;
 }
 
-.bio-box ul {
-    list-style: none;
-    padding-left: 0;
+.bio-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-left: 5px solid #1c5d99;
+    transition: transform 0.3s ease;
 }
 
-.bio-box ul li {
-    padding: 6px 0;
+.bio-box:hover {
+    transform: scale(1.01);
+}
+
+.bio-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bio-list li {
+    margin-bottom: 12px;
     font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.bio-list li span {
+    font-weight: 600;
+    color: #1c5d99;
+    margin-right: 6px;
+    display: inline-block;
 }
 
 .detail-text {
@@ -84,6 +106,16 @@
 }
 
 @media (max-width: 768px) {
+
+    .intro-text,
+    .detail-text {
+        margin: 0 20px;
+    }
+
+    .secondCol {
+        margin-top: 0 !important;
+    }
+
     .profile-image {
         width: 75vw;
         height: 75vw;

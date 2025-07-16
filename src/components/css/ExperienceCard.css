@@ -59,7 +59,7 @@
     color: white;
     backdrop-filter: blur(5px);
     transition: transform 0.3s ease;
-    max-width: 40vw;
+    max-width: 60vw !important;
 }
 
 .timeline-card:hover {
@@ -121,7 +121,7 @@
     }
 
     .timeline-card {
-        max-width: 90%;
+        max-width: 100% !important;
     }
 
     .align-right {

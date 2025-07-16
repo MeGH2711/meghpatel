@@ -84,6 +84,7 @@ const Experience = () => {
                     <motion.div
                         whileHover={{ x: -5 }}
                         style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        className="navigationLeftArrow"
                         onClick={() => navigate('/about')}
                     >
                         About ←
@@ -92,6 +93,7 @@ const Experience = () => {
                     <motion.div
                         whileHover={{ x: 5 }}
                         style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        className="navigationRightArrow"
                         onClick={() => navigate('/projects')}
                     >
                         → Projects

@@ -102,22 +102,26 @@ const Projects = () => {
                 ))}
             </Row>
 
-            <div className="d-flex justify-content-between align-items-center mt-5">
-                <motion.div
-                    whileHover={{ x: -5 }}
-                    style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                    onClick={() => navigate('/experience')}
-                >
-                    Experience ←
-                </motion.div>
+            <div className='container'>
+                <div className="d-flex justify-content-between align-items-center mt-5">
+                    <motion.div
+                        whileHover={{ x: -5 }}
+                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        className="navigationLeftArrow"
+                        onClick={() => navigate('/experience')}
+                    >
+                        Experience ←
+                    </motion.div>
 
-                <motion.div
-                    whileHover={{ x: 5 }}
-                    style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                    onClick={() => navigate('/contact')}
-                >
-                    → Contact
-                </motion.div>
+                    <motion.div
+                        whileHover={{ x: 5 }}
+                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        className="navigationRightArrow"
+                        onClick={() => navigate('/contact')}
+                    >
+                        → Contact
+                    </motion.div>
+                </div>
             </div>
 
             <Footer />
