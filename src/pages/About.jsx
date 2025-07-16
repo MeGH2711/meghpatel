@@ -87,7 +87,7 @@ const About = () => {
                         <p className="detail-text text-justify mt-2">
                             I immerse myself in diverse fields—from coding and software architecture to design and innovation. I’ve actively participated in lab work, internships, and team projects...
                         </p>
-                        <p className="detail-text text-justify">
+                        <p className="detail-text text-justify mt-3">
                             On top of all this, I love hosting events, connecting with people, and contributing to experiences that bring joy and creativity—adding excitement to my professional journey.
                         </p>
                     </div>
