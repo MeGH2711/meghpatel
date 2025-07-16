@@ -41,12 +41,18 @@ const MyNavbar = () => {
         })
     };
 
+    const [isExpanded, setIsExpanded] = useState(false);
+
     return (
         <div
             ref={navRef}
             className={`navbar-wrapper ${hideNavbar ? 'navbar-hidden' : ''}`}
         >
-            <Navbar expand="lg" className="custom-navbar">
+            <Navbar
+                expand="lg"
+                className="custom-navbar"
+                expanded={isExpanded}
+            >
                 <Container>
                     <motion.div
                         initial={{ opacity: 0, x: 0 }}
@@ -63,7 +69,32 @@ const MyNavbar = () => {
                         </Navbar.Brand>
                     </motion.div>
 
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <div className="d-lg-none">
+                        <motion.button
+                            className="custom-toggler"
+                            onClick={() => setIsExpanded((prev) => !prev)}
+                            aria-controls="basic-navbar-nav"
+                            aria-expanded={isExpanded}
+                            aria-label="Toggle navigation"
+                        >
+                            <motion.span
+                                className="bar"
+                                animate={isExpanded ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
+                                transition={{ duration: 0.3 }}
+                            />
+                            <motion.span
+                                className="bar"
+                                animate={isExpanded ? { opacity: 0 } : { opacity: 1 }}
+                                transition={{ duration: 0.3 }}
+                            />
+                            <motion.span
+                                className="bar"
+                                animate={isExpanded ? { rotate: -45, y: -6.5 } : { rotate: 0, y: 0 }}
+                                transition={{ duration: 0.3 }}
+                            />
+                        </motion.button>
+                    </div>
+
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             {['/', '/about', '/experience', '/projects', '/contact'].map((path, i) => (
@@ -77,6 +108,7 @@ const MyNavbar = () => {
                                     <Nav.Link
                                         as={NavLink}
                                         to={path}
+                                        onClick={() => setIsExpanded(false)}
                                         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
                                     >
                                         {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
