@@ -100,6 +100,14 @@
     background-color: #702CF6;
 }
 
+.bg-darkGreen{
+    background-color: #004302;
+}
+
+.bg-lightGreen{
+    background-color: #00c306;
+}
+
 .blinking-dot {
     height: 10px;
     width: 10px;

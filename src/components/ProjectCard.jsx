@@ -7,14 +7,16 @@ import './css/ProjectCard.css';
 const getBadgeColor = (tech) => {
     const colors = {
         React: "info",
-        "Node.js": "success",
+        "Node.js": "darkGreen",
         MongoDB: "success",
         Express: "secondary",
         "Material UI": "primary",
         HTML: "danger",
         CSS: "primary",
         JavaScript: "warning",
-        Bootstrap: "purple"
+        Bootstrap: "purple",
+        GSAP: "lightGreen",
+        "SMTP API": "info"
     };
     return `bg-${colors[tech] || "dark"}`;
 };
