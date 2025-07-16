@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaYoutube } from 'react-
 import { FaXTwitter } from 'react-icons/fa6';
 import emailjs from '@emailjs/browser';
 import Loader from '../components/Loader';
-import ToastMessage from '../components/ToastMessage';
+import MessageModal from '../components/MessageModal';
 import Footer from '../components/Footer'
 import './css/Contact.css';
 
@@ -137,9 +137,9 @@ const Contact = () => {
                     </form>
                 </motion.div>
                 {loading && <Loader />}
-                <ToastMessage
+                <MessageModal
                     show={toast.show}
-                    onClose={() => setToast({ ...toast, show: false })}
+                    onHide={() => setToast({ ...toast, show: false })}
                     variant={toast.variant}
                     message={toast.message}
                 />
