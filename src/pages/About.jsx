@@ -97,7 +97,7 @@ const About = () => {
                 animate={isAboutInView ? 'visible' : 'hidden'}
             >
                 <div className="row align-items-center">
-                    <div className="col-md-7">
+                    <div className="col-lg-7">
                         <h2 className="section-title">About Me</h2>
                         <p className="intro-text text-justify">
                             Hi! I am <span className="highlightedText">Megh Patel</span>, currently pursuing my bachelor's degree in Computer Engineering at <strong>Gandhinagar Institute of Technology</strong> (Gandhinagar University) Affiliated with <strong>Gujarat Technological University</strong>.
@@ -127,7 +127,7 @@ const About = () => {
                             On top of all this, I love hosting events, connecting with people, and contributing to experiences that bring joy and creativity—adding excitement to my professional journey.
                         </p>
                     </div>
-                    <div className="col-md-5 text-center mt-4 mt-md-0">
+                    <div className="col-lg-5 text-center mt-4 mt-md-0">
                         <motion.img
                             src={profileImg}
                             alt="Megh Patel"
