@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './css/Home.css';
 import '../index.css';
+import resume from '../assets/documents/MeghCV.pdf';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -54,10 +55,17 @@ const Home = () => {
                     Developer • UI/UX Designer • AI Enthusiast
                 </motion.p>
 
-                <motion.div variants={itemVariants}>
+                <motion.div className="hero-buttons gap-3" variants={itemVariants}>
                     <Button className="hero-btn" onClick={handleViewWork}>
                         View My Work
                     </Button>
+                    <a
+                        href={resume}
+                        download
+                        className="hero-btn-outline"
+                    >
+                        Download Resume
+                    </a>
                 </motion.div>
             </div>
         </motion.div>
