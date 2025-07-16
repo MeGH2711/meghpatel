@@ -1,6 +1,6 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import MyNavbar from './components/Navbar';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import SocialSidebar from './components/SocialSidebar';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -10,10 +10,25 @@ import Contact from './pages/Contact';
 
 const NotFound = () => <div className="cont3ainer mt-5"><h2>404 - Not Found</h2></div>;
 
+const routeTitles = {
+  '/': 'Home',
+  '/about': 'About',
+  '/experience': 'Experience',
+  '/projects': 'Projects',
+  '/contact': 'Contact',
+};
+
 const App = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const title = routeTitles[location.pathname] || 'Page Not Found';
+    document.title = `Megh Portfolio | ${title}`;
+  }, [location.pathname]);
+
   return (
     <>
-      <MyNavbar />
+      <Navbar />
       <SocialSidebar />
       <Routes>
         <Route path="/" element={<Home />} />

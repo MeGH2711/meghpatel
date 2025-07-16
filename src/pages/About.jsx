@@ -214,7 +214,7 @@ const About = () => {
                         className="navigationRightArrow"
                         onClick={() => navigate('/experience')}
                     >
-                        → View My Experience
+                        → Experience
                     </motion.div>
                 </div>
 
