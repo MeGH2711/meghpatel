@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './css/About.css';
 import { Tooltip } from 'bootstrap';
 import { motion, useInView } from 'framer-motion';
@@ -47,6 +48,8 @@ const About = () => {
         { Icon: SiAdobephotoshop, label: "Photoshop" },
         { Icon: SiAdobepremierepro, label: "Premiere Pro" }
     ];
+
+    const navigate = useNavigate();
 
     return (
         <>
@@ -155,6 +158,28 @@ const About = () => {
                     </div>
                 </div>
             </motion.div>
+
+            <div className='container'>
+
+                <div className="d-flex justify-content-between align-items-center mt-4">
+                    <motion.div
+                        whileHover={{ x: -5 }}
+                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        onClick={() => navigate('/')}
+                    >
+                        Home ←
+                    </motion.div>
+
+                    <motion.div
+                        whileHover={{ x: 5 }}
+                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
+                        onClick={() => navigate('/experience')}
+                    >
+                        → View My Experience
+                    </motion.div>
+                </div>
+
+            </div>
 
             <Footer />
         </>
