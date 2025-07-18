@@ -65,7 +65,7 @@ const projects = [
             "A website that explores the diversity, importance, and fascinating stories of trees in our environment.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
         image: treeStory,
-        github: "https://github.com/MeGH2711/dftalumini.com",
+        github: "https://github.com/MeGH2711/treestory.com",
         demo: "https://megh2711.github.io/treestory.com/"
     }
 ];
