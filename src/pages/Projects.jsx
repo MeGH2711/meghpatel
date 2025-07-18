@@ -66,7 +66,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
         image: treeStory,
         github: "https://github.com/MeGH2711/dftalumini.com",
-        demo: "https://megh2711.github.io/dftalumini.com/"
+        demo: "https://megh2711.github.io/treestory.com/"
     }
 ];
 
