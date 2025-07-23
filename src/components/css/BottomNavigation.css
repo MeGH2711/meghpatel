@@ -1,0 +1,15 @@
+.navigationRightArrow {
+    color: #000000;
+}
+
+.navigationLeftArrow {
+    color: #000000;
+}
+
+[data-bs-theme="dark"] .navigationRightArrow {
+  color: #e6e6e6;
+}
+
+[data-bs-theme="dark"] .navigationLeftArrow {
+  color: #e6e6e6;
+}

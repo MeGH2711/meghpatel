@@ -47,3 +47,35 @@
     margin-top: 12px;
     line-height: 1.6;
 }
+
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .education-modern-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    box-shadow: 0 4px 25px rgba(255, 255, 255, 0.05);
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .education-modern-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .edu-logo {
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(255, 255, 255, 0.08);
+}
+
+[data-bs-theme="dark"] .edu-degree {
+    color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .edu-duration {
+    color: #bdbdbd;
+}
+
+[data-bs-theme="dark"] .edu-desc {
+    color: #dddddd;
+}

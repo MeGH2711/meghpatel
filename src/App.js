@@ -2,13 +2,14 @@ import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SocialSidebar from './components/SocialSidebar';
+import ThemeToggle from './components/ThemeToggle';
 import Home from './pages/Home';
 import About from './pages/About';
 import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-const NotFound = () => <div className="cont3ainer mt-5"><h2>404 - Not Found</h2></div>;
+const NotFound = () => <div className="container mt-5"><h2>404 - Not Found</h2></div>;
 
 const routeTitles = {
   '/': 'Home',
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ThemeToggle />
     </>
   );
 };

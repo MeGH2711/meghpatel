@@ -16,3 +16,10 @@
     width: 5rem !important;
     height: 5rem !important;
 }
+
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .email-loader-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(6px);
+}

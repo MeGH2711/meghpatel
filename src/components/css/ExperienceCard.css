@@ -109,6 +109,46 @@
     justify-content: flex-end;
 }
 
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .timeline-dot {
+    background: #6ab0f3;
+    color: #000;
+    box-shadow: 0 0 15px rgba(106, 176, 243, 0.7);
+}
+
+[data-bs-theme="dark"] .timeline-dot::before {
+    background-color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .timeline-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e0e0e0;
+    backdrop-filter: blur(6px);
+}
+
+[data-bs-theme="dark"] .timeline-card:hover {
+    transform: translateY(-5px);
+}
+
+[data-bs-theme="dark"] .exp-title {
+    color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .exp-subtitle {
+    color: #bbbbbb;
+}
+
+[data-bs-theme="dark"] .exp-description {
+    color: #dddddd;
+}
+
+[data-bs-theme="dark"] .tag {
+    background: #6ab0f3;
+    color: #000;
+}
+
 @media screen and (max-width: 768px) {
     .timeline-element {
         flex-direction: column !important;

@@ -66,12 +66,39 @@
     display: block;
 }
 
-
-
 @media screen and (max-width: 992px) {
 
     .custom-navbar .nav-link {
         text-align: center;
     }
 
+}
+
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .custom-navbar {
+    background: rgba(30, 30, 30, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
+}
+
+[data-bs-theme="dark"] .brand-logo {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+[data-bs-theme="dark"] .custom-navbar .nav-link {
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .custom-navbar .nav-link:hover,
+[data-bs-theme="dark"] .custom-navbar .nav-link.active,
+[data-bs-theme="dark"] .nav-link.active {
+    color: #6ab0f3 !important;
+    font-weight: 600;
+}
+
+[data-bs-theme="dark"] .custom-toggler .bar {
+    background-color: #f0f0f0;
 }

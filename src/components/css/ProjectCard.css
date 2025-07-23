@@ -100,11 +100,11 @@
     background-color: #702CF6;
 }
 
-.bg-darkGreen{
+.bg-darkGreen {
     background-color: #004302;
 }
 
-.bg-lightGreen{
+.bg-lightGreen {
     background-color: #00c306;
 }
 
@@ -130,6 +130,49 @@
     }
 }
 
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .project-img {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-bs-theme="dark"] .card-content-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    color: #f5f5f5;
+}
+
+[data-bs-theme="dark"] .card-content-overlay h5,
+[data-bs-theme="dark"] .card-content-overlay p,
+[data-bs-theme="dark"] .card-content-overlay .badge {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+[data-bs-theme="dark"] .modal-content {
+    background: #1e1e1e !important;
+    color: #f0f0f0;
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .modal-img {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .modal-buttons .btn {
+    color: #fff;
+    border: none;
+}
+
+[data-bs-theme="dark"] .bg-purple {
+    background-color: #844ff4;
+}
+
+[data-bs-theme="dark"] .bg-darkGreen {
+    background-color: #007e06;
+}
+
+[data-bs-theme="dark"] .bg-lightGreen {
+    background-color: #00f562;
+}
 
 @media screen and (max-width: 768px) {
     .project-img-wrapper {

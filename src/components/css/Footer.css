@@ -3,3 +3,7 @@
     color: #000000;
     font-size: 0.9rem;
 }
+
+[data-bs-theme="dark"] .footer {
+    color: #e0e0e0;
+}

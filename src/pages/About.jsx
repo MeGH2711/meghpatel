@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './css/About.css';
+import '../index.css'
 import { motion, useInView } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaBootstrap, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
 import { SiMongodb, SiFigma, SiPython, SiAdobephotoshop, SiAdobepremierepro } from 'react-icons/si';
 import EducationCard from '../components/EducationCard';
 import Footer from '../components/Footer';
+import BottomNavigation from '../components/BottomNavigation';
 import profileImg from '../assets/images/meghImage.webp';
 import guLogo from '../assets/images/guLogo.webp';
 import auLogo from '../assets/images/auLogo.webp';
@@ -83,9 +84,6 @@ const About = () => {
             tooltip.style.display = "none";
         }, 200);
     };
-
-
-    const navigate = useNavigate();
 
     return (
         <>
@@ -196,29 +194,7 @@ const About = () => {
                 </div>
             </motion.div>
 
-            <div className='container'>
-
-                <div className="d-flex justify-content-between align-items-center mt-4">
-                    <motion.div
-                        whileHover={{ x: -5 }}
-                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                        className="navigationLeftArrow"
-                        onClick={() => navigate('/')}
-                    >
-                        Home ←
-                    </motion.div>
-
-                    <motion.div
-                        whileHover={{ x: 5 }}
-                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                        className="navigationRightArrow"
-                        onClick={() => navigate('/experience')}
-                    >
-                        → Experience
-                    </motion.div>
-                </div>
-
-            </div>
+            <BottomNavigation left="Home" leftRoute="/" right="Experience" rightRoute="/experience" />
 
             <Footer />
         </>

@@ -84,6 +84,23 @@
     margin-top: 20px;
 }
 
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .left-sidebar a,
+[data-bs-theme="dark"] .right-sidebar a {
+    color: #c9cdd8;
+}
+
+[data-bs-theme="dark"] .left-sidebar a:hover,
+[data-bs-theme="dark"] .right-sidebar a:hover {
+    color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .left-sidebar::after,
+[data-bs-theme="dark"] .right-sidebar::after {
+    background-color: #c9cdd8;
+}
+
 @media (max-width: 768px) {
 
     .left-sidebar {
@@ -93,5 +110,5 @@
     .right-sidebar {
         display: none;
     }
-    
+
 }

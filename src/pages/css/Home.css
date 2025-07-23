@@ -7,6 +7,8 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .hero-content {
@@ -31,12 +33,14 @@
     font-size: 1.5rem;
     color: #555;
     margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
 }
 
 .roles {
     font-size: 1.2rem;
     color: #888;
     margin-bottom: 2rem;
+    transition: color 0.3s ease;
 }
 
 .hero-buttons {
@@ -57,7 +61,7 @@
 }
 
 .hero-btn:hover {
-    background-color: #164a7a;
+    background-color: #164a7a !important;
 }
 
 .hero-btn-outline {
@@ -74,5 +78,23 @@
 
 .hero-btn-outline:hover {
     background-color: #1c5d99;
-    color: #fff;
+    color: #ffffff;
+}
+
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .home-hero {
+    color: #e6e6e6;
+}
+
+[data-bs-theme="dark"] .tagline {
+    color: #ccc;
+}
+
+[data-bs-theme="dark"] .roles {
+    color: #aaa;
+}
+
+[data-bs-theme="dark"] .hero-btn-outline {
+    color: #ffffff;
 }

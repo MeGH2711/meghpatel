@@ -48,6 +48,39 @@
     align-items: center;
 }
 
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .social-link {
+    color: #e0e0e0;
+}
+
+[data-bs-theme="dark"] .social-link:hover {
+    color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .contact-form input,
+[data-bs-theme="dark"] .contact-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #f0f0f0;
+}
+
+[data-bs-theme="dark"] .contact-form input:focus,
+[data-bs-theme="dark"] .contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #6ab0f3;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .contact-form label {
+    color: #d0d0d0;
+}
+
+[data-bs-theme="dark"] .email-loader-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
 @media screen and (max-width: 768px) {
 
     .socialMediaSubtext,
@@ -56,9 +89,9 @@
         margin-left: 20px;
         margin-right: 20px;
     }
-    
-    .submitBtn{
+
+    .submitBtn {
         width: 100%;
     }
-    
+
 }

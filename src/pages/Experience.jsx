@@ -1,9 +1,9 @@
 // Experience.jsx
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { FaLaptopCode, FaPaintBrush, FaMicrophone } from 'react-icons/fa';
 import './css/Experience.css';
+import BottomNavigation from '../components/BottomNavigation';
 import ExperienceCard from '../components/ExperienceCard';
 import Footer from '../components/Footer';
 
@@ -48,8 +48,6 @@ const Experience = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const navigate = useNavigate();
-
     return (
         <>
             <div className="experience-hero">
@@ -78,29 +76,7 @@ const Experience = () => {
                 </div>
             </div>
 
-            <div className='container'>
-
-                <div className="d-flex justify-content-between align-items-center mt-4">
-                    <motion.div
-                        whileHover={{ x: -5 }}
-                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                        className="navigationLeftArrow"
-                        onClick={() => navigate('/about')}
-                    >
-                        About ←
-                    </motion.div>
-
-                    <motion.div
-                        whileHover={{ x: 5 }}
-                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                        className="navigationRightArrow"
-                        onClick={() => navigate('/projects')}
-                    >
-                        → Projects
-                    </motion.div>
-                </div>
-
-            </div>
+            <BottomNavigation left="About" leftRoute="/about" right="Projects" rightRoute="/projects" />
 
             <Footer />
         </>

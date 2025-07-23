@@ -1,9 +1,9 @@
 // components/Projects.jsx
 import React from "react";
-import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./css/Projects.css";
+import BottomNavigation from '../components/BottomNavigation';
 import ProjectCard from "../components/ProjectCard";
 import Footer from "../components/Footer";
 import inventuraxImage from "../assets/images/inventurax.webp";
@@ -72,8 +72,6 @@ const projects = [
 
 const Projects = () => {
 
-    const navigate = useNavigate();
-
     return (
         <Container>
             <div className="projects-hero">
@@ -102,27 +100,7 @@ const Projects = () => {
                 ))}
             </Row>
 
-            <div className='container'>
-                <div className="d-flex justify-content-between align-items-center mt-5">
-                    <motion.div
-                        whileHover={{ x: -5 }}
-                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                        className="navigationLeftArrow"
-                        onClick={() => navigate('/experience')}
-                    >
-                        Experience ←
-                    </motion.div>
-
-                    <motion.div
-                        whileHover={{ x: 5 }}
-                        style={{ cursor: 'pointer', color: '#000000ff', fontWeight: '500' }}
-                        className="navigationRightArrow"
-                        onClick={() => navigate('/contact')}
-                    >
-                        → Contact
-                    </motion.div>
-                </div>
-            </div>
+            <BottomNavigation left="Experience" leftRoute="/experience" right="Contact" rightRoute="/contact" />
 
             <Footer />
         </Container>

@@ -64,7 +64,7 @@ const MyNavbar = () => {
                                 src={logo}
                                 alt="Brand Logo"
                                 height="60"
-                                className="d-inline-block align-middle"
+                                className="d-inline-block align-middle brand-logo"
                             />
                         </Navbar.Brand>
                     </motion.div>

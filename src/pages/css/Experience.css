@@ -27,3 +27,14 @@
     max-width: 100%;
     margin: 0 auto;
 }
+
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .hero-heading {
+    color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .hero-subtext {
+    color: #cccccc;
+    opacity: 0.9;
+}

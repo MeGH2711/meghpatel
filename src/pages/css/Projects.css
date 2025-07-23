@@ -18,3 +18,14 @@
     font-family: 'Montserrat', sans-serif;
     opacity: 0.85;
 }
+
+/* -------------------- DARK THEME -------------------- */
+
+[data-bs-theme="dark"] .projects-hero .hero-heading {
+    color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .projects-hero .hero-subtext {
+    color: #cccccc;
+    opacity: 0.9;
+}
