@@ -5,7 +5,7 @@ const ThemeToggle = () => {
     const [theme, setTheme] = useState('light');
 
     const getSystemTheme = () =>
-        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light';
 
     const applyTheme = (newTheme) => {
         document.documentElement.setAttribute('data-bs-theme', newTheme);
@@ -19,7 +19,7 @@ const ThemeToggle = () => {
     }, []);
 
     const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
+        const newTheme = theme === 'dark' ? 'light' : 'dark';
         applyTheme(newTheme);
     };
 
@@ -30,7 +30,7 @@ const ThemeToggle = () => {
             style={{
                 bottom: '1.5rem',
                 right: '3rem',
-                width: '50px',
+                width: '50px',  
                 height: '50px',
                 zIndex: 9999,
             }}
