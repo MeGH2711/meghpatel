@@ -95,7 +95,7 @@ const ProjectCard = ({ title, description, tech, image, github, demo }) => {
                                     Code
                                 </Button>
                                 {demo && (
-                                    <Button variant="outline-primary d-flex align-items-center justify-content-center" href={demo} target="_blank" rel="noreferrer">
+                                    <Button variant="primary d-flex align-items-center justify-content-center" href={demo} target="_blank" rel="noreferrer">
                                         <span className="blinking-dot me-2"></span> Live
                                     </Button>
                                 )}

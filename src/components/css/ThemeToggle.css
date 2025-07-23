@@ -1,0 +1,7 @@
+.btn-toggleTheme {
+    background-color: #c0c0c0 !important;
+}
+
+[data-bs-theme="dark"] .btn-toggleTheme {
+    background-color: #323232 !important;
+}

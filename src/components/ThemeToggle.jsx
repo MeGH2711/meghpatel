@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './css/ThemeToggle.css'
 import { FaSun, FaMoon } from 'react-icons/fa';
 
 const ThemeToggle = () => {
@@ -26,11 +27,11 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="btn btn-light rounded-circle position-fixed d-flex align-items-center justify-content-center shadow"
+            className="btn btn-toggleTheme rounded-circle position-fixed d-flex align-items-center justify-content-center shadow fs-5"
             style={{
                 bottom: '1.5rem',
                 right: '3rem',
-                width: '50px',  
+                width: '50px',
                 height: '50px',
                 zIndex: 9999,
             }}
