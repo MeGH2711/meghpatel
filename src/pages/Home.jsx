@@ -59,12 +59,8 @@ const Home = () => {
                     <Button className="hero-btn" onClick={handleViewWork}>
                         View My Work
                     </Button>
-                    <a
-                        href={resume}
-                        download
-                        className="hero-btn-outline"
-                    >
-                        Download Resume
+                    <a href={resume} download className="hero-btn-outline">
+                        <span>Download Resume</span>
                     </a>
                 </motion.div>
             </div>
