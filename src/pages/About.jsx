@@ -179,7 +179,7 @@ const About = () => {
                             altText="Ahmedabad University"
                             degree="Master's in Computer Science & Engineering"
                             duration="Planned: 2025 – 2027 (Ongoing)"
-                            description="Planning to pursue a Master's degree in Computer Science to deepen my expertise in latest technologies. This will be a crucial step in expanding my research capabilities and contributing to innovative tech solutions."
+                            description="Pursuing Master's degree in Computer Science to deepen my expertise in latest technologies. This will be a crucial step in expanding my research capabilities and contributing to innovative tech solutions."
                         />
                     </div>
                     <div className="col-md-6 d-flex justify-content-center">
