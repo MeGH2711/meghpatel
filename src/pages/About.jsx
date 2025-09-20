@@ -98,8 +98,7 @@ const About = () => {
                     <div className="col-lg-7">
                         <h2 className="section-title">About Me</h2>
                         <p className="intro-text text-justify">
-                            Hi! I am <span className="highlightedText">Megh Patel</span>, currently pursuing my bachelor's degree in Computer Engineering at <strong>Gandhinagar Institute of Technology</strong> (Gandhinagar University) Affiliated with <strong>Gujarat Technological University</strong>.
-                            I’m passionate about <strong>UI/UX design, web development</strong> and exploring the world of <strong>AI</strong>.
+                            Hi! I am <span className="highlightedText">Megh Patel</span>, a Computer Science enthusiast who has completed a <strong>Bachelor’s degree in Computer Engineering</strong> from <strong>Gandhinagar Institute of Technology</strong> (Gandhinagar University), affiliated with <strong>Gujarat Technological University</strong>. I am currently pursuing a <strong>Master’s degree in Computer Science and Engineering</strong> at <strong>Ahmedabad University</strong>. My passions include <strong>AI, Data Science, web development</strong>, and crafting engaging <strong>UI/UX designs</strong>.
                         </p>
                         <div className="bio-box my-4 p-4 rounded shadow-sm">
                             <div className="row row-cols-1 row-cols-md-2 g-3 g-md-4">
@@ -107,7 +106,7 @@ const About = () => {
                                     <ul className="bio-list">
                                         <li><span>Qualification:</span> Bachelors in Engineering</li>
                                         <li><span>Email:</span> patelmeghmahesh2701@gmail.com</li>
-                                        <li><span>Freelance:</span> Available</li>
+                                        <li><span>Freelance:</span> Unavailable</li>
                                     </ul>
                                 </div>
                                 <div className="col secondCol">
