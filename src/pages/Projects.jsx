@@ -1,10 +1,9 @@
 // components/Projects.jsx
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
 import "./css/Projects.css";
-import BottomNavigation from '../components/BottomNavigation';
-import ProjectCard from "../components/ProjectCard";
+import BottomNavigation from "../components/BottomNavigation";
 import Footer from "../components/Footer";
 import inventuraxImage from "../assets/images/inventurax.webp";
 import debakers from "../assets/images/debakers.webp";
@@ -71,7 +70,6 @@ const projects = [
 ];
 
 const Projects = () => {
-
     return (
         <Container>
             <div className="projects-hero">
@@ -92,16 +90,52 @@ const Projects = () => {
                     Blueprints of innovation, built with passion and precision.
                 </motion.p>
             </div>
-            <Row className="projectCardsContainer g-4">
+
+            {/* Masonry Grid Section */}
+            <div className="masonry-container">
                 {projects.map((project, idx) => (
-                    <Col key={idx} sm={12} md={6} lg={6}>
-                        <ProjectCard {...project} />
-                    </Col>
+                    <motion.div
+                        className="masonry-card"
+                        key={idx}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: idx * 0.1 }}
+                        viewport={{ once: true }}
+                    >
+                        <div className="card-image">
+                            <img src={project.image} alt={project.title} />
+                            <div className="overlay">
+                                {project.demo && (
+                                    <a href={project.demo} target="_blank" rel="noreferrer">
+                                        Live Demo
+                                    </a>
+                                )}
+                                {project.github && (
+                                    <a href={project.github} target="_blank" rel="noreferrer">
+                                        GitHub
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                        <div className="card-info">
+                            <h3>{project.title}</h3>
+                            <p>{project.description}</p>
+                            <div className="tech-stack">
+                                {project.tech.map((t, i) => (
+                                    <span key={i}>{t}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </motion.div>
                 ))}
-            </Row>
+            </div>
 
-            <BottomNavigation left="Experience" leftRoute="/experience" right="Contact" rightRoute="/contact" />
-
+            <BottomNavigation
+                left="Experience"
+                leftRoute="/experience"
+                right="Contact"
+                rightRoute="/contact"
+            />
             <Footer />
         </Container>
     );

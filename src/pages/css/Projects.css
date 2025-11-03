@@ -1,3 +1,4 @@
+/* ===== HERO (unchanged) ===== */
 .projects-hero {
     padding-top: 70px;
     padding-bottom: 50px;
@@ -8,24 +9,156 @@
     font-size: 3rem;
     font-weight: 700;
     color: rgb(28, 93, 153);
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
 .hero-subtext {
     font-size: 1.2rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     opacity: 0.85;
 }
 
-/* -------------------- DARK THEME -------------------- */
+/* ====== MASONRY GRID ====== */
+.masonry-container {
+    column-count: 3;
+    column-gap: 1.5rem;
+    padding: 0 1rem;
+}
 
-[data-bs-theme="dark"] .projects-hero .hero-heading {
+.masonry-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    break-inside: avoid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.masonry-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== IMAGE + OVERLAY ====== */
+.card-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eaeaea;
+    transition: transform 0.5s ease;
+}
+
+.masonry-card:hover .card-image img {
+    transform: scale(1.08);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.3s ease;
+}
+
+.masonry-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay a {
+    background: #fff;
+    color: #1c5d99;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.overlay a:hover {
+    background: #1c5d99;
+    color: #fff;
+}
+
+/* ====== CARD INFO ====== */
+.card-info {
+    padding: 16px 20px;
+}
+
+.card-info h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1c5d99;
+    margin-bottom: 6px;
+}
+
+.card-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tech-stack span {
+    background: #eaf2ff;
+    color: #1c5d99;
+    font-size: 0.75rem;
+    padding: 3px 9px;
+    border-radius: 10px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 992px) {
+    .masonry-container {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry-container {
+        column-count: 1;
+    }
+}
+
+/* ====== DARK THEME ====== */
+[data-bs-theme="dark"] .hero-heading {
     color: #6ab0f3;
 }
 
-[data-bs-theme="dark"] .projects-hero .hero-subtext {
-    color: #cccccc;
+[data-bs-theme="dark"] .hero-subtext {
+    color: #ccc;
     opacity: 0.9;
+}
+
+[data-bs-theme="dark"] .masonry-card {
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="dark"] .card-info h3 {
+    color: #6ab0f3;
+}
+
+[data-bs-theme="dark"] .card-info p {
+    color: #bbb;
+}
+
+[data-bs-theme="dark"] .tech-stack span {
+    background: rgba(255, 255, 255, 0.1);
+    color: #8ac4ff;
 }
