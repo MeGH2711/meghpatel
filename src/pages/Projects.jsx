@@ -9,6 +9,14 @@ import inventuraxImage from "../assets/images/inventurax.webp";
 
 const projects = [
     {
+        title: "De Baker's & More (Bakery Website) - Latest",
+        description:
+            "A charming website for a local bakery featuring a dynamic product catalog, and contact form integration with product availability support.",
+        tech: ["ReactJS", "Bootstrap", "Node.js", "Firebase"],
+        demo: "https://debakersandmore.vercel.app/",
+        github: "https://github.com/MeGH2711/debakersandmore",
+    },
+    {
         title: "InventuraX : Sales and Billing Software",
         description:
             "PDF generation, QR-based UPI, sessions, invoicing and sales management.",
