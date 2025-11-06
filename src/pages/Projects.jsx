@@ -141,8 +141,8 @@ const Projects = () => {
             <BottomNavigation
                 left="Experience"
                 leftRoute="/experience"
-                right="Contact"
-                rightRoute="/contact"
+                right="Certifications"
+                rightRoute="/certifications"
             />
             <Footer />
         </Container>

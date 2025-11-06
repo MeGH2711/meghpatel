@@ -97,7 +97,7 @@ const MyNavbar = () => {
 
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            {['/', '/about', '/experience', '/projects', '/contact'].map((path, i) => (
+                            {['/', '/about', '/experience', '/projects', '/certifications', '/contact'].map((path, i) => (
                                 <motion.div
                                     key={path}
                                     custom={i}
