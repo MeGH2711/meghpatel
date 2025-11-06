@@ -99,12 +99,19 @@
     z-index: 9999;
     pointer-events: none;
     padding: 6px 12px;
-    background-color: #0dcaf0;
+    background-color: rgba(13, 202, 240, 0.4);
+    /* light cyan with transparency */
     color: #000;
     border-radius: 8px;
     font-size: 0.9rem;
     font-weight: 500;
     white-space: nowrap;
+    backdrop-filter: blur(8px);
+    /* adds the blur effect */
+    -webkit-backdrop-filter: blur(8px);
+    /* for Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    /* optional subtle border for contrast */
 }
 
 .tooltip.bs-tooltip-top .tooltip-arrow::before {
@@ -162,18 +169,20 @@
 /* Custom Tooltip for Dark Mode */
 
 [data-bs-theme="dark"] #custom-tooltip {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.4);
     color: #0ff;
-    border: 2px solid #0ff;
+    border: 2px solid rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     box-shadow:
-        0 0 2.5px #0ff,
-        0 0 5px #0ff,
-        0 0 10px #0ff,
-        0 0 15px #0ff;
+        0 0 2.5px rgba(0, 255, 255, 0.7),
+        0 0 5px rgba(0, 255, 255, 0.6),
+        0 0 10px rgba(0, 255, 255, 0.5),
+        0 0 15px rgba(0, 255, 255, 0.4);
 }
 
 [data-bs-theme="dark"] .tooltip.bs-tooltip-top .tooltip-arrow::before {
-    border-top-color: #6ab0f3 !important;
+    border-top-color: rgba(0, 255, 255, 0.7) !important;
 }
 
 @media (max-width: 768px) {
