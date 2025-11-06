@@ -1,4 +1,4 @@
-/* ===== HERO (unchanged) ===== */
+/* ===== HERO ===== */
 .projects-hero {
     padding-top: 70px;
     padding-bottom: 50px;
@@ -42,23 +42,69 @@
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
 }
 
-/* ====== IMAGE + OVERLAY ====== */
-.card-image {
+/* ====== CARD FRAME (Laptop Preview / Image Fallback) ====== */
+.card-frame {
     position: relative;
-    overflow: hidden;
-}
-
-.card-image img {
     width: 100%;
-    height: auto;
-    border-bottom: 1px solid #eaeaea;
-    transition: transform 0.5s ease;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.masonry-card:hover .card-image img {
-    transform: scale(1.08);
+/* Top Bar (Laptop Frame Look) */
+.card-frame::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background: #222;
+    border-radius: 12px 12px 0 0;
+    z-index: 2;
 }
 
+/* ====== iFrame Preview ====== */
+.card-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1366px;
+    height: 768px;
+    transform: translateX(-50%) scale(0.31);
+    transform-origin: top center;
+    border: none;
+    pointer-events: none;
+    transition: transform 0.4s ease;
+}
+
+.masonry-card:hover .card-frame iframe {
+    transform: translateX(-50%) scale(0.32);
+}
+
+/* ====== Image Fallback (Full Coverage) ====== */
+.card-frame img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.masonry-card:hover .card-frame img {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+}
+
+/* ====== OVERLAY ====== */
 .overlay {
     position: absolute;
     inset: 0;
@@ -69,6 +115,7 @@
     align-items: center;
     gap: 12px;
     transition: opacity 0.3s ease;
+    z-index: 3;
 }
 
 .masonry-card:hover .overlay {
@@ -82,7 +129,7 @@
     padding: 6px 14px;
     border-radius: 8px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .overlay a:hover {
@@ -127,11 +174,19 @@
     .masonry-container {
         column-count: 2;
     }
+
+    .card-frame iframe {
+        transform: translateX(-50%) scale(0.3);
+    }
 }
 
 @media (max-width: 576px) {
     .masonry-container {
         column-count: 1;
+    }
+
+    .card-frame iframe {
+        transform: translateX(-50%) scale(0.3);
     }
 }
 

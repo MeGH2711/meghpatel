@@ -6,11 +6,6 @@ import "./css/Projects.css";
 import BottomNavigation from "../components/BottomNavigation";
 import Footer from "../components/Footer";
 import inventuraxImage from "../assets/images/inventurax.webp";
-import debakers from "../assets/images/debakers.webp";
-import anchorMegh from "../assets/images/anchorMegh.webp";
-import neoflex from "../assets/images/neoflex.webp";
-import dftalumini from "../assets/images/dftalumini.webp";
-import treeStory from "../assets/images/treeStory.webp";
 
 const projects = [
     {
@@ -18,55 +13,50 @@ const projects = [
         description:
             "PDF generation, QR-based UPI, sessions, invoicing and sales management.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "MongoDB"],
+        demo: "",
         image: inventuraxImage,
         github: "https://github.com/MeGH2711/inventurax",
-        demo: ""
     },
     {
         title: "De Baker's & More (Bakery Website)",
         description:
             "A charming website for a local bakery featuring a dynamic product catalog, custom cake ordering, and contact form integration.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-        image: debakers,
+        demo: "https://megh2711.github.io/debakersandmore.com/",
         github: "https://github.com/MeGH2711/debakersandmore.com",
-        demo: "https://megh2711.github.io/debakersandmore.com/"
     },
     {
         title: "Anchoring Portfolio Site",
         description:
             "Personal website showcasing hosting experience, event highlights, and booking contact with an elegant UI.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "SMTP API"],
-        image: anchorMegh,
+        demo: "https://anchormegh.vercel.app/",
         github: "https://github.com/MeGH2711/anchormegh",
-        demo: "https://anchormegh.vercel.app/"
     },
     {
         title: "Neoflex (Luxury Watch Brand Website)",
         description:
             "A modern, responsive website for showcasing luxury timepieces with product galleries, brand story, and purchase links.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "GSAP"],
-        image: neoflex,
+        demo: "https://megh2711.github.io/neoflex.com/",
         github: "https://github.com/MeGH2711/neoflex.com",
-        demo: "https://megh2711.github.io/neoflex.com/"
     },
     {
         title: "DFT Alumini Association",
         description:
             "A dedicated platform for DFT Bhavnagar alumni to reconnect, share memories, and stay updated on events and opportunities.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-        image: dftalumini,
+        demo: "https://megh2711.github.io/dftalumini.com/",
         github: "https://github.com/MeGH2711/dftalumini.com",
-        demo: "https://megh2711.github.io/dftalumini.com/"
     },
     {
         title: "Tree Story",
         description:
             "A website that explores the diversity, importance, and fascinating stories of trees in our environment.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-        image: treeStory,
+        demo: "https://megh2711.github.io/treestory.com/",
         github: "https://github.com/MeGH2711/treestory.com",
-        demo: "https://megh2711.github.io/treestory.com/"
-    }
+    },
 ];
 
 const Projects = () => {
@@ -102,8 +92,17 @@ const Projects = () => {
                         transition={{ duration: 0.6, delay: idx * 0.1 }}
                         viewport={{ once: true }}
                     >
-                        <div className="card-image">
-                            <img src={project.image} alt={project.title} />
+                        <div className="card-frame">
+                            {project.demo ? (
+                                <iframe
+                                    src={project.demo}
+                                    title={project.title}
+                                    loading="lazy"
+                                    sandbox="allow-same-origin allow-scripts"
+                                ></iframe>
+                            ) : (
+                                <img src={project.image} alt={project.title} className="fallback-image" />
+                            )}
                             <div className="overlay">
                                 {project.demo && (
                                     <a href={project.demo} target="_blank" rel="noreferrer">
@@ -117,6 +116,7 @@ const Projects = () => {
                                 )}
                             </div>
                         </div>
+
                         <div className="card-info">
                             <h3>{project.title}</h3>
                             <p>{project.description}</p>
