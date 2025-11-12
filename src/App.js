@@ -9,6 +9,7 @@ import Experience from './pages/Experience';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Certifications from './pages/Certifications';
+import ContactResponses from "./pages/ContactResponses";
 
 const NotFound = () => <div className="container mt-5"><h2>404 - Not Found</h2></div>;
 
@@ -19,6 +20,7 @@ const routeTitles = {
   '/projects': 'Projects',
   '/contact': 'Contact',
   '/certifications': 'Certifications',
+  '/admin/responses': 'Contact Responses',
 };
 
 const App = () => {
@@ -40,6 +42,7 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/certifications" element={<Certifications />} />
+        <Route path="/admin/responses" element={<ContactResponses />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <ThemeToggle />

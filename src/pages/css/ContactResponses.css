@@ -1,0 +1,8 @@
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+.table a {
+    color: #c3e2ff;
+}

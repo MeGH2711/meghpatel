@@ -1,12 +1,16 @@
+// src/pages/Contact.jsx  (or where your Contact file lives)
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import emailjs from '@emailjs/browser';
 import Loader from '../components/Loader';
 import MessageModal from '../components/MessageModal';
-import Footer from '../components/Footer'
+import Footer from '../components/Footer';
 import './css/Contact.css';
+
+// Firestore imports
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase'; // adjust path if needed
 
 const socialLinks = [
     { icon: FaGithub, link: 'https://www.github.com/MeGH2711', label: 'GitHub' },
@@ -18,39 +22,50 @@ const socialLinks = [
 ];
 
 const Contact = () => {
-
     const form = useRef();
-
     const [loading, setLoading] = React.useState(false);
-
     const [toast, setToast] = React.useState({ show: false, message: '', variant: 'success' });
 
-    const sendEmail = (e) => {
+    const sendMessageToFirestore = async (e) => {
         e.preventDefault();
         setLoading(true);
 
-        const now = new Date().toLocaleString();
-        const hiddenInput = document.createElement('input');
-        hiddenInput.type = 'hidden';
-        hiddenInput.name = 'time';
-        hiddenInput.value = now;
-        form.current.appendChild(hiddenInput);
+        try {
+            // Read form values
+            const formData = new FormData(form.current);
+            const name = formData.get('user_name')?.toString().trim();
+            const email = formData.get('user_email')?.toString().trim();
+            const message = formData.get('message')?.toString().trim();
 
-        emailjs.sendForm(
-            'service_b8udbmk',
-            'template_7fdwuwm',
-            form.current,
-            'BGFVdNjL1KcWa2STN'
-        )
-            .then(() => {
-                setToast({ show: true, message: 'Message sent successfully!', variant: 'success' });
-                form.current.reset();
+            // Basic client-side validation (optional)
+            if (!name || !email || !message) {
+                setToast({ show: true, message: 'Please fill all fields.', variant: 'danger' });
                 setLoading(false);
-            })
-            .catch(() => {
-                setToast({ show: true, message: 'Failed to send message. Please try again.', variant: 'danger' });
-                setLoading(false);
-            });
+                return;
+            }
+
+            // Create object to store
+            const docData = {
+                name,
+                email,
+                message,
+                createdAt: serverTimestamp(), // use server timestamp
+                // optionally capture client timezone/local time:
+                clientTime: new Date().toLocaleString(),
+                // any other metadata you want
+            };
+
+            // Add a document to 'contacts' collection
+            await addDoc(collection(db, 'contacts'), docData);
+
+            setToast({ show: true, message: 'Message saved! Thank you.', variant: 'success' });
+            form.current.reset();
+        } catch (error) {
+            console.error('Firestore write error:', error);
+            setToast({ show: true, message: 'Failed to save message. Try again later.', variant: 'danger' });
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -89,7 +104,7 @@ const Contact = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h2 className="section-title mb-4">Send a Message</h2>
-                    <form className="contact-form" ref={form} onSubmit={sendEmail}>
+                    <form className="contact-form" ref={form} onSubmit={sendMessageToFirestore}>
                         <div className="mb-3">
                             <label className="form-label" htmlFor="name">Name</label>
                             <input
@@ -136,6 +151,7 @@ const Contact = () => {
                         </motion.button>
                     </form>
                 </motion.div>
+
                 {loading && <Loader />}
                 <MessageModal
                     show={toast.show}
