@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import {
+    collection,
+    getDocs,
+    orderBy,
+    query,
+    updateDoc,
+    doc,
+    deleteDoc,
+} from "firebase/firestore";
 import { db } from "../firebase";
 import {
     Container,
@@ -22,6 +30,9 @@ const ContactResponses = () => {
     const [adminKey, setAdminKey] = useState("");
     const [authorized, setAuthorized] = useState(false);
     const [verifying, setVerifying] = useState(false);
+    const [deleteModal, setDeleteModal] = useState(false);
+    const [selectedResponse, setSelectedResponse] = useState(null);
+    const [deleting, setDeleting] = useState(false);
 
     const fetchResponses = async () => {
         try {
@@ -54,57 +65,94 @@ const ContactResponses = () => {
         }, 800);
     };
 
-    // Function to format date as "15 November 2025"
-    const formatDate = (dateObj) => {
-        return dateObj.toLocaleDateString("en-GB", {
+    const handleReviewChange = async (id, currentValue) => {
+        try {
+            const ref = doc(db, "contacts", id);
+            await updateDoc(ref, { reviewed: !currentValue });
+            setResponses((prev) =>
+                prev.map((res) =>
+                    res.id === id ? { ...res, reviewed: !currentValue } : res
+                )
+            );
+        } catch (err) {
+            console.error("Error updating review status:", err);
+            alert("Failed to update review status.");
+        }
+    };
+
+    const handleDeleteClick = (response) => {
+        setSelectedResponse(response);
+        setDeleteModal(true);
+    };
+
+    const confirmDelete = async () => {
+        if (!selectedResponse) return;
+        setDeleting(true);
+        try {
+            await deleteDoc(doc(db, "contacts", selectedResponse.id));
+            setResponses((prev) =>
+                prev.filter((res) => res.id !== selectedResponse.id)
+            );
+            setDeleteModal(false);
+            setSelectedResponse(null);
+        } catch (err) {
+            console.error("Error deleting response:", err);
+            alert("Failed to delete response.");
+        } finally {
+            setDeleting(false);
+        }
+    };
+
+    const cancelDelete = () => {
+        setDeleteModal(false);
+        setSelectedResponse(null);
+    };
+
+    const formatDate = (dateObj) =>
+        dateObj.toLocaleDateString("en-GB", {
             day: "2-digit",
             month: "long",
             year: "numeric",
         });
-    };
 
-    // Function to format time as "10:45 PM"
-    const formatTime = (dateObj) => {
-        return dateObj.toLocaleTimeString("en-US", {
+    const formatTime = (dateObj) =>
+        dateObj.toLocaleTimeString("en-US", {
             hour: "2-digit",
             minute: "2-digit",
             hour12: true,
         });
-    };
 
     if (!authorized) {
         return (
-            <>
-                <Modal show={showModal} backdrop="static" centered>
-                    <Modal.Header>
-                        <Modal.Title>Admin Access Required</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <p className="text-muted mb-3">
-                            Please enter the admin key to access contact form responses.
-                        </p>
-                        <Form.Control
-                            type="password"
-                            placeholder="Enter admin key"
-                            value={adminKey}
-                            onChange={(e) => setAdminKey(e.target.value)}
-                            onKeyDown={(e) => e.key === "Enter" && handleVerifyKey()}
-                        />
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={() => window.history.back()}>
-                            Cancel
-                        </Button>
-                        <Button
-                            variant="primary"
-                            onClick={handleVerifyKey}
-                            disabled={verifying || !adminKey}
-                        >
-                            {verifying ? "Verifying..." : "Submit"}
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
-            </>
+            <Modal show={showModal} backdrop="static" centered>
+                <Modal.Header>
+                    <Modal.Title>Admin Access Required</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p className="text-muted mb-3">
+                        Please enter the admin key to access contact form responses.
+                    </p>
+                    <Form.Control
+                        type="password"
+                        placeholder="Enter admin key"
+                        value={adminKey}
+                        onChange={(e) => setAdminKey(e.target.value)}
+                        onKeyDown={(e) => e.key === "Enter" && handleVerifyKey()}
+                    />
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => window.history.back()}>
+                        Cancel
+                    </Button>
+                    <Button
+                        variant="primary"
+                        onClick={handleVerifyKey}
+                        disabled={verifying || !adminKey}
+                    >
+                        {verifying ? "Verifying..." : "Submit"}
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         );
     }
 
@@ -138,12 +186,14 @@ const ContactResponses = () => {
                         <Table bordered hover responsive className="align-middle">
                             <thead className="table-dark">
                                 <tr>
+                                    <th className="text-center">Reviewed</th>
                                     <th className="text-center">Sr. No.</th>
                                     <th className="text-center">Date</th>
                                     <th className="text-center">Time</th>
                                     <th className="text-center">Name</th>
                                     <th className="text-center">Email</th>
                                     <th className="text-center">Message</th>
+                                    <th className="text-center">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -151,8 +201,21 @@ const ContactResponses = () => {
                                     const dateObj = res.createdAt?.toDate
                                         ? res.createdAt.toDate()
                                         : null;
+                                    const reviewed = res.reviewed || false;
                                     return (
-                                        <tr key={res.id}>
+                                        <tr
+                                            key={res.id}
+                                            className={reviewed ? "table-primary" : ""}
+                                        >
+                                            <td className="text-center">
+                                                <Form.Check
+                                                    type="checkbox"
+                                                    checked={reviewed}
+                                                    onChange={() =>
+                                                        handleReviewChange(res.id, reviewed)
+                                                    }
+                                                />
+                                            </td>
                                             <td className="text-center">{index + 1}</td>
                                             <td className="text-center">
                                                 {dateObj
@@ -183,6 +246,15 @@ const ContactResponses = () => {
                                             >
                                                 {res.message}
                                             </td>
+                                            <td className="text-center">
+                                                <Button
+                                                    variant="danger"
+                                                    size="sm"
+                                                    onClick={() => handleDeleteClick(res)}
+                                                >
+                                                    Delete
+                                                </Button>
+                                            </td>
                                         </tr>
                                     );
                                 })}
@@ -191,6 +263,40 @@ const ContactResponses = () => {
                     </div>
                 )}
             </Container>
+
+            {/* Delete Confirmation Modal */}
+            <Modal show={deleteModal} onHide={cancelDelete} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Confirm Delete</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {selectedResponse && (
+                        <>
+                            <p>
+                                Are you sure you want to delete this response from{" "}
+                                <strong>{selectedResponse.name}</strong>?
+                            </p>
+                            <p className="text-muted small">
+                                <strong>Email:</strong> {selectedResponse.email}
+                                <br />
+                                <strong>Message:</strong> {selectedResponse.message}
+                            </p>
+                        </>
+                    )}
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={cancelDelete} disabled={deleting}>
+                        Cancel
+                    </Button>
+                    <Button
+                        variant="danger"
+                        onClick={confirmDelete}
+                        disabled={deleting}
+                    >
+                        {deleting ? "Deleting..." : "Delete"}
+                    </Button>
+                </Modal.Footer>
+            </Modal>
 
             <Footer />
         </div>
