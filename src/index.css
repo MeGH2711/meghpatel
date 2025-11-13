@@ -136,3 +136,20 @@ body {
   }
 
 }
+
+.message-modal .modal-content {
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.message-modal .modal-body h5 {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.message-modal .btn {
+  border-radius: 8px;
+  font-weight: 500;
+}
