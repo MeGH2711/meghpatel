@@ -7,6 +7,13 @@ import Footer from "../components/Footer";
 
 const certifications = [
     {
+        title: "Python (Basic)",
+        issuer: "HackerRank",
+        date: "Issued on Nov 2025",
+        link: "https://www.hackerrank.com/certificates/927a24bc9b81",
+        badge: "https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png",
+    },
+    {
         title: "Basic SQL",
         issuer: "HackerRank",
         date: "Issued on July 2024",
