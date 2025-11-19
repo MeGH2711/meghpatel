@@ -10,14 +10,6 @@ import birdspeciesdetection from "../assets/images/birdspeciesdetection.png";
 
 const projects = [
     {
-        title: "De Baker's & More (Bakery Website) - Latest",
-        description:
-            "A charming website for a local bakery featuring a dynamic product catalog, and contact form integration with product availability support.",
-        tech: ["ReactJS", "Bootstrap", "Node.js", "Firebase"],
-        demo: "https://debakersandmore.vercel.app/",
-        github: "https://github.com/MeGH2711/debakersandmore",
-    },
-    {
         title: "Bird Species Detection Using Deep Learning",
         description:
             "A Vision Transformer–based deep learning model for fine-grained classification of 200 bird species using the CUB-200-2011 dataset.",
@@ -25,6 +17,14 @@ const projects = [
         demo: "",
         image: birdspeciesdetection,
         github: "https://github.com/MeGH2711/birdspeciesrecognition",
+    },
+    {
+        title: "De Baker's & More (Bakery Website) - Latest",
+        description:
+            "A charming website for a local bakery featuring a dynamic product catalog, and contact form integration with product availability support.",
+        tech: ["ReactJS", "Bootstrap", "Node.js", "Firebase"],
+        demo: "https://debakersandmore.vercel.app/",
+        github: "https://github.com/MeGH2711/debakersandmore",
     },
     {
         title: "InventuraX : Sales and Billing Software",
