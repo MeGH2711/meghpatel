@@ -6,6 +6,7 @@ import "./css/Projects.css";
 import BottomNavigation from "../components/BottomNavigation";
 import Footer from "../components/Footer";
 import inventuraxImage from "../assets/images/inventurax.webp";
+import birdspeciesdetection from "../assets/images/birdspeciesdetection.png";
 
 const projects = [
     {
@@ -15,6 +16,15 @@ const projects = [
         tech: ["ReactJS", "Bootstrap", "Node.js", "Firebase"],
         demo: "https://debakersandmore.vercel.app/",
         github: "https://github.com/MeGH2711/debakersandmore",
+    },
+    {
+        title: "Bird Species Detection Using Deep Learning",
+        description:
+            "A Vision Transformer–based deep learning model for fine-grained classification of 200 bird species using the CUB-200-2011 dataset.",
+        tech: ["Python", "ViT-B/16 Model", "CNN Model", "PyTorch", "Gradio"],
+        demo: "",
+        image: birdspeciesdetection,
+        github: "https://github.com/MeGH2711/birdspeciesrecognition",
     },
     {
         title: "InventuraX : Sales and Billing Software",
