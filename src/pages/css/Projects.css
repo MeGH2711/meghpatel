@@ -22,8 +22,9 @@
 
 /* ====== MASONRY GRID ====== */
 .masonry-container {
-    column-count: 3;
-    column-gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
     padding: 0 1rem;
 }
 
@@ -31,11 +32,7 @@
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
-    margin-bottom: 1.5rem;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    break-inside: avoid;
-    display: inline-block;     /* <-- ADD THIS */
-    width: 100%;               /* ensures proper card sizing */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -171,27 +168,6 @@
     border-radius: 10px;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 992px) {
-    .masonry-container {
-        column-count: 2;
-    }
-
-    .card-frame iframe {
-        transform: translateX(-50%) scale(0.3);
-    }
-}
-
-@media (max-width: 576px) {
-    .masonry-container {
-        column-count: 1;
-    }
-
-    .card-frame iframe {
-        transform: translateX(-50%) scale(0.3);
-    }
-}
-
 /* ====== DARK THEME ====== */
 [data-bs-theme="dark"] .hero-heading {
     color: #6ab0f3;
@@ -218,4 +194,36 @@
 [data-bs-theme="dark"] .tech-stack span {
     background: rgba(255, 255, 255, 0.1);
     color: #8ac4ff;
+}
+
+@media (max-width: 992px) {
+    .masonry-container {
+        column-count: 2;
+    }
+
+    .card-frame iframe {
+        transform: translateX(-50%) scale(0.3);
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry-container {
+        column-count: 1;
+    }
+
+    .card-frame iframe {
+        transform: translateX(-50%) scale(0.3);
+    }
+}
+
+@media (max-width: 992px) {
+    .masonry-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

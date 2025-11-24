@@ -36,20 +36,20 @@ const projects = [
         github: "https://github.com/MeGH2711/inventurax",
     },
     {
-        title: "De Baker's & More (Bakery Website)",
-        description:
-            "A charming website for a local bakery featuring a dynamic product catalog, custom cake ordering, and contact form integration.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-        demo: "https://megh2711.github.io/debakersandmore.com/",
-        github: "https://github.com/MeGH2711/debakersandmore.com",
-    },
-    {
         title: "Anchoring Portfolio Site",
         description:
             "Personal website showcasing hosting experience, event highlights, and booking contact with an elegant UI.",
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "SMTP API"],
         demo: "https://anchormegh.vercel.app/",
         github: "https://github.com/MeGH2711/anchormegh",
+    },
+    {
+        title: "De Baker's & More (Bakery Website)",
+        description:
+            "A charming website for a local bakery featuring a dynamic product catalog, custom cake ordering, and contact form integration.",
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+        demo: "https://megh2711.github.io/debakersandmore.com/",
+        github: "https://github.com/MeGH2711/debakersandmore.com",
     },
     {
         title: "Neoflex (Luxury Watch Brand Website)",
