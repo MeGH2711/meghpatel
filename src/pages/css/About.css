@@ -201,3 +201,58 @@
         height: 75vw;
     }
 }
+
+.github-title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.github-link-icon {
+    padding: 10px 0;
+    font-size: 1.6rem;
+    color: #ffffff;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.github-link-icon:hover {
+    transform: scale(1.2);
+    color: #6ab0f3;
+}
+
+/* Dark mode */
+[data-bs-theme="dark"] .github-link-icon {
+    color: #ffffff;
+}
+
+[data-bs-theme="dark"] .github-link-icon:hover {
+    color: #6ab0f3;
+}
+
+.github-calendar-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.github-calendar-container svg {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+}
+
+[data-bs-theme="dark"] .github-calendar-container svg text {
+    fill: #ddd !important;
+}
+
+.react-activity-calendar__calendar g rect {
+    transition: transform 0.25s ease;
+    rx: 4px !important;
+    ry: 4px !important;
+}
+
+.react-activity-calendar__calendar g rect:hover {
+    transform: scale(1.05);
+}

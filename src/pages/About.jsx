@@ -10,6 +10,8 @@ import BottomNavigation from '../components/BottomNavigation';
 import profileImg from '../assets/images/meghImage.webp';
 import guLogo from '../assets/images/guLogo.webp';
 import auLogo from '../assets/images/auLogo.webp';
+import { GitHubCalendar } from 'react-github-calendar';
+import { FaGithub } from "react-icons/fa";
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
@@ -22,10 +24,12 @@ const About = () => {
     const aboutRef = useRef(null);
     const skillsRef = useRef(null);
     const educationRef = useRef(null);
+    const githubRef = useRef(null);
 
     const isAboutInView = useInView(aboutRef, { once: true, threshold: 0.2 });
     const isSkillsInView = useInView(skillsRef, { once: true, threshold: 0.2 });
     const isEducationInView = useInView(educationRef, { once: true, threshold: 0.2 });
+    const isGithubInView = useInView(githubRef, { once: true, threshold: 0.2 });
 
     const skills = [
         { Icon: FaHtml5, label: "HTML5" },
@@ -160,6 +164,39 @@ const About = () => {
                             <Icon />
                         </motion.div>
                     ))}
+                </div>
+            </motion.div>
+
+            <motion.div
+                className="github-section container mt-5"
+                ref={githubRef}
+                variants={fadeInUp}
+                initial="hidden"
+                animate={isGithubInView ? 'visible' : 'hidden'}
+            >
+                <h3 className="section-title mb-4 github-title">
+                    GitHub Activity
+                    <a
+                        href="https://github.com/megh2711"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="github-link-icon d-flex align-items-center"
+                    >
+                        <FaGithub />
+                    </a>
+                </h3>
+
+                <div className="github-calendar-container">
+                    <GitHubCalendar
+                        username="megh2711"
+                        blockSize={15}
+                        blockMargin={4}
+                        colorScheme="light"
+                        theme={{
+                            light: ['#e8faff', '#a8e4ff', '#6acbff', '#2baaff', '#117ad6'],
+                            dark: ['#0a1a2f', '#123a5a', '#1c5d99', '#0dcaf0', '#6ab0f3']
+                        }}
+                    />
                 </div>
             </motion.div>
 
