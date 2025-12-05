@@ -1,5 +1,3 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
@@ -25,3 +23,7 @@ yarn-error.log*
 # Batch Files
 launch-hidden.vbs
 StartServer.bat
+
+# Updates
+# Update Resume
+# Add Soft Skills too in the About Me Page

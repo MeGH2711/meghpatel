@@ -233,10 +233,22 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 40px;
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+}
+
+[data-bs-theme="dark"] .github-calendar-container {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(13, 202, 240, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .github-calendar-container svg {
@@ -250,11 +262,33 @@
 }
 
 .react-activity-calendar__calendar g rect {
-    transition: transform 0.25s ease;
-    rx: 4px !important;
-    ry: 4px !important;
+    transition: all 0.3s ease;
+    stroke: transparent;
+    stroke-width: 2px;
 }
 
 .react-activity-calendar__calendar g rect:hover {
+    stroke: #0dcaf0;
+    stroke-opacity: 0.8;
     transform: scale(1.05);
+    z-index: 10;
+}
+
+[data-bs-theme="dark"] .react-activity-calendar__calendar g rect[data-level="4"] {
+    fill: #0dcaf0;
+    filter: drop-shadow(0 0 4px rgba(13, 202, 240, 0.6));
+}
+
+[data-bs-theme="dark"] .react-activity-calendar__calendar g rect[data-level="3"] {
+    fill: #6ab0f3;
+    filter: drop-shadow(0 0 2px rgba(106, 176, 243, 0.4));
+}
+
+.react-activity-calendar__calendar text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+[data-bs-theme="dark"] .react-activity-calendar__calendar text {
+    fill: #a8a8a8;
 }

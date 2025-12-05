@@ -148,7 +148,7 @@ const About = () => {
                 initial="hidden"
                 animate={isSkillsInView ? 'visible' : 'hidden'}
             >
-                <h3 className="section-title">Skills & Tools</h3>
+                <h3 className="section-title">Technical Skills & Tools</h3>
                 <div className="skills-grid">
                     {skills.map(({ Icon, label }, index) => (
                         <motion.div
@@ -189,12 +189,12 @@ const About = () => {
                 <div className="github-calendar-container">
                     <GitHubCalendar
                         username="megh2711"
-                        blockSize={15}
-                        blockMargin={4}
-                        colorScheme="light"
+                        blockSize={14}
+                        blockMargin={5}
+                        fontSize={14}
                         theme={{
-                            light: ['#e8faff', '#a8e4ff', '#6acbff', '#2baaff', '#117ad6'],
-                            dark: ['#0a1a2f', '#123a5a', '#1c5d99', '#0dcaf0', '#6ab0f3']
+                            light: ['#ebedf0', '#90e0ef', '#00b4d8', '#0077b6', '#03045e'],
+                            dark: ['#161b22', '#0d3b66', '#2a6f97', '#6ab0f3', '#0dcaf0']
                         }}
                     />
                 </div>
