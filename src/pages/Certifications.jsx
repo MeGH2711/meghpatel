@@ -6,9 +6,18 @@ import BottomNavigation from "../components/BottomNavigation";
 import Footer from "../components/Footer";
 
 import nationalipawareness from "../assets/documents/nationalipawareness.pdf";
+import cpim2025 from "../assets/documents/cpim2025.pdf";
 import tcsioncareeredgeyoungprofessional from "../assets/documents/tcsioncareeredgeyoungprofessional.pdf";
 
 const certifications = [
+    {
+        title: "CPIM 2025",
+        issuer: "SVGU",
+        date: "Issued on April 2025",
+        sortDate: "2025-04",
+        link: cpim2025,
+        badge: "https://images.shiksha.com/mediadata/images/1717483894phpW49Qzc.jpeg",
+    },
     {
         title: "Python (Basic)",
         issuer: "HackerRank",
