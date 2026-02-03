@@ -33,7 +33,7 @@ const projects = [
         tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "MongoDB"],
         demo: "",
         image: inventuraxImage,
-        github: "https://github.com/MeGH2711/inventurax",
+        github: "https://github.com/MeGH2711/inventuraxpro",
     },
     {
         title: "Anchoring Portfolio Site",
