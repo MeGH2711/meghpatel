@@ -124,7 +124,7 @@ const Projects = () => {
                             <div className="overlay">
                                 {project.demo && (
                                     <a href={project.demo} target="_blank" rel="noreferrer">
-                                        Live Demo
+                                        Live
                                     </a>
                                 )}
                                 {project.github && (
