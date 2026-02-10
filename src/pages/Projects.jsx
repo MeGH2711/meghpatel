@@ -5,10 +5,17 @@ import { motion } from "framer-motion";
 import "./css/Projects.css";
 import BottomNavigation from "../components/BottomNavigation";
 import Footer from "../components/Footer";
-import inventuraxImage from "../assets/images/inventurax.webp";
 import birdspeciesdetection from "../assets/images/birdspeciesdetection.png";
 
 const projects = [
+    {
+        title: "InventuraX : Sales and Billing Software",
+        description:
+            "PDF generation, QR-based UPI, sessions, invoicing and sales management.",
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "MongoDB"],
+        demo: "https://inventuraxpro.vercel.app/",
+        github: "https://github.com/MeGH2711/inventuraxpro",
+    },
     {
         title: "Bird Species Detection Using Deep Learning",
         description:
@@ -25,15 +32,6 @@ const projects = [
         tech: ["ReactJS", "Bootstrap", "Node.js", "Firebase"],
         demo: "https://debakersandmore.vercel.app/",
         github: "https://github.com/MeGH2711/debakersandmore",
-    },
-    {
-        title: "InventuraX : Sales and Billing Software",
-        description:
-            "PDF generation, QR-based UPI, sessions, invoicing and sales management.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "MongoDB"],
-        demo: "",
-        image: inventuraxImage,
-        github: "https://github.com/MeGH2711/inventuraxpro",
     },
     {
         title: "Anchoring Portfolio Site",
