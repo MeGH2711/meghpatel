@@ -12,7 +12,7 @@ const projects = [
         title: "InventuraX : Sales and Billing Software",
         description:
             "PDF generation, QR-based UPI, sessions, invoicing and sales management.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Node.js", "MongoDB"],
+        tech: ["ReactJS", "Bootstrap", "Node.js", "Firebase"],
         demo: "https://inventuraxpro.vercel.app/",
         github: "https://github.com/MeGH2711/inventuraxpro",
     },
