@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import "./css/Projects.css";
 import BottomNavigation from "../components/BottomNavigation";
 import Footer from "../components/Footer";
-import birdspeciesdetection from "../assets/images/birdspeciesdetection.png";
+import birdspeciesdetection from "../assets/images/bird_species_detection.png";
 
 const projects = [
     {
