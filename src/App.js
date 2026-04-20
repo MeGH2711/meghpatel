@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import HomeNavbar from './components/HomeNavbar';
 import SocialSidebar from './components/SocialSidebar';
 import ThemeToggle from './components/ThemeToggle';
 import Home from './pages/Home';
@@ -25,6 +26,7 @@ const routeTitles = {
 
 const App = () => {
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const title = routeTitles[location.pathname] || 'Page Not Found';
@@ -33,7 +35,8 @@ const App = () => {
 
   return (
     <>
-      <Navbar />
+      {isHomePage ? <HomeNavbar /> : <Navbar />}
+
       <SocialSidebar />
       <Routes>
         <Route path="/" element={<Home />} />

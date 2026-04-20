@@ -3,7 +3,9 @@ import './css/About.css';
 import '../index.css'
 import { motion, useInView } from 'framer-motion';
 import { FaHtml5, FaCss3Alt, FaJs, FaBootstrap, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import { SiMongodb, SiFigma, SiPython, SiAdobephotoshop, SiAdobepremierepro } from 'react-icons/si';
+import { SiMongodb, SiFigma, SiPython } from 'react-icons/si';
+import { DiPhotoshop } from 'react-icons/di';
+import { TbBrandAdobePremier } from 'react-icons/tb';
 import EducationCard from '../components/EducationCard';
 import Footer from '../components/Footer';
 import BottomNavigation from '../components/BottomNavigation';
@@ -42,8 +44,8 @@ const About = () => {
         { Icon: FaGitAlt, label: "Git" },
         { Icon: SiFigma, label: "Figma" },
         { Icon: SiPython, label: "Python" },
-        { Icon: SiAdobephotoshop, label: "Photoshop" },
-        { Icon: SiAdobepremierepro, label: "Premiere Pro" }
+        { Icon: DiPhotoshop, label: "Photoshop" },
+        { Icon: TbBrandAdobePremier, label: "Premiere Pro" }
     ];
 
     let hideTimeout = null;
