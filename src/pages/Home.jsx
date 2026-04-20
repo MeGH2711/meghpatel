@@ -5,7 +5,6 @@ import './css/Home.css';
 import resume from '../assets/documents/MeghCV.pdf';
 import profileVideo from '../assets/videos/loopedvideo.webm';
 import { FaReact, FaRobot, FaPalette } from 'react-icons/fa';
-import SpotifyBadge from '../components/SpotifyBadge';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -183,7 +182,6 @@ const Home = () => {
                     <FaPalette color="#fbbf24" /> <span>UX</span>
                 </motion.div>
             </motion.div>
-            <SpotifyBadge />
         </motion.section>
     );
 };
