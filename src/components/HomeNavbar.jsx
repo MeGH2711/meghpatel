@@ -33,10 +33,10 @@ const HomeNavbar = () => {
                     ))}
                 </div>
 
-                <div className="nav-status">
+                {/* <div className="nav-status">
                     <span className="status-dot"></span>
                     <span className="status-text">Available</span>
-                </div>
+                </div> */}
             </div>
         </motion.nav>
     );
