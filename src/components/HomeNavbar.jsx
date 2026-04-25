@@ -6,6 +6,7 @@ import logoImg from '../assets/images/logoBlack.webp'; // Using the same logo as
 
 const HomeNavbar = () => {
     const navLinks = [
+        { name: 'Home', path: '/' },
         { name: 'About', path: '/about' },
         { name: 'Experience', path: '/experience' },
         { name: 'Projects', path: '/projects' },

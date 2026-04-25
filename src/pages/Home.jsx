@@ -63,16 +63,6 @@ const Home = () => {
                 '--my': `${mousePos.y}%`,
             }}
         >
-            {/* Ambient background orbs */}
-            <div className="orb orb-1" />
-            <div className="orb orb-2" />
-            <div className="orb orb-3" />
-
-            {/* Noise texture overlay */}
-            <div className="noise-overlay" />
-
-            {/* Grid lines */}
-            <div className="grid-lines" />
 
             {/* LEFT — Text */}
             <div className="hero-text-container">
@@ -97,7 +87,16 @@ const Home = () => {
                 <motion.div className="roles-row" variants={fadeUp}>
                     {roles.map((role, i) => (
                         <React.Fragment key={role}>
-                            <span className="role-chip">{role}</span>
+                            <motion.span
+                                className="role-chip"
+                                whileHover={{
+                                    scale: 1.05,
+                                    backgroundColor: "rgba(59, 130, 246, 0.1)",
+                                    borderColor: "var(--accent)"
+                                }}
+                            >
+                                {role}
+                            </motion.span>
                             {i < roles.length - 1 && <span className="role-sep">·</span>}
                         </React.Fragment>
                     ))}
