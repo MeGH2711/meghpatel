@@ -16,7 +16,7 @@ const PROJECT = {
     status: 'Live',
     badges: [
         { label: 'Completed', variant: 'green' },
-        { label: 'V2.0 Live', variant: 'blue' },
+        { label: 'V1.0.2 Live', variant: 'blue' },
         { label: 'Open Source', variant: 'violet' },
     ],
     metrics: [

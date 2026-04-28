@@ -10,7 +10,7 @@ const PROJECT = {
     title: 'Bird Species Detection',
     subtitle: 'Deep Learning · Fine-Grained Visual Classification',
     demo: '',           // no live demo — model is local
-    github: 'https://github.com/MeGH2711/bird-species-detection',
+    github: 'https://github.com/MeGH2711/birdspeciesrecognition',
     year: '2025',
     type: 'ML Research',
     status: 'Research Phase',
@@ -280,13 +280,6 @@ const BirdSpeciesDetail = () => {
                     <div className="bsd-sidebar-thumb">
                         <div className="bsd-thumb-inner">
                             <div className="bsd-thumb-grid" />
-                            {/* Bird silhouette SVG accent */}
-                            <div className="bsd-thumb-bird-accent" aria-hidden="true">
-                                <svg width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M32 38 C20 38 8 28 4 18 C10 22 18 24 24 22 C28 20 30 16 32 14 C34 16 36 20 40 22 C46 24 54 22 60 18 C56 28 44 38 32 38Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
-                                    <circle cx="26" cy="20" r="1.5" fill="rgba(255,255,255,0.6)" />
-                                </svg>
-                            </div>
                             <div className="bsd-thumb-logo">
                                 <div className="bsd-thumb-icon">
                                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
