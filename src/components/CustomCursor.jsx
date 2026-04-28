@@ -7,6 +7,12 @@ const CustomCursor = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Check if the device has a fine pointer (mouse)
+    const isMobile = !window.matchMedia('(pointer: fine)').matches;
+    
+    // Exit early if it's a touch device
+    if (isMobile) return;
+
     // Hide default cursor globally
     const styleTag = document.createElement('style');
     styleTag.id = 'custom-cursor-style';
@@ -49,6 +55,10 @@ const CustomCursor = () => {
     };
   }, []);
 
+  // Return null if we are on a mobile device so nothing renders
+  const isMobileDevice = typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches;
+  if (isMobileDevice) return null;
+
   const scale = isClicking ? 0.82 : isHovering ? 1 : 1;
 
   return (
@@ -81,7 +91,6 @@ const CustomCursor = () => {
             : 'drop-shadow(0 1px 3px rgba(0,0,0,0.9)) drop-shadow(0 0 5px rgba(255,255,255,0.12))',
         }}
       >
-        {/* Simplified triangle cursor without the tail */}
         <path
           d="M1.5 1.5 L1.5 20.5 L6.5 13.5 L16.5 13.5 Z"
           fill={isHovering ? '#6ab0f3' : '#ffffff'}
