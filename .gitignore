@@ -24,6 +24,7 @@ yarn-error.log*
 launch-hidden.vbs
 StartServer.bat
 
+.env
 # Updates
 # Update Resume
 # Add Soft Skills too in the About Me Page

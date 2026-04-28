@@ -1,58 +1,76 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
+
+// Components
 import Navbar from './components/Navbar';
-import HomeNavbar from './components/HomeNavbar';
+import Footer from './components/Footer';
 import SocialSidebar from './components/SocialSidebar';
 import ThemeToggle from './components/ThemeToggle';
+import CustomCursor from './components/CustomCursor';
+
+// Pages
 import Home from './pages/Home';
 import About from './pages/About';
-import Experience from './pages/Experience';
+import TechStack from './pages/TechStack';
+import GitHubActivity from './pages/GitHubActivity';
+import Education from './pages/Education';
 import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import WorkExperience from './pages/WorkExperience';
 import Certifications from './pages/Certifications';
-import ContactResponses from "./pages/ContactResponses";
+import Socials from './pages/Socials';
+import Contact from './pages/Contact';
 
-const NotFound = () => <div className="container mt-5"><h2>404 - Not Found</h2></div>;
+// Project Detail Pages
+import InventuraXDetail from './pages/ProjectDetails/InventuraXDetail';
+import BirdSpeciesDetail from './pages/ProjectDetails/BirdSpeciesDetail';
 
-const routeTitles = {
-  '/': 'Home',
-  '/about': 'About',
-  '/experience': 'Experience',
-  '/projects': 'Projects',
-  '/contact': 'Contact',
-  '/certifications': 'Certifications',
-  '/admin/responses': 'Contact Responses',
-};
+// ── Main single-page layout ───────────────────────────────
+const MainLayout = () => (
+  <>
+    <section id="home"><Home /></section>
+    <section id="about"><About /></section>
+    <section id="techstack"><TechStack /></section>
+    <section id="gitHubactivity"><GitHubActivity /></section>
+    <section id="education"><Education /></section>
+    <section id="projects"><Projects /></section>
+    <section id="workexperience"><WorkExperience /></section>
+    <section id="certifications"><Certifications /></section>
+    <section id="socials"><Socials /></section>
+    <section id="contact"><Contact /></section>
+  </>
+);
 
 const App = () => {
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
-    const title = routeTitles[location.pathname] || 'Page Not Found';
-    document.title = `Megh Portfolio | ${title}`;
-  }, [location.pathname]);
+    document.title = "Megh Portfolio";
+  }, []);
+
+  const isProjectPage = location.pathname.startsWith('/projects/');
 
   return (
     <>
+      <CustomCursor />
       <div className="orb orb-1" />
       <div className="orb orb-2" />
       <div className="orb orb-3" />
       <div className="noise-overlay" />
       <div className="grid-lines" />
-      {isHomePage ? <HomeNavbar /> : <Navbar />}
 
+      {!isProjectPage && <Navbar />}
       <SocialSidebar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/certifications" element={<Certifications />} />
-        <Route path="/admin/responses" element={<ContactResponses />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+
+      <main>
+        <Routes>
+          <Route path="/" element={<MainLayout />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/projects/inventurax" element={<InventuraXDetail />} />
+          <Route path="/projects/birdspeciesdetection" element={<BirdSpeciesDetail />} />
+        </Routes>
+      </main>
+
+      {!isProjectPage && <Footer />}
       <ThemeToggle />
     </>
   );

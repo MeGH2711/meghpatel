@@ -528,3 +528,10 @@
 [data-bs-theme="light"] .name-outline {
     -webkit-text-stroke: 2px var(--accent);
 }
+
+
+@media (max-width: 1024px) {
+    .float-pill{
+        display: none !important;
+    }
+}

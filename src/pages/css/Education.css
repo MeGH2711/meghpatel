@@ -1,0 +1,561 @@
+/* ============================================================
+   EDUCATION — Luxury Editorial Redesign
+   Aesthetic: Oversized index numbers · staggered asymmetric cards
+   · emblem side-strip · deep glass surfaces
+   ============================================================ */
+
+/* ── Section Shell ─────────────────────────────────────── */
+.edu-section {
+    position: relative;
+    padding: 1rem 8% 6rem;
+    font-family: var(--font-body);
+    color: var(--text-hi);
+    overflow: hidden;
+}
+
+/* ── Section Header ─────────────────────────────────────── */
+.edu-header {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.edu-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.edu-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+}
+
+.edu-eyebrow-tick {
+    width: 28px;
+    height: 1px;
+    background: var(--accent);
+    display: block;
+}
+
+.edu-heading {
+    font-family: var(--font-disp);
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    margin: 0;
+    color: var(--text-hi);
+}
+
+.edu-heading em {
+    font-style: normal;
+    -webkit-text-stroke: 1.5px var(--accent);
+    color: transparent;
+}
+
+.edu-header-count {
+    font-family: var(--font-disp);
+    font-size: clamp(5rem, 9vw, 9rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.06em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(59, 130, 246, 0.2);
+    user-select: none;
+    flex-shrink: 0;
+}
+
+/* ── Cards Stack ────────────────────────────────────────── */
+.edu-stack {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ── Individual Entry ───────────────────────────────────── */
+.edu-entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0 2.5rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.edu-entry:last-child {
+    border-bottom: none;
+}
+
+/* ── Left Index Column ──────────────────────────────────── */
+.edu-index-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 0.3rem;
+}
+
+.edu-index-num {
+    font-family: var(--font-disp);
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(59, 130, 246, 0.25);
+    transition: -webkit-text-stroke-color 0.3s ease;
+    user-select: none;
+}
+
+.edu-entry:hover .edu-index-num {
+    -webkit-text-stroke-color: rgba(59, 130, 246, 0.6);
+}
+
+.edu-index-bar {
+    width: 2px;
+    height: 100%;
+    min-height: 60px;
+    background: linear-gradient(to bottom, rgba(59, 130, 246, 0.4), rgba(59, 130, 246, 0.05));
+    border-radius: 2px;
+    margin-left: 2px;
+    flex: 1;
+    max-height: 80px;
+}
+
+/* ── Right Content ──────────────────────────────────────── */
+.edu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ── Top Row: Degree title + Badge ──────────────────────── */
+.edu-title-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.edu-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.edu-degree-name {
+    font-family: var(--font-disp);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text-hi);
+    margin: 0;
+}
+
+.edu-degree-field {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--accent-2);
+    margin: 0;
+    letter-spacing: 0.01em;
+}
+
+/* ── Status Capsule ─────────────────────────────────────── */
+.edu-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.edu-status--done {
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.25);
+    color: #34d399;
+}
+
+.edu-status--active {
+    background: rgba(251, 191, 36, 0.1);
+    border: 1px solid rgba(251, 191, 36, 0.25);
+    color: #fbbf24;
+}
+
+.edu-status-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.edu-status--active .edu-status-dot {
+    animation: edu-blink 1.8s ease-in-out infinite;
+}
+
+@keyframes edu-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ── Card Glass ─────────────────────────────────────────── */
+.edu-card {
+    position: relative;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35),
+                0 0 0 1px rgba(255, 255, 255, 0.035) inset;
+    transition: box-shadow 0.35s ease, transform 0.35s ease, border-color 0.35s ease;
+}
+
+.edu-card:hover {
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 36px 80px rgba(0, 0, 0, 0.45),
+                0 0 0 1px rgba(59, 130, 246, 0.1) inset,
+                0 0 50px rgba(59, 130, 246, 0.06);
+    transform: translateY(-2px);
+}
+
+.edu-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.55), transparent);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.edu-card:hover::after { opacity: 1; }
+
+/* ── Card Layout ────────────────────────────────────────── */
+.edu-card-layout {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0;
+}
+
+/* Emblem strip on left */
+.edu-card-emblem-strip {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 0 2rem 0;
+    gap: 0.8rem;
+    border-right: 1px solid var(--border);
+}
+
+.edu-emblem-ring {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(59, 130, 246, 0.22);
+    background: rgba(59, 130, 246, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.edu-card:hover .edu-emblem-ring {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 22px rgba(59, 130, 246, 0.18);
+}
+
+.edu-emblem-ring img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.35));
+    transition: transform 0.3s ease;
+}
+
+.edu-card:hover .edu-emblem-ring img { transform: scale(1.08); }
+
+.edu-emblem-mono {
+    font-family: var(--font-disp);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-2);
+}
+
+.edu-emblem-year {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--text-lo);
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+}
+
+/* ── Card Body ──────────────────────────────────────────── */
+.edu-card-body {
+    padding: 2rem 2rem 2rem 1.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.edu-uni-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.edu-uni-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-hi);
+    margin: 0;
+    font-family: var(--font-disp);
+    letter-spacing: -0.01em;
+}
+
+.edu-uni-sub {
+    font-size: 0.78rem;
+    color: var(--text-lo);
+    margin: 0;
+}
+
+.edu-rule {
+    height: 1px;
+    background: var(--border);
+}
+
+.edu-desc {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* ── Focus tags ─────────────────────────────────────────── */
+.edu-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.edu-tag {
+    padding: 4px 11px;
+    border-radius: 999px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    background: rgba(59, 130, 246, 0.07);
+    border: 1px solid rgba(59, 130, 246, 0.16);
+    color: var(--accent-2);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.edu-tag:hover {
+    background: rgba(59, 130, 246, 0.14);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* ── Meta footer ────────────────────────────────────────── */
+.edu-meta {
+    display: flex;
+    gap: 2rem;
+    padding-top: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.edu-meta-item { display: flex; flex-direction: column; gap: 2px; }
+
+.edu-meta-key {
+    font-size: 0.63rem;
+    text-transform: uppercase;
+    letter-spacing: 0.11em;
+    color: var(--text-lo);
+}
+
+.edu-meta-val {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-hi);
+}
+
+/* ── Card glow ──────────────────────────────────────────── */
+.edu-card-glow {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 90px;
+    background: radial-gradient(ellipse, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.edu-card:hover .edu-card-glow { opacity: 1; }
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE
+   ══════════════════════════════════════════════════════════ */
+
+[data-bs-theme="light"] .edu-heading { color: #0f172a; }
+[data-bs-theme="light"] .edu-degree-name { color: #0f172a; }
+
+[data-bs-theme="light"] .edu-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(59, 130, 246, 0.1);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.03),
+        0 20px 50px rgba(59, 130, 246, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+[data-bs-theme="light"] .edu-card:hover {
+    border-color: rgba(59, 130, 246, 0.22);
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.05),
+        0 28px 60px rgba(59, 130, 246, 0.12);
+}
+
+[data-bs-theme="light"] .edu-card-emblem-strip {
+    border-right-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-bs-theme="light"] .edu-emblem-ring {
+    background: rgba(59, 130, 246, 0.05);
+    border-color: rgba(59, 130, 246, 0.15);
+}
+
+[data-bs-theme="light"] .edu-emblem-ring img { filter: none; }
+[data-bs-theme="light"] .edu-uni-name { color: #0f172a; }
+[data-bs-theme="light"] .edu-uni-sub { color: #94a3b8; }
+[data-bs-theme="light"] .edu-rule { background: rgba(0,0,0,0.06); }
+[data-bs-theme="light"] .edu-desc { color: #475569; }
+
+[data-bs-theme="light"] .edu-tag {
+    background: rgba(59, 130, 246, 0.06);
+    border-color: rgba(59, 130, 246, 0.14);
+    color: #2563eb;
+}
+
+[data-bs-theme="light"] .edu-meta-key { color: #94a3b8; }
+[data-bs-theme="light"] .edu-meta-val { color: #0f172a; }
+
+[data-bs-theme="light"] .edu-index-num {
+    -webkit-text-stroke-color: rgba(59, 130, 246, 0.18);
+}
+
+[data-bs-theme="light"] .edu-entry:hover .edu-index-num {
+    -webkit-text-stroke-color: rgba(59, 130, 246, 0.5);
+}
+
+[data-bs-theme="light"] .edu-eyebrow { color: var(--accent); }
+
+[data-bs-theme="light"] .edu-status--done {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.2);
+    color: #059669;
+}
+
+[data-bs-theme="light"] .edu-status--active {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.2);
+    color: #d97706;
+}
+
+[data-bs-theme="light"] .edu-degree-field { color: #2563eb; }
+[data-bs-theme="light"] .edu-header-count { -webkit-text-stroke-color: rgba(59, 130, 246, 0.14); }
+[data-bs-theme="light"] .edu-connector-dot { background: rgba(59, 130, 246, 0.22); }
+
+[data-bs-theme="light"] .edu-card-glow {
+    background: radial-gradient(ellipse, rgba(59, 130, 246, 0.07) 0%, transparent 70%);
+}
+
+[data-bs-theme="light"] .edu-emblem-year { color: #94a3b8; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .edu-section { padding: 6rem 6% 6rem; }
+}
+
+@media (max-width: 768px) {
+    .edu-section { padding: 5rem 6% 5rem; }
+
+    .edu-header {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .edu-header-count { display: none; }
+
+    .edu-entry {
+        grid-template-columns: 60px 1fr;
+        gap: 0 1.5rem;
+        padding: 2.5rem 0;
+    }
+
+    .edu-index-num { font-size: 3.8rem; }
+
+    .edu-card-layout { grid-template-columns: 1fr; }
+
+    .edu-card-emblem-strip {
+        flex-direction: row;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1.4rem 1.6rem;
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+
+    .edu-emblem-year { writing-mode: horizontal-tb; transform: none; }
+
+    .edu-title-row {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .edu-section { padding: 4rem 5% 4rem; }
+
+    .edu-entry {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .edu-index-col {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .edu-index-bar { display: none; }
+    .edu-index-num { font-size: 3rem; }
+    .edu-card-body { padding: 1.5rem; }
+    .edu-meta { gap: 1.2rem; }
+}

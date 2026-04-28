@@ -1,0 +1,437 @@
+/* ============================================================
+   TECHSTACK — Dark Editorial, matches About.css design system
+   Font: Clash Display + DM Sans (inherited from Home.css)
+   ============================================================ */
+
+/* ── Section Shell ─────────────────────────────────────── */
+.techstack-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 1rem 8% 6rem;
+    font-family: var(--font-body);
+    color: var(--text-hi);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+/* ── Section Header (reuses About patterns) ─────────────── */
+.ts-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.4rem;
+}
+
+.ts-heading {
+    font-family: var(--font-disp);
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin: 0;
+    color: var(--text-hi);
+}
+
+[data-bs-theme="light"] .ts-heading {
+    color: #0f172a;
+}
+
+.ts-subheading {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 520px;
+    margin: 0;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* ── Tech Grid ──────────────────────────────────────────── */
+.tech-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+}
+
+/* ── Category Card ──────────────────────────────────────── */
+.tech-category-card {
+    position: relative;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    backdrop-filter: blur(20px);
+    padding: 2rem 2rem 2.2rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    cursor: default;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-category-card:hover {
+    border-color: color-mix(in srgb, var(--cat-color) 30%, transparent);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.category-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cat-color);
+    box-shadow: 0 0 12px var(--cat-color);
+    flex-shrink: 0;
+}
+
+.category-name {
+    font-family: var(--font-disp);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--cat-color);
+}
+
+.category-glow {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, color-mix(in srgb, var(--cat-color) 15%, transparent) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ── Skill Bars ─────────────────────────────────────────── */
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.skill-bar-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.skill-bar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-bar-icon {
+    font-size: 0.9rem;
+    width: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+.skill-bar-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-hi);
+    flex: 1;
+}
+
+.skill-bar-pct {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--cat-color);
+    font-family: var(--font-disp);
+    letter-spacing: 0.04em;
+    opacity: 0.85;
+}
+
+.skill-bar-track {
+    width: 100%;
+    height: 3px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.07);
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    border-radius: 100px;
+    background: linear-gradient(90deg, var(--cat-color), color-mix(in srgb, var(--cat-color) 60%, #fff));
+    box-shadow: 0 0 10px color-mix(in srgb, var(--cat-color) 50%, transparent);
+}
+
+/* ── Divider ────────────────────────────────────────────── */
+.ts-divider {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    z-index: 2;
+}
+
+.ts-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    opacity: 0.5;
+}
+
+.ts-divider-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--text-lo);
+    white-space: nowrap;
+}
+
+/* ── AI Tools Row ───────────────────────────────────────── */
+.ai-tools-row {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.4rem;
+}
+
+/* ── AI Tool Card ───────────────────────────────────────── */
+.ai-tool-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.6rem 1.6rem;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    overflow: hidden;
+    cursor: default;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ai-tool-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ai-tool-symbol {
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: var(--font-disp);
+    line-height: 1;
+}
+
+.ai-tool-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.ai-tool-name {
+    font-family: var(--font-disp);
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-hi);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ai-tool-role {
+    font-size: 0.74rem;
+    color: var(--text-lo);
+    line-height: 1.45;
+}
+
+.ai-tool-tag {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 0.62rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--tool-accent);
+    background: color-mix(in srgb, var(--tool-accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tool-accent) 22%, transparent);
+    border-radius: var(--radius-pill);
+    padding: 3px 9px;
+}
+
+.ai-tool-glow {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 80px;
+    background: radial-gradient(ellipse, var(--tool-glow) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE
+   ══════════════════════════════════════════════════════════ */
+
+[data-bs-theme="light"] .tech-category-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(0, 0, 0, 0.07);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.04),
+        0 16px 48px rgba(59, 130, 246, 0.07),
+        0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+[data-bs-theme="light"] .skill-bar-track {
+    background: rgba(0, 0, 0, 0.07);
+}
+
+[data-bs-theme="light"] .skill-bar-name {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .category-name {
+    opacity: 0.9;
+}
+
+[data-bs-theme="light"] .ai-tool-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(0, 0, 0, 0.07);
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.05),
+        0 16px 40px rgba(0, 0, 0, 0.06);
+}
+
+[data-bs-theme="light"] .ai-tool-name {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .ai-tool-role {
+    color: #64748b;
+}
+
+[data-bs-theme="light"] .automation-strip {
+    background: linear-gradient(135deg, rgba(16, 163, 127, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+    border-color: rgba(16, 163, 127, 0.14);
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.03),
+        0 20px 50px rgba(16, 163, 127, 0.08);
+}
+
+[data-bs-theme="light"] .auto-desc {
+    color: #475569;
+}
+
+[data-bs-theme="light"] .ts-subheading {
+    color: #475569;
+}
+
+[data-bs-theme="light"] .ts-divider-label {
+    color: #94a3b8;
+}
+
+[data-bs-theme="light"] .ts-divider-line {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .techstack-section {
+        padding: 1rem 6% 5rem;
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .techstack-section {
+        padding: 1rem 6% 4rem;
+        gap: 3.5rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-tools-row {
+        grid-template-columns: 1fr;
+    }
+
+    .automation-strip {
+        padding: 1.8rem 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .techstack-section {
+        padding: 1rem 5% 3.5rem;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .ai-tools-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .ai-tool-card {
+        padding: 1.3rem 1.3rem;
+    }
+}
+
+/* ── SVG Icon sizing in skill bars ─────────────────────── */
+
+/* ── Skill Bar Avatar (mirrors ai-tool-avatar style) ───── */
+.skill-bar-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: color-mix(in srgb, var(--cat-color) 14%, transparent);
+    border: 1px solid color-mix(in srgb, var(--cat-color) 28%, transparent);
+}
+
+.skill-bar-logo-img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    display: block;
+    border-radius: 2px;
+}
+
+/* ── AI Tool PNG logo image ─────────────────────────────── */
+.ai-tool-logo-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+    border-radius: 4px;
+}

@@ -1,126 +1,63 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
 import { motion } from 'framer-motion';
 import './css/Navbar.css';
-import '../index.css';
-import logo from '../assets/images/logoBlack.webp';
+import logoImg from '../assets/images/logoBlack.webp';
 
-const MyNavbar = () => {
-    const [hideNavbar, setHideNavbar] = useState(false);
-    const lastScrollY = useRef(0);
-    const navRef = useRef(null);
+const HomeNavbar = () => {
+    const navLinks = [
+        { name: 'About', path: 'about' },
+        { name: 'Techstack', path: 'techstack' },
+        { name: 'Education', path: 'education' },
+        { name: 'Projects', path: 'projects' },
+        { name: 'Experience', path: 'workexperience' },
+        { name: 'Certifications', path: 'certifications' },
+    ];
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-                setHideNavbar(true);
-            } else {
-                setHideNavbar(false);
-            }
-
-            lastScrollY.current = currentScrollY;
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const navItemVariants = {
-        hidden: { opacity: 0, y: 10 },
-        visible: (i) => ({
-            opacity: 1,
-            y: 0,
-            transition: {
-                delay: 0.2 + i * 0.1,
-                duration: 0.4,
-                ease: 'easeOut'
-            }
-        })
+    const handleScroll = (e, targetId) => {
+        e.preventDefault();
+        
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        } else if (targetId === 'home') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     };
 
-    const [isExpanded, setIsExpanded] = useState(false);
-
     return (
-        <div
-            ref={navRef}
-            className={`navbar-wrapper ${hideNavbar ? 'navbar-hidden' : ''}`}
+        <motion.nav
+            className="home-nav"
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
         >
-            <Navbar
-                expand="lg"
-                className="custom-navbar"
-                expanded={isExpanded}
-            >
-                <Container>
-                    <motion.div
-                        initial={{ opacity: 0, x: 0 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, ease: 'easeOut' }}
-                    >
-                        <Navbar.Brand as={NavLink} to="/">
-                            <img
-                                src={logo}
-                                alt="Brand Logo"
-                                height="60"
-                                className="d-inline-block align-middle brand-logo"
-                            />
-                        </Navbar.Brand>
-                    </motion.div>
+            <div className="nav-container">
+                <a 
+                    href="#home" 
+                    onClick={(e) => handleScroll(e, 'home')} 
+                    className="nav-logo-wrapper"
+                >
+                    <img src={logoImg} alt="Logo" className="nav-custom-logo brand-logo" />
+                </a>
 
-                    <div className="d-lg-none">
-                        <motion.button
-                            className="custom-toggler"
-                            onClick={() => setIsExpanded((prev) => !prev)}
-                            aria-controls="basic-navbar-nav"
-                            aria-expanded={isExpanded}
-                            aria-label="Toggle navigation"
+                <div className="nav-links">
+                    {navLinks.map((link) => (
+                        <a 
+                            key={link.name} 
+                            href={`#${link.path}`} 
+                            className="nav-item"
+                            onClick={(e) => handleScroll(e, link.path)}
                         >
-                            <motion.span
-                                className="bar"
-                                animate={isExpanded ? { rotate: 45, y: 10 } : { rotate: 0, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                            />
-                            <motion.span
-                                className="bar"
-                                animate={isExpanded ? { opacity: 0 } : { opacity: 1 }}
-                                transition={{ duration: 0.3 }}
-                            />
-                            <motion.span
-                                className="bar"
-                                animate={isExpanded ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
-                                transition={{ duration: 0.3 }}
-                            />
-                        </motion.button>
-                    </div>
-
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ms-auto">
-                            {['/', '/about', '/experience', '/projects', '/certifications', '/contact'].map((path, i) => (
-                                <motion.div
-                                    key={path}
-                                    custom={i}
-                                    initial="hidden"
-                                    animate="visible"
-                                    variants={navItemVariants}
-                                >
-                                    <Nav.Link
-                                        as={NavLink}
-                                        to={path}
-                                        onClick={() => setIsExpanded(false)}
-                                        className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}
-                                    >
-                                        {path === '/' ? 'Home' : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
-                                    </Nav.Link>
-                                </motion.div>
-                            ))}
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-        </div>
+                            {link.name}
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </motion.nav>
     );
 };
 
-export default MyNavbar;
+export default HomeNavbar;

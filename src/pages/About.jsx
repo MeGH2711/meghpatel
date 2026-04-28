@@ -1,241 +1,168 @@
-import React, { useEffect, useRef } from 'react';
-import './css/About.css';
-import '../index.css'
+import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaHtml5, FaCss3Alt, FaJs, FaBootstrap, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import { SiMongodb, SiFigma, SiPython } from 'react-icons/si';
-import { DiPhotoshop } from 'react-icons/di';
-import { TbBrandAdobePremier } from 'react-icons/tb';
-import EducationCard from '../components/EducationCard';
-import Footer from '../components/Footer';
-import BottomNavigation from '../components/BottomNavigation';
-import profileImg from '../assets/images/meghImage.webp';
-import guLogo from '../assets/images/guLogo.webp';
-import auLogo from '../assets/images/auLogo.webp';
-import { GitHubCalendar } from 'react-github-calendar';
-import { FaGithub } from "react-icons/fa";
+import { FaReact, FaRobot, FaPalette, FaCode, FaBrain, FaLayerGroup } from 'react-icons/fa';
+import './css/About.css';
 
-const fadeInUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+const skills = [
+    { icon: <FaReact color="#61DAFB" />, label: 'Frontend Dev', desc: 'React' },
+    { icon: <FaRobot color="#3b82f6" />, label: 'AI Engineering', desc: 'LLMs, RAG, Fine-tuning' },
+    { icon: <FaPalette color="#fbbf24" />, label: 'UI/UX Design', desc: 'Figma, Design Systems' },
+    { icon: <FaCode color="#a78bfa" />, label: 'Full Stack', desc: 'Node, Python, FastAPI' },
+    { icon: <FaBrain color="#f472b6" />, label: 'ML / Deep Learning', desc: 'PyTorch, Transformers' },
+    { icon: <FaLayerGroup color="#34d399" />, label: 'Product Thinking', desc: 'Shipping end-to-end' },
+];
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 36 },
+    show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 75, damping: 18 } }
+};
+
+const stagger = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.1 } }
+};
+
+const SkillCard = ({ icon, label, desc, index }) => {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: '-60px' });
+
+    return (
+        <motion.div
+            ref={ref}
+            className="skill-card"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.07, type: 'spring', stiffness: 300 }}
+            whileHover={{ y: -3, borderColor: 'rgba(59,130,246,0.35)' }}
+        >
+            <span className="skill-icon">{icon}</span>
+            <span className="skill-label">{label}</span>
+            <span className="skill-desc">{desc}</span>
+        </motion.div>
+    );
 };
 
 const About = () => {
-
-    // Refs and inView hooks
-    const aboutRef = useRef(null);
-    const skillsRef = useRef(null);
-    const educationRef = useRef(null);
-    const githubRef = useRef(null);
-
-    const isAboutInView = useInView(aboutRef, { once: true, threshold: 0.2 });
-    const isSkillsInView = useInView(skillsRef, { once: true, threshold: 0.2 });
-    const isEducationInView = useInView(educationRef, { once: true, threshold: 0.2 });
-    const isGithubInView = useInView(githubRef, { once: true, threshold: 0.2 });
-
-    const skills = [
-        { Icon: FaHtml5, label: "HTML5" },
-        { Icon: FaCss3Alt, label: "CSS3" },
-        { Icon: FaJs, label: "JavaScript" },
-        { Icon: FaBootstrap, label: "Bootstrap" },
-        { Icon: FaReact, label: "React.js" },
-        { Icon: FaNodeJs, label: "Node.js" },
-        { Icon: SiMongodb, label: "MongoDB" },
-        { Icon: FaGitAlt, label: "Git" },
-        { Icon: SiFigma, label: "Figma" },
-        { Icon: SiPython, label: "Python" },
-        { Icon: DiPhotoshop, label: "Photoshop" },
-        { Icon: TbBrandAdobePremier, label: "Premiere Pro" }
-    ];
-
-    let hideTimeout = null;
-
-    useEffect(() => {
-        const tooltip = document.createElement("div");
-        tooltip.id = "custom-tooltip";
-        document.body.appendChild(tooltip);
-
-        return () => {
-            tooltip.remove();
-        };
-    }, []);
-
-    const showTooltip = (e, label) => {
-        const tooltip = document.getElementById("custom-tooltip");
-        tooltip.textContent = label;
-
-        if (hideTimeout) {
-            clearTimeout(hideTimeout);
-            hideTimeout = null;
-        }
-
-        tooltip.style.display = "block";
-        tooltip.style.opacity = "1";
-        moveTooltip(e);
-    };
-
-    const moveTooltip = (e) => {
-        const tooltip = document.getElementById("custom-tooltip");
-        if (tooltip) {
-            tooltip.style.left = e.clientX + 15 + "px";
-            tooltip.style.top = e.clientY + 15 + "px";
-        }
-    };
-
-    const hideTooltip = () => {
-        const tooltip = document.getElementById("custom-tooltip");
-        tooltip.style.opacity = "0";
-
-        hideTimeout = setTimeout(() => {
-            tooltip.style.display = "none";
-        }, 200);
-    };
+    const sectionRef = useRef(null);
+    const headingRef = useRef(null);
+    const headingInView = useInView(headingRef, { once: true, margin: '-80px' });
 
     return (
-        <>
+        <section className="about-section" ref={sectionRef}>
+
+            {/* ── Header ── */}
             <motion.div
-                className="about-section container"
-                ref={aboutRef}
-                variants={fadeInUp}
+                ref={headingRef}
+                className="about-header"
                 initial="hidden"
-                animate={isAboutInView ? 'visible' : 'hidden'}
+                animate={headingInView ? 'show' : 'hidden'}
+                variants={stagger}
             >
-                <div className="row align-items-center">
-                    <div className="col-lg-7">
-                        <h2 className="section-title">About Me</h2>
-                        <p className="intro-text text-justify">
-                            Hi! I am <span className="highlightedText">Megh Patel</span>, a Computer Science enthusiast who has completed a <strong>Bachelor’s degree in Computer Engineering</strong> from <strong>Gandhinagar Institute of Technology</strong> (Gandhinagar University), affiliated with <strong>Gujarat Technological University</strong>. I am currently pursuing a <strong>Master’s degree in Computer Science and Engineering</strong> at <strong>Ahmedabad University</strong>. My passions include <strong>AI, Data Science, web development</strong>, and crafting engaging <strong>UI/UX designs</strong>.
-                        </p>
-                        <div className="bio-box my-4 p-4 rounded shadow-sm">
-                            <div className="row row-cols-1 row-cols-md-2 g-3 g-md-4">
-                                <div className="col">
-                                    <ul className="bio-list">
-                                        <li><span>Qualification:</span> Bachelors in Engineering</li>
-                                        <li><span>Email:</span> patelmeghmahesh2701@gmail.com</li>
-                                        <li><span>Freelance:</span> Unavailable</li>
-                                    </ul>
-                                </div>
-                                <div className="col secondCol">
-                                    <ul className="bio-list">
-                                        <li><span>City:</span> Ahmedabad, Gujarat</li>
-                                        <li><span>Age:</span> 22</li>
-                                    </ul>
-                                </div>
-                            </div>
+                <motion.span className="section-label" variants={fadeUp}>
+                    <span className="label-line" />
+                    About Me
+                    <span className="label-line" />
+                </motion.span>
+
+                <motion.h2 className="about-heading" variants={fadeUp}>
+                    A developer who{' '}
+                    <span className="heading-accent">thinks</span>
+                    <br />
+                    like a designer.
+                </motion.h2>
+
+                <motion.p className="about-subheading" variants={fadeUp}>
+                    I sit at the intersection of logic and aesthetics<br/> writing code that's as
+                    intentional as the interfaces it powers. 3+ years deep, still obsessed.
+                </motion.p>
+            </motion.div>
+
+            {/* ── Main Grid ── */}
+            <div className="about-grid">
+
+                {/* Left — Bio Card */}
+                <motion.div
+                    className="bio-card"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ type: 'spring', stiffness: 70, damping: 18 }}
+                >
+                    <div className="bio-card-inner">
+                        <div className="bio-tag">
+                            <span className="bio-dot" />
+                            <span>Who I am</span>
                         </div>
-                        <p className="detail-text text-justify mt-2">
-                            I immerse myself in diverse fields—from coding and software architecture to design and innovation. I’ve actively participated in lab work, internships, and team projects...
-                        </p>
-                        <p className="detail-text text-justify mt-3">
-                            On top of all this, I love hosting events, connecting with people, and contributing to experiences that bring joy and creativity—adding excitement to my professional journey.
-                        </p>
-                    </div>
-                    <div className="col-lg-5 text-center mt-4 mt-md-0">
-                        <motion.img
-                            src={profileImg}
-                            alt="Megh Patel"
-                            className="img-fluid profile-image"
-                            initial={{ opacity: 0, scale: 0 }}
-                            animate={isAboutInView ? { opacity: 1, scale: 1 } : {}}
-                            transition={{ duration: 0.1 }}
-                        />
-                    </div>
-                </div>
-            </motion.div>
 
-            <motion.div
-                className="skills-section container"
-                ref={skillsRef}
-                variants={fadeInUp}
-                initial="hidden"
-                animate={isSkillsInView ? 'visible' : 'hidden'}
-            >
-                <h3 className="section-title">Technical Skills & Tools</h3>
-                <div className="skills-grid">
-                    {skills.map(({ Icon, label }, index) => (
-                        <motion.div
-                            key={index}
-                            className="skill-icon"
-                            onMouseEnter={(e) => showTooltip(e, label)}
-                            onMouseMove={(e) => moveTooltip(e)}
-                            onMouseLeave={hideTooltip}
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            animate={isSkillsInView ? { opacity: 1, scale: 1 } : {}}
-                            transition={{ delay: index * 0.05 }}
-                        >
-                            <Icon />
-                        </motion.div>
-                    ))}
-                </div>
-            </motion.div>
+                        <p className="bio-text">
+                            Hey, I'm <strong>Megh Patel</strong>, an AI engineer
+                            based in India. I build products that blend powerful AI backends with
+                            interfaces people actually enjoy using.
+                        </p>
+                        <p className="bio-text">
+                            My sweet spot is the space where machine intelligence meets polished UX.
+                            I obsess over the details like the micro-interactions, the data pipelines,
+                            the performance wins that make products feel <em>alive</em>.
+                        </p>
+                        <p className="bio-text">
+                            When I'm not shipping, I'm exploring new model architectures, tinkering
+                            with design systems, or finding ways to make AI genuinely useful.
+                        </p>
 
-            <motion.div
-                className="github-section container mt-5"
-                ref={githubRef}
-                variants={fadeInUp}
-                initial="hidden"
-                animate={isGithubInView ? 'visible' : 'hidden'}
-            >
-                <h3 className="section-title mb-4 github-title">
-                    GitHub Activity
-                    <a
-                        href="https://github.com/megh2711"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="github-link-icon d-flex align-items-center"
+                        <div className="bio-divider" />
+
+                        <div className="bio-meta">
+                            {[
+                                { label: 'Location', val: 'India 🇮🇳' },
+                                { label: 'Focus', val: 'AI + Frontend' },
+                                { label: 'Status', val: 'Open to Work' },
+                            ].map(({ label, val }) => (
+                                <div key={label} className="bio-meta-item">
+                                    <span className="meta-label">{label}</span>
+                                    <span className="meta-val">{val}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="bio-card-glow" />
+                </motion.div>
+
+                {/* Right — Skills Grid */}
+                <div className="skills-side">
+                    <motion.p
+                        className="skills-eyebrow"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
                     >
-                        <FaGithub />
-                    </a>
-                </h3>
-
-                <div className="github-calendar-container">
-                    <GitHubCalendar
-                        username="megh2711"
-                        blockSize={14}
-                        blockMargin={5}
-                        fontSize={14}
-                        theme={{
-                            light: ['#ebedf0', '#90e0ef', '#00b4d8', '#0077b6', '#03045e'],
-                            dark: ['#161b22', '#0d3b66', '#2a6f97', '#6ab0f3', '#0dcaf0']
-                        }}
-                    />
+                        What I bring to the table
+                    </motion.p>
+                    <div className="skills-grid">
+                        {skills.map((s, i) => (
+                            <SkillCard key={s.label} {...s} index={i} />
+                        ))}
+                    </div>
                 </div>
-            </motion.div>
+            </div>
 
+            {/* ── Bottom CTA strip ── */}
             <motion.div
-                className="education-section container mt-5"
-                ref={educationRef}
-                variants={fadeInUp}
-                initial="hidden"
-                animate={isEducationInView ? 'visible' : 'hidden'}
+                className="about-cta"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ type: 'spring', stiffness: 70 }}
             >
-                <h3 className="section-title">Education</h3>
-                <div className="row gy-4 mt-3">
-                    <div className="col-md-6 d-flex justify-content-center">
-                        <EducationCard
-                            logo={auLogo}
-                            altText="Ahmedabad University"
-                            degree="Master's in Computer Science & Engineering"
-                            duration="Planned: 2025 – 2027 (Ongoing)"
-                            description="Pursuing Master's degree in Computer Science to deepen my expertise in latest technologies. This will be a crucial step in expanding my research capabilities and contributing to innovative tech solutions."
-                        />
-                    </div>
-                    <div className="col-md-6 d-flex justify-content-center">
-                        <EducationCard
-                            logo={guLogo}
-                            altText="Gandhinagar University"
-                            degree="Bachelor of Engineering (B.E.)"
-                            duration="Completed: 2021 – 2025"
-                            description="Studying Computer Engineering at Gandhinagar Institute of Technology (Gandhinagar University), affiliated with Gujarat Technological University. This journey is enriching me with strong technical knowledge, hands-on experience, and a resilient problem-solving approach."
-                        />
-                    </div>
-                </div>
+                <span className="cta-text">Let's build something remarkable together.</span>
+                <a href="mailto:megh@example.com" className="cta-btn">
+                    Get in touch
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </a>
             </motion.div>
-
-            <BottomNavigation left="Home" leftRoute="/" right="Experience" rightRoute="/experience" />
-
-            <Footer />
-        </>
+        </section>
     );
 };
 

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import './css/ThemeToggle.css'
+import './css/ThemeToggle.css';
 import { FaSun, FaMoon } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ThemeToggle = () => {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
 
     const getSystemTheme = () =>
-        window.matchMedia('(prefers-color-scheme: light)').matches ? 'dark' : 'light';
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
     const applyTheme = (newTheme) => {
         document.documentElement.setAttribute('data-bs-theme', newTheme);
@@ -27,17 +28,34 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="btn btn-toggleTheme rounded-circle position-fixed d-flex align-items-center justify-content-center shadow fs-5"
+            className="btn-toggleTheme rounded-circle position-fixed d-flex align-items-center justify-content-center"
             style={{
-                bottom: '1.5rem',
+                bottom: '1.5rem', // Aligned higher for better thumb reach/visuals
                 right: '3rem',
-                width: '50px',
-                height: '50px',
+                width: '56px',
+                height: '56px',
                 zIndex: 9999,
+                padding: 0,
+                overflow: 'hidden'
             }}
-            title="Toggle Theme"
+            title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         >
-            {theme === 'dark' ? <FaSun color="#f39c12" /> : <FaMoon color="#34495e" />}
+            <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                    key={theme}
+                    initial={{ y: 20, opacity: 0, rotate: 40 }}
+                    animate={{ y: 0, opacity: 1, rotate: 0 }}
+                    exit={{ y: -20, opacity: 0, rotate: -40 }}
+                    transition={{ duration: 0.3 }}
+                    className="d-flex align-items-center justify-content-center"
+                >
+                    {theme === 'dark' ? (
+                        <FaSun size={20} />
+                    ) : (
+                        <FaMoon className='text-warning' size={18} />
+                    )}
+                </motion.div>
+            </AnimatePresence>
         </button>
     );
 };

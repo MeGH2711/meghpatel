@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/SocialSidebar.css';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import '../index.css';
 
@@ -14,6 +14,16 @@ const SocialSidebar = () => {
                 transition={{ type: 'spring', stiffness: 70, damping: 15, delay: 0.4 }}
             >
                 <ul>
+                    <li>
+                        <a href="https://youtube.com/@mojilomegh" target="_blank" rel="noreferrer">
+                            <FaYoutube />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://instagram.com/megh_vekaria" target="_blank" rel="noreferrer">
+                            <FaInstagram />
+                        </a>
+                    </li>
                     <li>
                         <a href="https://github.com/MeGH2711" target="_blank" rel="noreferrer">
                             <FaGithub />

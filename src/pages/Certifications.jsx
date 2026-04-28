@@ -1,13 +1,9 @@
-import React from "react";
-import { Container } from "react-bootstrap";
-import { motion } from "framer-motion";
-import "./css/Certifications.css";
-import BottomNavigation from "../components/BottomNavigation";
-import Footer from "../components/Footer";
-
-import nationalipawareness from "../assets/documents/nationalipawareness.pdf";
-import cpim2025 from "../assets/documents/cpim2025.pdf";
-import tcsioncareeredgeyoungprofessional from "../assets/documents/tcsioncareeredgeyoungprofessional.pdf";
+import React, { useRef, useState } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import './css/Certifications.css';
+import cpim2025 from '../assets/documents/cpim2025.pdf';
+import tcsioncareeredgeyoungprofessional from '../assets/documents/tcsioncareeredgeyoungprofessional.pdf';
+import nationalipawareness from '../assets/documents/nationalipawareness.pdf';
 
 const certifications = [
     {
@@ -92,68 +88,167 @@ const certifications = [
     },
 ];
 
-const sortedCerts = [...certifications].sort(
-    (a, b) => new Date(b.sortDate) - new Date(a.sortDate)
-);
+const ITEMS_PER_PAGE = 6;
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 36 },
+    show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 75, damping: 18 } },
+};
+
+const stagger = {
+    hidden: {},
+    show: { transition: { staggerChildren: 0.1 } },
+};
+
+const CertCard = ({ title, issuer, date, link, badge, index }) => {
+    const ref = useRef(null);
+    const inView = useInView(ref, { once: true, margin: '-60px' });
+    const [imgError, setImgError] = useState(false);
+
+    return (
+        <motion.a
+            ref={ref}
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cert-card"
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: index * 0.07, type: 'spring', stiffness: 80 }}
+            whileHover={{ y: -5 }}
+            aria-label={`${title} by ${issuer} — View Certificate`}
+        >
+            {/* Badge */}
+            <div className="cert-badge-wrap">
+                {!imgError ? (
+                    <img
+                        src={badge}
+                        alt={`${issuer} badge`}
+                        className="cert-badge-img"
+                        onError={() => setImgError(true)}
+                    />
+                ) : (
+                    <div className="cert-badge-fallback">
+                        {issuer.charAt(0)}
+                    </div>
+                )}
+            </div>
+
+            {/* Content */}
+            <div className="cert-content">
+                <span className="cert-issuer">{issuer}</span>
+                <h3 className="cert-title">{title}</h3>
+                <span className="cert-date">{date}</span>
+            </div>
+
+            {/* Arrow */}
+            <div className="cert-arrow">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+            </div>
+
+            {/* Hover glow */}
+            <div className="cert-card-glow" />
+        </motion.a>
+    );
+};
 
 const Certifications = () => {
+    const headingRef = useRef(null);
+    const headingInView = useInView(headingRef, { once: true, margin: '-80px' });
+    const [showAll, setShowAll] = useState(false);
+
+    const sorted = [...certifications].sort((a, b) => b.sortDate.localeCompare(a.sortDate));
+    const visible = showAll ? sorted : sorted.slice(0, ITEMS_PER_PAGE);
+    const remaining = sorted.length - ITEMS_PER_PAGE;
+
     return (
-        <Container>
-            <div className="certifications-hero">
-                <motion.h1
-                    className="hero-heading"
-                    initial={{ opacity: 0, y: -30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
+        <section className="cert-section">
+
+            {/* ── Header ── */}
+            <motion.div
+                ref={headingRef}
+                className="cert-header"
+                initial="hidden"
+                animate={headingInView ? 'show' : 'hidden'}
+                variants={stagger}
+            >
+                <motion.span className="section-label" variants={fadeUp}>
+                    <span className="label-line" />
                     Certifications
-                </motion.h1>
-                <motion.p
-                    className="hero-subtext"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                >
-                    Verified credentials reflecting continuous learning and skill growth.
+                    <span className="label-line" />
+                </motion.span>
+
+                <motion.h2 className="cert-heading" variants={fadeUp}>
+                    Credentials that{' '}
+                    <span className="heading-accent">validate</span>
+                    <br />
+                    the craft.
+                </motion.h2>
+
+                <motion.p className="cert-subheading" variants={fadeUp}>
+                    A curated collection of certifications spanning AI, design, development, and beyond,
+                    each one a deliberate investment in growing sharper.
                 </motion.p>
-            </div>
+            </motion.div>
 
-            {/* ====== GRID SECTION ====== */}
+            {/* ── Cert count badge ── */}
+            <motion.div
+                className="cert-count-row"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+            >
+                <span className="cert-count-pill">
+                    <span className="cert-count-num">{certifications.length}</span>
+                    <span className="cert-count-label">Certificates Earned</span>
+                </span>
+            </motion.div>
+
+            {/* ── Cards Grid ── */}
             <div className="cert-grid">
-                {sortedCerts.map((cert, idx) => (
-                    <motion.div
-                        className="cert-card"
-                        key={idx}
-                        initial={{ opacity: 0, y: 50 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: idx * 0.1 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="cert-header">
-                            <img src={cert.badge} alt={cert.issuer} className="cert-badge" />
-                            <div>
-                                <h3>{cert.title}</h3>
-                                <p>{cert.issuer}</p>
-                            </div>
-                        </div>
-                        <div className="cert-body">
-                            <p className="cert-date">{cert.date}</p>
-                            <a href={cert.link} target="_blank" rel="noreferrer" className="view-btn">
-                                View Certificate
-                            </a>
-                        </div>
-                    </motion.div>
-                ))}
+                <AnimatePresence>
+                    {visible.map((cert, i) => (
+                        <CertCard key={cert.title} {...cert} index={i % ITEMS_PER_PAGE} />
+                    ))}
+                </AnimatePresence>
             </div>
 
-            <BottomNavigation
-                left="Projects"
-                leftRoute="/projects"
-                right="Contact"
-                rightRoute="/contact"
-            />
-            <Footer />
-        </Container>
+            {/* ── Show More / Less ── */}
+            {sorted.length > ITEMS_PER_PAGE && (
+                <motion.div
+                    className="cert-toggle-row"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ type: 'spring', stiffness: 70 }}
+                >
+                    <button
+                        className="cert-toggle-btn"
+                        onClick={() => setShowAll(prev => !prev)}
+                        aria-label={showAll ? 'Show fewer certifications' : `Show ${remaining} more certifications`}
+                    >
+                        {showAll ? (
+                            <>
+                                Show less
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 10l4-4 4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </>
+                        ) : (
+                            <>
+                                Show {remaining} more
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                    <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </>
+                        )}
+                    </button>
+                </motion.div>
+            )}
+        </section>
     );
 };
 

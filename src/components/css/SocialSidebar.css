@@ -1,114 +1,97 @@
-/* src/components/SocialSidebar.css */
-
-.left-sidebar {
-    position: fixed;
-    bottom: 0;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 100;
-}
-
-.left-sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.left-sidebar li {
-    margin: 10px 0;
-}
-
-.left-sidebar a {
-    color: #676e84;
-    font-size: 1.5rem;
-    transition: 0.3s;
-}
-
-.left-sidebar a:hover {
-    color: #1c5d99;
-}
-
-.left-sidebar::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    background-color: #676e84;
-    margin-top: 20px;
-}
-
-/* Right */
-
+/* Sidebar Containers */
+.left-sidebar,
 .right-sidebar {
     position: fixed;
     bottom: 0;
-    right: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 100;
 }
 
+.left-sidebar {
+    left: 30px;
+}
+
+.right-sidebar {
+    right: 30px;
+}
+
+.left-sidebar ul,
 .right-sidebar ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
+.left-sidebar li,
 .right-sidebar li {
-    margin: 10px 0;
+    margin: 15px 0;
+}
+
+/* Links & Typography */
+.left-sidebar a,
+.right-sidebar a {
+    color: var(--text-lo);
+    /* Using About.css variable */
+    transition: color 0.25s ease;
+    display: block;
+}
+
+.left-sidebar a {
+    font-size: 1.3rem;
 }
 
 .right-sidebar a {
-    font-family: 'Montserrat', sans-serif;
-    color: #676e84;
-    font-size: 1rem;
-    font-weight: 450;
+    font-family: var(--font-disp);
+    /* Matches About heading font */
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     text-decoration: none;
     writing-mode: vertical-rl;
-    transition: 0.3s;
 }
 
+/* Hover Effects matching Bio Card accents */
+.left-sidebar a:hover,
 .right-sidebar a:hover {
-    color: #1c5d99;
+    color: var(--accent);
 }
 
+/* Vertical Lines - Redesigned to match .label-line style */
+.left-sidebar::after,
 .right-sidebar::after {
     content: "";
     display: block;
     width: 1px;
+    height: 90px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    opacity: 0.4;
+    margin-top: 15px;
+}
+
+.right-sidebar::after {
     height: 110px;
-    background-color: #676e84;
-    margin-top: 20px;
 }
 
-/* -------------------- DARK THEME -------------------- */
-
-[data-bs-theme="dark"] .left-sidebar a,
-[data-bs-theme="dark"] .right-sidebar a {
-    color: #c9cdd8;
+/* Light Mode Overrides */
+[data-bs-theme="light"] .left-sidebar a,
+[data-bs-theme="light"] .right-sidebar a {
+    color: #94a3b8;
+    /* Matches .meta-label in light mode */
 }
 
-[data-bs-theme="dark"] .left-sidebar a:hover,
-[data-bs-theme="dark"] .right-sidebar a:hover {
-    color: #6ab0f3;
+[data-bs-theme="light"] .left-sidebar a:hover,
+[data-bs-theme="light"] .right-sidebar a:hover {
+    color: var(--accent);
 }
 
-[data-bs-theme="dark"] .left-sidebar::after,
-[data-bs-theme="dark"] .right-sidebar::after {
-    background-color: #c9cdd8;
-}
+/* Responsiveness */
+@media (max-width: 1024px) {
 
-@media (max-width: 768px) {
-
-    .left-sidebar {
-        display: none;
-    }
-
+    .left-sidebar,
     .right-sidebar {
         display: none;
     }
-
 }

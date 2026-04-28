@@ -1,0 +1,352 @@
+/* ============================================================
+   SOCIALS — Dark Editorial, matches About.css / Home.css system
+   Font: Clash Display + DM Sans (inherited)
+   ============================================================ */
+
+/* ── Section Shell ─────────────────────────────────────── */
+.socials-section {
+    position: relative;
+    padding: 1rem 8% 6rem;
+    font-family: var(--font-body);
+    color: var(--text-hi);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* ── Section Header ─────────────────────────────────────── */
+.socials-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.4rem;
+}
+
+/* reuses .section-label, .label-line, .heading-accent from About.css */
+
+.socials-heading {
+    font-family: var(--font-disp);
+    font-size: clamp(2.6rem, 5vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin: 0;
+    color: var(--text-hi);
+}
+
+[data-bs-theme="light"] .socials-heading {
+    color: #0f172a;
+}
+
+.socials-subheading {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 480px;
+    margin: 0;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+[data-bs-theme="light"] .socials-subheading {
+    color: #475569;
+}
+
+/* ── Cards Grid ─────────────────────────────────────────── */
+.socials-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+/* ── Social Card ─────────────────────────────────────────── */
+.social-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.4rem;
+    padding: 1.8rem 1.8rem 1.6rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28);
+}
+
+.social-card:hover {
+    border-color: var(--card-color, var(--accent));
+    box-shadow:
+        0 16px 48px rgba(0, 0, 0, 0.4),
+        0 0 0 1px color-mix(in srgb, var(--card-color, #3b82f6) 30%, transparent) inset;
+}
+
+.social-card:hover .social-card-glow {
+    opacity: 1;
+}
+
+.social-card:hover .social-card-shimmer {
+    transform: translateX(100%);
+}
+
+.social-card:hover .social-icon {
+    color: var(--card-color);
+    filter: drop-shadow(0 0 10px var(--card-glow, rgba(59,130,246,0.5)));
+}
+
+.social-card:hover .social-arrow {
+    opacity: 1;
+    color: var(--card-color);
+    transform: translate(2px, -2px);
+}
+
+/* ── Card Top Row ── */
+.social-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.social-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.social-card:hover .social-icon-wrap {
+    background: color-mix(in srgb, var(--card-color, #3b82f6) 12%, transparent);
+    border-color: color-mix(in srgb, var(--card-color, #3b82f6) 25%, transparent);
+}
+
+.social-icon {
+    font-size: 1.3rem;
+    color: var(--text-mid);
+    transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.social-arrow {
+    font-size: 0.8rem;
+    color: var(--text-lo);
+    opacity: 0.5;
+    transition: opacity 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+/* ── Card Body ── */
+.social-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.social-label {
+    font-family: var(--font-disp);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-hi);
+    letter-spacing: -0.01em;
+}
+
+.social-handle {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: color 0.25s ease;
+}
+
+.social-card:hover .social-handle {
+    color: var(--card-color);
+}
+
+.social-desc {
+    font-size: 0.72rem;
+    color: var(--text-lo);
+    line-height: 1.4;
+    margin-top: 2px;
+}
+
+/* ── Glow & Shimmer effects ── */
+.social-card-glow {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 100px;
+    background: radial-gradient(ellipse, var(--card-glow, rgba(59,130,246,0.2)) 0%, transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.social-card-shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.04) 50%,
+        transparent 60%
+    );
+    pointer-events: none;
+    transition: transform 0.55s ease;
+}
+
+/* ── Footnote ───────────────────────────────────────────── */
+.socials-footnote {
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-lo);
+    letter-spacing: 0.03em;
+    margin: 0;
+}
+
+[data-bs-theme="light"] .socials-footnote {
+    color: #94a3b8;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE
+   ══════════════════════════════════════════════════════════ */
+
+[data-bs-theme="light"] .social-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(0, 0, 0, 0.07);
+    box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.04),
+        0 10px 28px rgba(59, 130, 246, 0.07);
+    backdrop-filter: blur(16px);
+}
+
+[data-bs-theme="light"] .social-card:hover {
+    background: #ffffff;
+    box-shadow:
+        0 6px 12px rgba(0, 0, 0, 0.06),
+        0 20px 48px color-mix(in srgb, var(--card-color, #3b82f6) 14%, transparent);
+}
+
+[data-bs-theme="light"] .social-icon-wrap {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-bs-theme="light"] .social-card:hover .social-icon-wrap {
+    background: color-mix(in srgb, var(--card-color, #3b82f6) 10%, transparent);
+    border-color: color-mix(in srgb, var(--card-color, #3b82f6) 22%, transparent);
+}
+
+[data-bs-theme="light"] .social-icon {
+    color: #64748b;
+}
+
+[data-bs-theme="light"] .social-label {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .social-handle {
+    color: #475569;
+}
+
+[data-bs-theme="light"] .social-desc {
+    color: #94a3b8;
+}
+
+[data-bs-theme="light"] .social-arrow {
+    color: #94a3b8;
+}
+
+[data-bs-theme="light"] .social-card-shimmer {
+    background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(59, 130, 246, 0.04) 50%,
+        transparent 60%
+    );
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .socials-section {
+        padding: 1rem 6% 5rem;
+        gap: 3.5rem;
+    }
+
+    .socials-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .socials-section {
+        padding: 1rem 6% 4rem;
+        gap: 3rem;
+    }
+
+    .socials-heading {
+        font-size: clamp(2.2rem, 9vw, 3.2rem);
+    }
+
+    .socials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .socials-section {
+        padding: 1rem 5% 3.5rem;
+        gap: 2.5rem;
+    }
+
+    .socials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+    }
+
+    .social-card {
+        padding: 1.4rem 1.3rem 1.3rem;
+        gap: 1.1rem;
+    }
+
+    .social-icon-wrap {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icon {
+        font-size: 1.15rem;
+    }
+
+    .social-label {
+        font-size: 0.9rem;
+    }
+
+    .social-handle {
+        font-size: 0.72rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .socials-grid {
+        grid-template-columns: 1fr;
+    }
+}
