@@ -1,11 +1,152 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import './css/Home.css';
 import resume from '../assets/documents/MeghCV.pdf';
-import profileVideo from '../assets/videos/loopedvideo.webm';
 import { FaReact, FaRobot, FaPalette } from 'react-icons/fa';
 
+/* ── Image Sequence Player ───────────────────────────────── */
+const FRAME_COUNT = 158;
+const FPS = 45;
+const FRAME_PATH = (i) => `/images/frames/frame_${String(i).padStart(5, '0')}.avif`;
+
+const ImageSequencePlayer = ({ frameCount = FRAME_COUNT, fps = FPS }) => {
+    const canvasRef = useRef(null);
+    const framesRef = useRef([]);
+    const rafRef = useRef(null);
+    const currentFrameRef = useRef(0);
+    const lastTimeRef = useRef(null);
+    const [loadProgress, setLoadProgress] = useState(0);
+    const [ready, setReady] = useState(false);
+    const interval = 1000 / fps;
+
+    useEffect(() => {
+        if (frameCount === 0) return;
+
+        let loaded = 0;
+        const images = [];
+
+        const handleLoad = (e) => {
+            loaded++;
+            setLoadProgress(Math.round((loaded / frameCount) * 100));
+            if (loaded === frameCount) {
+                framesRef.current = images;
+                setReady(true);
+            }
+        };
+
+        const handleError = (e) => {
+            console.error("Failed to load:", e.target.src);
+            loaded++; // Count it anyway so the app doesn't hang at 99%
+            if (loaded === frameCount) setReady(true);
+        };
+
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = FRAME_PATH(i);
+            img.onload = handleLoad;
+            img.onerror = handleError;
+            images.push(img);
+        }
+
+        return () => {
+            framesRef.current = [];
+        };
+    }, [frameCount]);
+
+    // Animation loop
+    const animate = useCallback((timestamp) => {
+        if (!lastTimeRef.current) lastTimeRef.current = timestamp;
+        const elapsed = timestamp - lastTimeRef.current;
+
+        if (elapsed >= interval) {
+            lastTimeRef.current = timestamp - (elapsed % interval);
+            const canvas = canvasRef.current;
+            const frames = framesRef.current;
+            if (canvas && frames.length > 0) {
+                const ctx = canvas.getContext('2d');
+                const frame = frames[currentFrameRef.current];
+                if (frame && frame.complete) {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    // Cover-fit: maintain aspect ratio, center crop
+                    const cw = canvas.width, ch = canvas.height;
+                    const fw = frame.naturalWidth, fh = frame.naturalHeight;
+                    const scale = Math.max(cw / fw, ch / fh);
+                    const dw = fw * scale, dh = fh * scale;
+                    const dx = (cw - dw) / 2, dy = (ch - dh) / 2;
+                    ctx.drawImage(frame, dx, dy, dw, dh);
+                }
+                currentFrameRef.current = (currentFrameRef.current + 1) % frames.length;
+            }
+        }
+
+        rafRef.current = requestAnimationFrame(animate);
+    }, [interval]);
+
+    useEffect(() => {
+        if (!ready) return;
+        rafRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(rafRef.current);
+    }, [ready, animate]);
+
+    return (
+        <div className="hero-video" style={{ position: 'relative', width: '100%', height: '100%' }}>
+            {/* Loading state */}
+            {!ready && frameCount > 0 && (
+                <div style={{
+                    position: 'absolute', inset: 0,
+                    display: 'flex', flexDirection: 'column',
+                    alignItems: 'center', justifyContent: 'center',
+                    gap: '12px', background: 'rgba(10,15,25,0.6)',
+                    zIndex: 2,
+                }}>
+                    <div style={{
+                        width: '120px', height: '3px',
+                        background: 'rgba(255,255,255,0.1)',
+                        borderRadius: '999px', overflow: 'hidden',
+                    }}>
+                        <div style={{
+                            height: '100%', width: `${loadProgress}%`,
+                            background: 'var(--accent)',
+                            transition: 'width 0.2s ease',
+                            borderRadius: '999px',
+                        }} />
+                    </div>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-lo)', letterSpacing: '0.1em' }}>
+                        {loadProgress}%
+                    </span>
+                </div>
+            )}
+
+            {/* Fallback placeholder when frameCount not set */}
+            {frameCount === 0 && (
+                <div style={{
+                    position: 'absolute', inset: 0,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    background: 'rgba(10,15,25,0.5)',
+                    color: 'var(--text-lo)', fontSize: '0.8rem',
+                }}>
+                    Set FRAME_COUNT in Home.jsx
+                </div>
+            )}
+
+            <canvas
+                ref={canvasRef}
+                width={380}
+                height={420}
+                style={{
+                    width: '100%', height: '100%',
+                    objectFit: 'cover',
+                    display: 'block',
+                    opacity: ready ? 1 : 0,
+                    transition: 'opacity 0.4s ease',
+                }}
+            />
+        </div>
+    );
+};
+
+/* ── Home Component ──────────────────────────────────────── */
 const Home = () => {
     const navigate = useNavigate();
     const containerRef = useRef(null);
@@ -63,17 +204,10 @@ const Home = () => {
                 '--my': `${mousePos.y}%`,
             }}
         >
-
             {/* LEFT — Text */}
             <div className="hero-text-container">
-                {/* <motion.div className="eyebrow-tag" variants={fadeUp}>
-                    <span className="dot" />
-                    <span>Available for opportunities</span>
-                </motion.div> */}
-
                 <motion.h1 variants={fadeUp}>
                     <span className="greeting">Hey, I'm</span>
-                    {/* <br /> */}
                     <span className="name-block">
                         <span className="name-fill">Megh</span>
                         <span className="name-outline"> Patel</span>
@@ -130,7 +264,7 @@ const Home = () => {
                 </motion.div>
             </div>
 
-            {/* RIGHT — Video Card */}
+            {/* RIGHT — Image Sequence Card */}
             <motion.div
                 className="hero-video-wrapper"
                 variants={fadeIn}
@@ -138,20 +272,8 @@ const Home = () => {
             >
                 <div className="video-card">
                     <div className="video-glow" />
-                    <video
-                        className="hero-video"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                    >
-                        <source src={profileVideo} type="video/webm" />
-                    </video>
+                    <ImageSequencePlayer />
                     <div className="video-border-ring" />
-                    {/* <div className="video-badge">
-                        <span className="badge-dot pulse" />
-                        <span>Open to work</span>
-                    </div> */}
                 </div>
 
                 <motion.div

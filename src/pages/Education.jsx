@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import guLogo from '../assets/images/guLogo.webp';
-import auLogo from '../assets/images/auLogo.png';
+import guLogo from '../assets/images/guLogo.avif';
+import auLogo from '../assets/images/auLogo.avif';
 import './css/Education.css';
 
 /* ─── University logos ───────────────────────────────────── */

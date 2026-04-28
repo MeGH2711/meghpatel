@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './css/Projects.css';
-import birdspecies from '../assets/images/bird_species_detection.png';
+import birdspecies from '../assets/images/bird_species_detection.avif';
 
 const PROJECT_PALETTES = [
     { from: '#3b82f6', to: '#6366f1' },  // blue → indigo

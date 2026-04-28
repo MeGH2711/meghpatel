@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './css/Navbar.css';
-import logoImg from '../assets/images/logoBlack.webp';
+import logoImg from '../assets/images/logoBlack.avif';
 
 const HomeNavbar = () => {
     const navLinks = [
