@@ -7,12 +7,20 @@ import nationalipawareness from '../assets/documents/nationalipawareness.pdf';
 
 const certifications = [
     {
+        title: "Prompt Design in Vertex AI",
+        issuer: "Google Cloud",
+        date: "Issued on April 2026",
+        sortDate: "2026-04",
+        link: "https://www.credly.com/badges/ccdf6e7f-055b-42a2-a6d5-42de1222bdcd",
+        badge: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-cloud-icon.png",
+    },
+    {
         title: "CPIM 2025",
         issuer: "SVGU",
         date: "Issued on April 2025",
         sortDate: "2025-04",
         link: cpim2025,
-        badge: "https://images.shiksha.com/mediadata/images/1717483894phpW49Qzc.jpeg",
+        badge: "https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/jxv842u2xrt9oi9n5wbz?ik-sanitizeSvg=true",
     },
     {
         title: "Python (Basic)",
@@ -36,7 +44,7 @@ const certifications = [
         date: "Issued on June 2024",
         sortDate: "2024-06",
         link: "https://www.futurelearn.com/certificates/8w9n2fe",
-        badge: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Accenture.svg/2560px-Accenture.svg.png",
+        badge: "https://companieslogo.com/img/orig/ACN-cce5b411.png?t=1720244490",
     },
     {
         title: "Digital Design & UX Job Simulation",
@@ -76,7 +84,7 @@ const certifications = [
         date: "Issued Oct 2022",
         sortDate: "2022-10",
         link: "https://www.credly.com/badges/ae120aa9-2c8e-4b1c-bf38-4998fe66a0f1/linked_in_profile",
-        badge: "https://images.credly.com/size/680x680/images/af8c6b4e-fc31-47c4-8dcb-eb7a2065dc5b/I2CS__1_.png",
+        badge: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png",
     },
     {
         title: "IP Awareness and Training Program",
