@@ -5,6 +5,18 @@ import cpim2025 from '../assets/documents/cpim2025.pdf';
 import tcsioncareeredgeyoungprofessional from '../assets/documents/tcsioncareeredgeyoungprofessional.pdf';
 import nationalipawareness from '../assets/documents/nationalipawareness.pdf';
 
+// Icons
+import accentureIcon from '../assets/images/icons/accenture.avif';
+import bpIcon from '../assets/images/icons/bp.avif';
+import ciscoIcon from '../assets/images/icons/cisco.avif';
+import cognitiveIcon from '../assets/images/icons/cognitive.avif';
+import googlecloudIcon from '../assets/images/icons/google_cloud.avif';
+import googleplayacademyIcon from '../assets/images/icons/google_play_academy.avif';
+import hackerrankIcon from '../assets/images/icons/hackerrank.avif';
+import nipamIcon from '../assets/images/icons/nipam.avif';
+import svguIcon from '../assets/images/icons/svgu.avif';
+import tcsionIcon from '../assets/images/icons/tcs_ion.avif';
+
 const certifications = [
     {
         title: "Prompt Design in Vertex AI",
@@ -12,7 +24,7 @@ const certifications = [
         date: "Issued on April 2026",
         sortDate: "2026-04",
         link: "https://www.credly.com/badges/ccdf6e7f-055b-42a2-a6d5-42de1222bdcd",
-        badge: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/google-cloud-icon.png",
+        badge: googlecloudIcon,
     },
     {
         title: "CPIM 2025",
@@ -20,7 +32,7 @@ const certifications = [
         date: "Issued on April 2025",
         sortDate: "2025-04",
         link: cpim2025,
-        badge: "https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/jxv842u2xrt9oi9n5wbz?ik-sanitizeSvg=true",
+        badge: svguIcon,
     },
     {
         title: "Python (Basic)",
@@ -28,7 +40,7 @@ const certifications = [
         date: "Issued on Nov 2025",
         sortDate: "2025-11",
         link: "https://www.hackerrank.com/certificates/927a24bc9b81",
-        badge: "https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png",
+        badge: hackerrankIcon,
     },
     {
         title: "Basic SQL",
@@ -36,7 +48,7 @@ const certifications = [
         date: "Issued on July 2024",
         sortDate: "2024-07",
         link: "https://www.hackerrank.com/certificates/cd761dfeafa4",
-        badge: "https://upload.wikimedia.org/wikipedia/commons/6/65/HackerRank_logo.png",
+        badge: hackerrankIcon,
     },
     {
         title: "UI/UX Virtual Experience",
@@ -44,7 +56,7 @@ const certifications = [
         date: "Issued on June 2024",
         sortDate: "2024-06",
         link: "https://www.futurelearn.com/certificates/8w9n2fe",
-        badge: "https://companieslogo.com/img/orig/ACN-cce5b411.png?t=1720244490",
+        badge: accentureIcon,
     },
     {
         title: "Digital Design & UX Job Simulation",
@@ -52,7 +64,7 @@ const certifications = [
         date: "Issued June 2024",
         sortDate: "2024-06",
         link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/bp/uwvgu23YiJ366ipgH_bp_LTtwsfyReLSd4FdM8_1719392323903_completion_certificate.pdf",
-        badge: "https://arda.africa/wp-content/uploads/2022/08/Arda_Sponsor_Logos_Silver_bp.png",
+        badge: bpIcon,
     },
     {
         title: "Python 101 for Data Science",
@@ -60,7 +72,7 @@ const certifications = [
         date: "Issued May 2024",
         sortDate: "2024-05",
         link: "https://courses.cognitiveclass.ai/certificates/e7b44bc8accc45c99da4617e180c546a",
-        badge: "https://sn-portals-cognitiveclass.s3.us-south.cloud-object-storage.appdomain.cloud/644bcxng43h754iyqftkagb7aen1",
+        badge: cognitiveIcon,
     },
     {
         title: "Google Play Store Listing Certificate",
@@ -68,7 +80,7 @@ const certifications = [
         date: "Issued Feb 2024",
         sortDate: "2024-02",
         link: "https://www.credential.net/fbcb8ba3-8fb8-4282-a5fe-9126a4a054c6#acc.AdGEkoHu",
-        badge: "https://templates.images.credential.net/16599603554210827167471657137208.png",
+        badge: googleplayacademyIcon,
     },
     {
         title: "TCS iON Career Edge - Young Professional",
@@ -76,7 +88,7 @@ const certifications = [
         date: "Issued on Jul 2023",
         sortDate: "2023-07",
         link: tcsioncareeredgeyoungprofessional,
-        badge: "https://www.sxill.in/wp-content/uploads/2023/06/TCS-iON-Logo-RGB-Color-300x121.png",
+        badge: tcsionIcon,
     },
     {
         title: "Introduction to Cybersecurity",
@@ -84,7 +96,7 @@ const certifications = [
         date: "Issued Oct 2022",
         sortDate: "2022-10",
         link: "https://www.credly.com/badges/ae120aa9-2c8e-4b1c-bf38-4998fe66a0f1/linked_in_profile",
-        badge: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png",
+        badge: ciscoIcon,
     },
     {
         title: "IP Awareness and Training Program",
@@ -92,7 +104,7 @@ const certifications = [
         date: "Issued on Apr 2022",
         sortDate: "2022-04",
         link: nationalipawareness,
-        badge: "https://employmentnews.gov.in/writereaddata/251020222131701.PNG",
+        badge: nipamIcon,
     },
 ];
 
