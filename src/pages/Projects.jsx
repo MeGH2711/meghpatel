@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { motion, useInView } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './css/Projects.css';
-import birdspecies from '../assets/images/bird_species_detection.avif';
+import birdspecies from '../assets/images/project_thumbnails/bird_species_detection.avif';
+import hiedetection from '../assets/images/project_thumbnails/hie_detection_using_deep_learning.avif';
 
 const PROJECT_PALETTES = [
     { from: '#3b82f6', to: '#6366f1' },  // blue → indigo
@@ -18,13 +19,14 @@ const PROJECT_PALETTES = [
 
 const projects = [
     {
-        title: "InventuraX",
-        subtitle: "Sales & Billing Software",
-        description: "PDF generation, QR-based UPI, sessions, invoicing and sales management.",
-        tech: ["ReactJS", "Firebase", "Bootstrap", "Node.js"],
-        demo: "https://inventuraxpro.vercel.app/",
-        github: "https://github.com/MeGH2711/inventuraxpro",
-        path: "/projects/inventurax",
+        title: "Hypoxic Ischemic Encephalopathy Lesion Segmentation",
+        subtitle: "Deep Learning · Swin-Unet",
+        description: "Transformer–based model for fine-grained segmentation task of HIE lesions using the BonBID2023 dataset.",
+        tech: ["Python", "Swin-Unet", "PyTorch", "Transformer"],
+        demo: "",
+        github: "",
+        image: hiedetection,
+        path: "",
         featured: true,
     },
     {
@@ -37,6 +39,16 @@ const projects = [
         image: birdspecies,
         path: "/projects/birdspeciesdetection",
         featured: true,
+    },
+    {
+        title: "InventuraX",
+        subtitle: "Sales & Billing Software",
+        description: "PDF generation, QR-based UPI, sessions, invoicing and sales management.",
+        tech: ["ReactJS", "Firebase", "Bootstrap", "Node.js"],
+        demo: "https://inventuraxpro.vercel.app/",
+        github: "https://github.com/MeGH2711/inventuraxpro",
+        path: "/projects/inventurax",
+        featured: false,
     },
     {
         title: "De Baker's & More",
