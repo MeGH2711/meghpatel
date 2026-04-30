@@ -1,0 +1,525 @@
+/* ============================================================
+   HIE LESION SEGMENTATION DETAIL PAGE
+   Theme: Dark Editorial · Medical AI — extends InventuraXDetail
+   Font: Clash Display (--font-disp) + DM Sans (--font-body)
+   Accent: Teal (#2dd4bf / #14b8a6) instead of Blue
+   ============================================================ */
+
+/* ── All base ix-* classes are inherited from InventuraXDetail.css ──
+   Import InventuraXDetail.css first, then this file overrides / extends. */
+
+/* ── HIE Teal Accent Overrides ──────────────────────────────── */
+
+/* Badge — teal variant */
+.ix-badge--teal {
+    background: rgba(20, 184, 166, 0.1);
+    border-color: rgba(20, 184, 166, 0.3);
+    color: #2dd4bf;
+}
+
+.ix-badge--teal .ix-badge-dot {
+    background: #14b8a6;
+    box-shadow: 0 0 6px #14b8a6;
+}
+
+/* Badge — amber variant */
+.ix-badge--amber {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.28);
+    color: #fbbf24;
+}
+
+.ix-badge--amber .ix-badge-dot {
+    background: #f59e0b;
+    box-shadow: 0 0 6px #f59e0b;
+}
+
+/* Metric accents — teal + amber */
+.ix-metric--teal .ix-metric-value { color: #2dd4bf; }
+.ix-metric--amber .ix-metric-value { color: #fbbf24; }
+
+/* Card icon — teal */
+.hie-icon--teal {
+    background: rgba(20, 184, 166, 0.12);
+    color: #2dd4bf;
+    border: 1px solid rgba(20, 184, 166, 0.22);
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Stats bar — subtle teal glow */
+.hie-stats-bar {
+    border-color: rgba(20, 184, 166, 0.15) !important;
+}
+
+/* ── Title ─────────────────────────────────────────────────── */
+.hie-title-sub {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    letter-spacing: -0.02em;
+}
+
+/* ── Sidebar Thumb — Brain Scan Visual ─────────────────────── */
+.hie-thumb-inner {
+    background: linear-gradient(135deg, #0d2d2a 0%, #0f1a2e 50%, #1a0d2e 100%) !important;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hie-thumb-grid {
+    background-image:
+        linear-gradient(rgba(20, 184, 166, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 184, 166, 0.06) 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+}
+
+/* Animated concentric ring scanner effect */
+.hie-scan-rings {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.hie-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(20, 184, 166, 0.15);
+    animation: hie-pulse 3s ease-in-out infinite;
+}
+
+.hie-ring--1 { width: 60px; height: 60px; animation-delay: 0s; }
+.hie-ring--2 { width: 95px; height: 95px; animation-delay: 0.6s; }
+.hie-ring--3 { width: 130px; height: 130px; animation-delay: 1.2s; }
+
+@keyframes hie-pulse {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50%       { opacity: 0.4;  transform: scale(1.03); }
+}
+
+.hie-thumb-visual {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hie-thumb-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(20, 184, 166, 0.18);
+    border: 1px solid rgba(20, 184, 166, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2dd4bf;
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
+}
+
+.hie-thumb-label {
+    font-family: var(--font-disp);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.75);
+    letter-spacing: 0.04em;
+    z-index: 1;
+    position: relative;
+}
+
+/* Status dot — amber for "In Development" */
+.hie-meta-dev {
+    color: #fbbf24 !important;
+}
+
+/* GitHub button teal hover */
+.hie-btn--github:hover {
+    background: rgba(20, 184, 166, 0.08) !important;
+    border-color: rgba(20, 184, 166, 0.28) !important;
+    color: #2dd4bf !important;
+}
+
+/* Tech tags — teal tinted */
+.hie-tech-tag {
+    background: rgba(20, 184, 166, 0.07) !important;
+    border-color: rgba(20, 184, 166, 0.16) !important;
+}
+
+.hie-tech-tag:hover {
+    background: rgba(20, 184, 166, 0.14) !important;
+    border-color: rgba(20, 184, 166, 0.32) !important;
+    color: #2dd4bf !important;
+}
+
+/* Feature hover — teal */
+.ix-feature-item:hover {
+    border-color: rgba(20, 184, 166, 0.22) !important;
+    background: rgba(20, 184, 166, 0.04) !important;
+}
+
+.ix-feature-num {
+    background: rgba(20, 184, 166, 0.1) !important;
+    border-color: rgba(20, 184, 166, 0.22) !important;
+    color: #2dd4bf !important;
+}
+
+/* Content card hover teal */
+.hie-page .ix-content-card:hover {
+    border-color: rgba(20, 184, 166, 0.16) !important;
+}
+
+/* ── Architecture Card (sidebar) ───────────────────────────── */
+.hie-arch-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.1rem;
+}
+
+.hie-arch-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 2px;
+}
+
+.hie-arch-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.75rem;
+}
+
+.hie-arch-label {
+    color: var(--text-mid);
+    flex-shrink: 0;
+    padding-top: 1px;
+}
+
+.hie-arch-val {
+    color: var(--text-hi);
+    font-weight: 600;
+    text-align: right;
+    line-height: 1.3;
+}
+
+/* ── Architecture Pipeline ─────────────────────────────────── */
+.hie-pipeline {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 1.1rem 0 1.25rem;
+}
+
+.hie-pipe-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.7rem 0.85rem;
+    border-radius: 12px;
+    border: 1px solid;
+    min-width: 88px;
+    flex-shrink: 0;
+    gap: 3px;
+    transition: transform 0.2s ease;
+}
+
+.hie-pipe-step:hover {
+    transform: translateY(-2px);
+}
+
+.hie-pipe-label {
+    font-family: var(--font-disp);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hie-pipe-sub {
+    font-size: 0.65rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.hie-pipe-desc {
+    font-size: 0.6rem;
+    opacity: 0.6;
+    line-height: 1.3;
+}
+
+.hie-pipe--teal  { background: rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.3);  color: #2dd4bf; }
+.hie-pipe--violet{ background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.28); color: #a78bfa; }
+.hie-pipe--amber { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); color: #fbbf24; }
+.hie-pipe--green { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);  color: #34d399; }
+
+.hie-pipe-arrow {
+    color: var(--text-mid);
+    opacity: 0.5;
+    flex-shrink: 0;
+}
+
+/* ── Results Row ───────────────────────────────────────────── */
+.hie-results-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    border-top: 1px solid var(--border);
+    padding-top: 1.1rem;
+    margin-top: 0.1rem;
+}
+
+.hie-result-chip {
+    background: rgba(20, 184, 166, 0.05);
+    border: 1px solid rgba(20, 184, 166, 0.14);
+    border-radius: 12px;
+    padding: 0.75rem 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: border-color 0.2s ease;
+}
+
+.hie-result-chip:hover {
+    border-color: rgba(20, 184, 166, 0.3);
+}
+
+.hie-result-val {
+    font-family: var(--font-disp);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #2dd4bf;
+    letter-spacing: -0.02em;
+}
+
+.hie-result-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text-hi);
+    line-height: 1.3;
+}
+
+.hie-result-note {
+    font-size: 0.62rem;
+    color: var(--text-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LIGHT MODE OVERRIDES
+   ══════════════════════════════════════════════════════════ */
+
+[data-bs-theme="light"] .ix-badge--teal {
+    background: rgba(20, 184, 166, 0.08);
+    border-color: rgba(20, 184, 166, 0.25);
+    color: #0d9488;
+}
+
+[data-bs-theme="light"] .ix-badge--amber {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.22);
+    color: #d97706;
+}
+
+[data-bs-theme="light"] .ix-metric--teal .ix-metric-value { color: #0d9488; }
+[data-bs-theme="light"] .ix-metric--amber .ix-metric-value { color: #d97706; }
+
+[data-bs-theme="light"] .hie-icon--teal {
+    background: rgba(20, 184, 166, 0.08);
+    color: #0d9488;
+    border-color: rgba(20, 184, 166, 0.18);
+}
+
+[data-bs-theme="light"] .hie-stats-bar {
+    border-color: rgba(20, 184, 166, 0.12) !important;
+}
+
+[data-bs-theme="light"] .hie-thumb-inner {
+    background: linear-gradient(135deg, #e8faf8 0%, #f0f4ff 50%, #f3eeff 100%) !important;
+}
+
+[data-bs-theme="light"] .hie-thumb-grid {
+    background-image:
+        linear-gradient(rgba(20, 184, 166, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(20, 184, 166, 0.1) 1px, transparent 1px) !important;
+}
+
+[data-bs-theme="light"] .hie-ring {
+    border-color: rgba(20, 184, 166, 0.25) !important;
+}
+
+[data-bs-theme="light"] .hie-thumb-icon {
+    background: rgba(20, 184, 166, 0.12);
+    border-color: rgba(20, 184, 166, 0.3);
+    color: #0d9488;
+    box-shadow: 0 0 16px rgba(20, 184, 166, 0.15);
+}
+
+[data-bs-theme="light"] .hie-thumb-label {
+    color: rgba(15, 23, 42, 0.7);
+}
+
+[data-bs-theme="light"] .hie-meta-dev {
+    color: #b45309 !important;
+}
+
+[data-bs-theme="light"] .hie-btn--github:hover {
+    background: rgba(20, 184, 166, 0.06) !important;
+    border-color: rgba(20, 184, 166, 0.22) !important;
+    color: #0d9488 !important;
+}
+
+[data-bs-theme="light"] .hie-tech-tag {
+    background: rgba(20, 184, 166, 0.06) !important;
+    border-color: rgba(20, 184, 166, 0.14) !important;
+    color: #475569 !important;
+}
+
+[data-bs-theme="light"] .hie-tech-tag:hover {
+    background: rgba(20, 184, 166, 0.12) !important;
+    border-color: rgba(20, 184, 166, 0.28) !important;
+    color: #0d9488 !important;
+}
+
+[data-bs-theme="light"] .ix-feature-item:hover {
+    border-color: rgba(20, 184, 166, 0.2) !important;
+    background: rgba(20, 184, 166, 0.03) !important;
+}
+
+[data-bs-theme="light"] .ix-feature-num {
+    background: rgba(20, 184, 166, 0.08) !important;
+    border-color: rgba(20, 184, 166, 0.18) !important;
+    color: #0d9488 !important;
+}
+
+[data-bs-theme="light"] .hie-page .ix-content-card:hover {
+    border-color: rgba(20, 184, 166, 0.18) !important;
+}
+
+[data-bs-theme="light"] .hie-arch-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-bs-theme="light"] .hie-arch-val {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .hie-arch-label {
+    color: #64748b;
+}
+
+[data-bs-theme="light"] .hie-pipe--teal  { background: rgba(20, 184, 166, 0.08); border-color: rgba(20, 184, 166, 0.25); color: #0d9488; }
+[data-bs-theme="light"] .hie-pipe--violet{ background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.22); color: #7c3aed; }
+[data-bs-theme="light"] .hie-pipe--amber { background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.22); color: #d97706; }
+[data-bs-theme="light"] .hie-pipe--green { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25); color: #059669; }
+
+[data-bs-theme="light"] .hie-results-row {
+    border-top-color: rgba(0, 0, 0, 0.07);
+}
+
+[data-bs-theme="light"] .hie-result-chip {
+    background: rgba(20, 184, 166, 0.04);
+    border-color: rgba(20, 184, 166, 0.12);
+}
+
+[data-bs-theme="light"] .hie-result-chip:hover {
+    border-color: rgba(20, 184, 166, 0.25);
+}
+
+[data-bs-theme="light"] .hie-result-val {
+    color: #0d9488;
+}
+
+[data-bs-theme="light"] .hie-result-label {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .hie-result-note {
+    color: #64748b;
+}
+
+[data-bs-theme="light"] .hie-title-sub {
+    color: #64748b;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+    .hie-results-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hie-pipeline {
+        gap: 3px;
+    }
+
+    .hie-pipe-step {
+        min-width: 76px;
+        padding: 0.6rem 0.7rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .hie-pipeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .hie-pipe-arrow {
+        display: none;
+    }
+
+    .hie-results-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hie-title-sub {
+        display: block;
+        font-size: 1rem;
+    }
+
+    .hie-pipeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hie-results-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 580px) {
+    .hie-pipeline {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hie-results-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hie-pipe-step {
+        min-width: unset;
+    }
+}

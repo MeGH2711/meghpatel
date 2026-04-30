@@ -21,8 +21,9 @@ import Socials from './pages/Socials';
 import Contact from './pages/Contact';
 
 // Project Detail Pages
-import InventuraXDetail from './pages/ProjectDetails/InventuraXDetail';
+import HIEDetection from './pages/ProjectDetails/HIEDetail';
 import BirdSpeciesDetail from './pages/ProjectDetails/BirdSpeciesDetail';
+import InventuraXDetail from './pages/ProjectDetails/InventuraXDetail';
 
 // ── Main single-page layout ───────────────────────────────
 const MainLayout = () => (
@@ -67,6 +68,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/projects/inventurax" element={<InventuraXDetail />} />
           <Route path="/projects/birdspeciesdetection" element={<BirdSpeciesDetail />} />
+          <Route path="/projects/hiedetection" element={<HIEDetection />} />
         </Routes>
       </main>
 

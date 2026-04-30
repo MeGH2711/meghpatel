@@ -26,7 +26,7 @@ const projects = [
         demo: "",
         github: "",
         image: hiedetection,
-        path: "",
+        path: "/projects/hiedetection",
         featured: true,
     },
     {
