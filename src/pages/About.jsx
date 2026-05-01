@@ -47,6 +47,14 @@ const About = () => {
     const headingRef = useRef(null);
     const headingInView = useInView(headingRef, { once: true, margin: '-80px' });
 
+    const scrollToContact = (e) => {
+        e.preventDefault();
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
         <section className="about-section" ref={sectionRef}>
 
@@ -72,7 +80,7 @@ const About = () => {
                 </motion.h2>
 
                 <motion.p className="about-subheading" variants={fadeUp}>
-                    I sit at the intersection of logic and aesthetics<br/> writing code that's as
+                    I sit at the intersection of logic and aesthetics<br /> writing code that's as
                     intentional as the interfaces it powers. 3+ years deep, still obsessed.
                 </motion.p>
             </motion.div>
@@ -155,7 +163,13 @@ const About = () => {
                 transition={{ type: 'spring', stiffness: 70 }}
             >
                 <span className="cta-text">Let's build something remarkable together.</span>
-                <a href="mailto:megh@example.com" className="cta-btn">
+
+                {/* Keep the <a> tag and class for hover effects, change functionality */}
+                <a
+                    href="#!"
+                    onClick={scrollToContact}
+                    className="cta-btn"
+                >
                     Get in touch
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
