@@ -84,10 +84,12 @@
     font-family: var(--font-body);
     font-size: 0.85rem;
     font-weight: 500;
+    transition: color 0.3s ease;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     transition: color 0.2s ease;
+    color: #888;
 }
 
 .nav-item:hover {
@@ -132,4 +134,16 @@
     .nav-custom-logo {
         height: 28px;
     }
+}
+
+.nav-item.active {
+    color: #0dcaf0 !important;
+    /* Cyan color from your section-title[cite: 1] */
+    font-weight: 600;
+}
+
+/* Dark Mode Active Color */
+[data-bs-theme="dark"] .nav-item.active {
+    color: #6ab0f3 !important;
+    /* Light blue from your dark theme[cite: 1] */
 }
