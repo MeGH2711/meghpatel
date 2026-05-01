@@ -6,16 +6,16 @@ import tcsioncareeredgeyoungprofessional from '../assets/documents/tcsioncareere
 import nationalipawareness from '../assets/documents/nationalipawareness.pdf';
 
 // Icons
-import accentureIcon from '../assets/images/icons/accenture.avif';
-import bpIcon from '../assets/images/icons/bp.avif';
-import ciscoIcon from '../assets/images/icons/cisco.avif';
-import cognitiveIcon from '../assets/images/icons/cognitive.avif';
-import googlecloudIcon from '../assets/images/icons/google_cloud.avif';
-import googleplayacademyIcon from '../assets/images/icons/google_play_academy.avif';
-import hackerrankIcon from '../assets/images/icons/hackerrank.avif';
-import nipamIcon from '../assets/images/icons/nipam.avif';
-import svguIcon from '../assets/images/icons/svgu.avif';
-import tcsionIcon from '../assets/images/icons/tcs_ion.avif';
+import accentureIcon from '../assets/images/icons/certifications/accenture.avif';
+import bpIcon from '../assets/images/icons/certifications/bp.avif';
+import ciscoIcon from '../assets/images/icons/certifications/cisco.avif';
+import cognitiveIcon from '../assets/images/icons/certifications/cognitive.avif';
+import googlecloudIcon from '../assets/images/icons/certifications/google_cloud.avif';
+import googleplayacademyIcon from '../assets/images/icons/certifications/google_play_academy.avif';
+import hackerrankIcon from '../assets/images/icons/certifications/hackerrank.avif';
+import nipamIcon from '../assets/images/icons/certifications/nipam.avif';
+import svguIcon from '../assets/images/icons/certifications/svgu.avif';
+import tcsionIcon from '../assets/images/icons/certifications/tcs_ion.avif';
 
 const certifications = [
     {

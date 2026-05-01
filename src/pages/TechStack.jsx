@@ -2,6 +2,10 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import './css/TechStack.css';
 
+import geminiIcon from '../assets/images/icons/ai_logos/google_gemini.avif'
+import chatgptIcon from '../assets/images/icons/ai_logos/chatgpt.avif'
+import claudeIcon from '../assets/images/icons/ai_logos/claude.avif'
+
 /* ── Tech Skill PNG logos ── */
 const TECH_LOGOS = {
     HTML: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
@@ -22,9 +26,9 @@ const TECH_LOGOS = {
 
 /* ── AI Tool PNG logos ── */
 const AI_LOGOS = {
-    'Google Gemini': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Google_Gemini_icon_2025.svg/500px-Google_Gemini_icon_2025.svg.png',
-    'ChatGPT': 'https://static.vecteezy.com/system/resources/previews/022/227/364/non_2x/openai-chatgpt-logo-icon-free-png.png',
-    'Claude': 'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/claude-ai-icon.png',
+    'Google Gemini': geminiIcon,
+    'ChatGPT': chatgptIcon,
+    'Claude': claudeIcon,
 };
 
 /* ── Tech Skill Data ── */
