@@ -9,7 +9,7 @@ import './css/HIEDetail.css';
 const PROJECT = {
     title: 'HIE Lesion Seg.',
     subtitle: 'Medical AI · Deep Learning · Image Segmentation',
-    github: '',
+    github: 'https://github.com/MeGH2711/hiedetection',
     year: '2025',
     type: 'Research · AI/ML',
     status: 'In Development',

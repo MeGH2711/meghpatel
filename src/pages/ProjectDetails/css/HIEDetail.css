@@ -35,8 +35,13 @@
 }
 
 /* Metric accents — teal + amber */
-.ix-metric--teal .ix-metric-value { color: #2dd4bf; }
-.ix-metric--amber .ix-metric-value { color: #fbbf24; }
+.ix-metric--teal .ix-metric-value {
+    color: #2dd4bf;
+}
+
+.ix-metric--amber .ix-metric-value {
+    color: #fbbf24;
+}
 
 /* Card icon — teal */
 .hie-icon--teal {
@@ -102,13 +107,36 @@
     animation: hie-pulse 3s ease-in-out infinite;
 }
 
-.hie-ring--1 { width: 60px; height: 60px; animation-delay: 0s; }
-.hie-ring--2 { width: 95px; height: 95px; animation-delay: 0.6s; }
-.hie-ring--3 { width: 130px; height: 130px; animation-delay: 1.2s; }
+.hie-ring--1 {
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+}
+
+.hie-ring--2 {
+    width: 95px;
+    height: 95px;
+    animation-delay: 0.6s;
+}
+
+.hie-ring--3 {
+    width: 130px;
+    height: 130px;
+    animation-delay: 1.2s;
+}
 
 @keyframes hie-pulse {
-    0%, 100% { opacity: 0.15; transform: scale(1); }
-    50%       { opacity: 0.4;  transform: scale(1.03); }
+
+    0%,
+    100% {
+        opacity: 0.15;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.4;
+        transform: scale(1.03);
+    }
 }
 
 .hie-thumb-visual {
@@ -223,6 +251,8 @@
 .hie-pipeline {
     display: flex;
     align-items: center;
+    justify-content: center;
+    /* Add this line */
     flex-wrap: wrap;
     gap: 4px;
     padding: 1.1rem 0 1.25rem;
@@ -265,10 +295,29 @@
     line-height: 1.3;
 }
 
-.hie-pipe--teal  { background: rgba(20, 184, 166, 0.1); border-color: rgba(20, 184, 166, 0.3);  color: #2dd4bf; }
-.hie-pipe--violet{ background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.28); color: #a78bfa; }
-.hie-pipe--amber { background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.28); color: #fbbf24; }
-.hie-pipe--green { background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);  color: #34d399; }
+.hie-pipe--teal {
+    background: rgba(20, 184, 166, 0.1);
+    border-color: rgba(20, 184, 166, 0.3);
+    color: #2dd4bf;
+}
+
+.hie-pipe--violet {
+    background: rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.28);
+    color: #a78bfa;
+}
+
+.hie-pipe--amber {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.28);
+    color: #fbbf24;
+}
+
+.hie-pipe--green {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #34d399;
+}
 
 .hie-pipe-arrow {
     color: var(--text-mid);
@@ -339,8 +388,13 @@
     color: #d97706;
 }
 
-[data-bs-theme="light"] .ix-metric--teal .ix-metric-value { color: #0d9488; }
-[data-bs-theme="light"] .ix-metric--amber .ix-metric-value { color: #d97706; }
+[data-bs-theme="light"] .ix-metric--teal .ix-metric-value {
+    color: #0d9488;
+}
+
+[data-bs-theme="light"] .ix-metric--amber .ix-metric-value {
+    color: #d97706;
+}
 
 [data-bs-theme="light"] .hie-icon--teal {
     background: rgba(20, 184, 166, 0.08);
@@ -427,10 +481,29 @@
     color: #64748b;
 }
 
-[data-bs-theme="light"] .hie-pipe--teal  { background: rgba(20, 184, 166, 0.08); border-color: rgba(20, 184, 166, 0.25); color: #0d9488; }
-[data-bs-theme="light"] .hie-pipe--violet{ background: rgba(139, 92, 246, 0.08); border-color: rgba(139, 92, 246, 0.22); color: #7c3aed; }
-[data-bs-theme="light"] .hie-pipe--amber { background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.22); color: #d97706; }
-[data-bs-theme="light"] .hie-pipe--green { background: rgba(16, 185, 129, 0.08); border-color: rgba(16, 185, 129, 0.25); color: #059669; }
+[data-bs-theme="light"] .hie-pipe--teal {
+    background: rgba(20, 184, 166, 0.08);
+    border-color: rgba(20, 184, 166, 0.25);
+    color: #0d9488;
+}
+
+[data-bs-theme="light"] .hie-pipe--violet {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.22);
+    color: #7c3aed;
+}
+
+[data-bs-theme="light"] .hie-pipe--amber {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.22);
+    color: #d97706;
+}
+
+[data-bs-theme="light"] .hie-pipe--green {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.25);
+    color: #059669;
+}
 
 [data-bs-theme="light"] .hie-results-row {
     border-top-color: rgba(0, 0, 0, 0.07);
