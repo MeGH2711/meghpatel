@@ -25,7 +25,7 @@ const experiences = [
         company: "Gandhinagar University",
         title: "TechFest Organizer & Host",
         date: "January 2024 – March 2024",
-        description: "Led end-to-end coordination for large-scale campus tech events, engaging over 3,000 attendees. Hosted multiple coding competitions and workshops. Contributed to event branding, marketing strategy, and enhancing the overall attendee experience.",
+        description: "Led end-to-end coordination for large-scale campus tech events, engaging over 3,000 attendees. Hosted multiple coding and gaming competitions and workshops. Contributed to event branding, marketing strategy, and enhancing the overall attendee experience.",
         tech: ["Event Hosting", "Leadership", "Team Coordination", "Public Speaking"]
     },
     {

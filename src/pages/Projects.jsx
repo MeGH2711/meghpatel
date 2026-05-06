@@ -67,14 +67,6 @@ const projects = [
         github: "https://github.com/MeGH2711/anchormegh",
     },
     {
-        title: "De Baker's & More",
-        subtitle: "Bakery Website · v1",
-        description: "Charming bakery site with dynamic product catalog, custom cake ordering, and contact form integration.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-        demo: "https://megh2711.github.io/debakersandmore.com/",
-        github: "https://github.com/MeGH2711/debakersandmore.com",
-    },
-    {
         title: "Neoflex",
         subtitle: "Luxury Watch Brand",
         description: "Modern responsive showcase for luxury timepieces with product galleries, brand story, and purchase links.",
