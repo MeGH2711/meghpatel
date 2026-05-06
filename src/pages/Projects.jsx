@@ -24,7 +24,7 @@ const projects = [
         description: "Transformer–based model for fine-grained segmentation task of HIE lesions using the BonBID2023 dataset.",
         tech: ["Python", "Swin-Unet", "PyTorch", "Transformer"],
         demo: "",
-        github: "",
+        github: "https://github.com/MeGH2711/hiedetection",
         image: hiedetection,
         path: "/projects/hiedetection",
         featured: true,
