@@ -192,6 +192,14 @@ const Home = () => {
 
     const roles = ['AI Engineer', 'Developer', 'UI/UX Designer'];
 
+    const handleScroll = (e, targetId) => {
+        e.preventDefault();
+        const element = document.getElementById(targetId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
         <motion.section
             className="home-hero pt-5"
@@ -237,7 +245,7 @@ const Home = () => {
                 </motion.div>
 
                 <motion.div className="hero-buttons" variants={fadeUp}>
-                    <button className="btn-primary" onClick={() => navigate('/projects')}>
+                    <button className="btn-primary" onClick={(e) => handleScroll(e, 'projects')}>
                         <span>View My Work</span>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
