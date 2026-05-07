@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { FaArrowRight, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './css/Projects.css';
 import birdspecies from '../assets/images/project_thumbnails/bird_species_detection.avif';
+import roadmarkingsegmentation from '../assets/images/project_thumbnails/road_marking_segmentation.avif';
 import hiedetection from '../assets/images/project_thumbnails/hie_detection_using_deep_learning.avif';
 
 const PROJECT_PALETTES = [
@@ -27,6 +28,17 @@ const projects = [
         github: "https://github.com/MeGH2711/hiedetection",
         image: hiedetection,
         path: "/projects/hiedetection",
+        featured: true,
+    },
+    {
+        title: "Road Marking Segmentation",
+        subtitle: "Computer Vision · DeepLabV3+ · Segformer",
+        description: "Semantic segmentation of road markings from dashcam images using DeepLabV3+ (ResNet-101) and SegFormer (MiT-B2), combined via an ensemble with soft & hard voting.",
+        tech: ["DeeplabV3+", "Segformer", "MiT", "CNN", "Tranformers", "Python"],
+        demo: "",
+        github: "https://github.com/MeGH2711/roadmarkingsegmentation",
+        image: roadmarkingsegmentation,
+        path: "/projects/roadmarkingsegmentation",
         featured: true,
     },
     {

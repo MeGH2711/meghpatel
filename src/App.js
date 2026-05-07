@@ -24,6 +24,7 @@ import Contact from './pages/Contact';
 import HIEDetection from './pages/ProjectDetails/HIEDetail';
 import BirdSpeciesDetail from './pages/ProjectDetails/BirdSpeciesDetail';
 import InventuraXDetail from './pages/ProjectDetails/InventuraXDetail';
+import RoadMarkingSegmentation from './pages/ProjectDetails/RoadMarkingDetail';
 
 // ── Main single-page layout ───────────────────────────────
 const MainLayout = () => (
@@ -69,6 +70,7 @@ const App = () => {
           <Route path="/projects/inventurax" element={<InventuraXDetail />} />
           <Route path="/projects/birdspeciesdetection" element={<BirdSpeciesDetail />} />
           <Route path="/projects/hiedetection" element={<HIEDetection />} />
+          <Route path="/projects/roadmarkingsegmentation" element={<RoadMarkingSegmentation />} />
         </Routes>
       </main>
 
