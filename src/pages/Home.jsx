@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import './css/Home.css';
 import resume from '../assets/documents/MeghCV.pdf';
@@ -148,7 +147,6 @@ const ImageSequencePlayer = ({ frameCount = FRAME_COUNT, fps = FPS }) => {
 
 /* ── Home Component ──────────────────────────────────────── */
 const Home = () => {
-    const navigate = useNavigate();
     const containerRef = useRef(null);
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
