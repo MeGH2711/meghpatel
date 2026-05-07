@@ -23,7 +23,7 @@ const PROJECT = {
         { label: 'Best mIoU', value: 'Ensemble Soft Vote', accent: 'green' },
         { label: 'Architectures', value: 'DeepLabV3+ & SegFormer', accent: 'blue' },
         { label: 'Loss Function', value: 'Dice + CrossEntropy', accent: 'violet' },
-        { label: 'Domain Adapt.', value: 'CeyMo → AU Drone', accent: 'amber' },
+        { label: 'Dataset', value: 'CeyMo', accent: 'amber' },
     ],
     tech: [
         'Python', 'PyTorch', 'DeepLabV3+', 'SegFormer', 'ResNet-101', 'MiT-B2',
