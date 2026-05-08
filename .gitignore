@@ -13,7 +13,7 @@
 .DS_Store
 .env.local
 .env.development.local
-.env.test.local
+.env.test.local``
 .env.production.local
 
 npm-debug.log*
@@ -25,6 +25,3 @@ launch-hidden.vbs
 StartServer.bat
 
 .env
-# Updates
-# Update Resume
-# Add Soft Skills too in the About Me Page
