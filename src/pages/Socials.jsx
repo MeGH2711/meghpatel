@@ -93,7 +93,7 @@ const SocialCard = ({ icon: Icon, link, label, handle, desc, color, glow, index 
                     <Icon className="social-icon" />
                 </span>
                 <span className="social-arrow">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-label='Socials Arrow Icon'>
                         <path d="M2 12L12 2M12 2H5M12 2v7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </span>
