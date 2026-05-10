@@ -15,22 +15,22 @@ const SocialSidebar = () => {
             >
                 <ul>
                     <li>
-                        <a href="https://youtube.com/@mojilomegh" target="_blank" rel="noreferrer">
+                        <a href="https://youtube.com/@mojilomegh" target="_blank" rel="noreferrer" aria-label="Visit my YouTube profile (opens in new window)">
                             <FaYoutube />
                         </a>
                     </li>
                     <li>
-                        <a href="https://instagram.com/megh_vekaria" target="_blank" rel="noreferrer">
+                        <a href="https://instagram.com/megh_vekaria" target="_blank" rel="noreferrer" aria-label="Visit my Instagram profile (opens in new window)">
                             <FaInstagram />
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/MeGH2711" target="_blank" rel="noreferrer">
+                        <a href="https://github.com/MeGH2711" target="_blank" rel="noreferrer" aria-label="Visit my GitHub profile (opens in new window)">
                             <FaGithub />
                         </a>
                     </li>
                     <li>
-                        <a href="https://linkedin.com/in/meghpatel2711" target="_blank" rel="noreferrer">
+                        <a href="https://linkedin.com/in/meghpatel2711" target="_blank" rel="noreferrer" aria-label="Visit my LinkedIn profile (opens in new window)">
                             <FaLinkedin />
                         </a>
                     </li>

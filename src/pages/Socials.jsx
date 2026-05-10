@@ -80,8 +80,9 @@ const SocialCard = ({ icon: Icon, link, label, handle, desc, color, glow, index 
             ref={ref}
             href={link}
             target={link.startsWith('mailto') ? undefined : '_blank'}
-            rel="noopener noreferrer"
+            rel={link.startsWith('mailto') ? undefined : 'noopener noreferrer'}
             className="social-card"
+            aria-label={link.startsWith('mailto') ? label : `${label} (opens in new window)`}
             style={{ '--card-color': color, '--card-glow': glow }}
             initial={{ opacity: 0, y: 32, scale: 0.96 }}
             animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
@@ -140,8 +141,7 @@ const Socials = () => {
                 </motion.h2>
 
                 <motion.p className="socials-subheading" variants={fadeUp}>
-                    Whether it's code, content, or conversation — I'm only a click away.
-                    <br />Pick your platform and let's talk.
+                    Whether it's code, content, or conversation. I'm only a click away. Pick your platform and let's talk.
                 </motion.p>
             </motion.div>
 

@@ -210,17 +210,17 @@ const FeaturedCard = ({ project, index, palette }) => {
                     
                     <div className="proj-actions">
                         {project.github && (
-                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-action-btn" title="View Code">
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-action-btn" title="View Code" aria-label={`View ${project.title} code on GitHub (opens in new window)`}>
                                 <FaGithub size={16} />
                             </a>
                         )}
                         {project.demo && (
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="proj-action-btn" title="Live Preview">
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="proj-action-btn" title="Live Preview" aria-label={`View ${project.title} live demo (opens in new window)`}>
                                 <FaExternalLinkAlt size={14} />
                             </a>
                         )}
                         {project.path && (
-                            <Link to={project.path} className="proj-details-btn">
+                            <Link to={project.path} className="proj-details-btn" aria-label={`View details for ${project.title}`}>
                                 Details
                                 <FaArrowRight size={11} />
                             </Link>
@@ -269,17 +269,17 @@ const ProjectCard = ({ project, index, palette }) => {
 
                     <div className="proj-actions">
                         {project.github && (
-                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-action-btn proj-action-btn--sm" title="View Code">
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="proj-action-btn proj-action-btn--sm" title="View Code" aria-label={`View ${project.title} code on GitHub (opens in new window)`}>
                                 <FaGithub size={14} />
                             </a>
                         )}
                         {project.demo && (
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="proj-action-btn proj-action-btn--sm" title="Live Preview">
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="proj-action-btn proj-action-btn--sm" title="Live Preview" aria-label={`View ${project.title} live demo (opens in new window)`}>
                                 <FaExternalLinkAlt size={12} />
                             </a>
                         )}
                         {project.path && (
-                            <Link to={project.path} className="proj-details-btn proj-details-btn--sm">
+                            <Link to={project.path} className="proj-details-btn proj-details-btn--sm" aria-label={`View details for ${project.title}`}>
                                 Details
                                 <FaArrowRight size={10} />
                             </Link>

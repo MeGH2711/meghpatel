@@ -39,6 +39,8 @@ const ThemeToggle = () => {
                 overflow: 'hidden'
             }}
             title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            aria-label={`Toggle ${theme === 'dark' ? 'light' : 'dark'} mode. Currently in ${theme} mode.`}
+            aria-pressed={theme === 'dark'}
         >
             <AnimatePresence mode="wait" initial={false}>
                 <motion.div

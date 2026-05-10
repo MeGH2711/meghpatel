@@ -3,7 +3,6 @@ import { motion, useInView, AnimatePresence } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import './css/Contact.css';
 
-/* ── Social links — swap hrefs as needed ── */
 const socials = [
     {
         label: 'GitHub',
@@ -61,7 +60,10 @@ const Field = ({ label, id, type = 'text', value, onChange, required, placeholde
 
     return (
         <div className={`cf-field ${focused ? 'is-focused' : ''} ${filled ? 'is-filled' : ''}`}>
-            <label className="cf-label" htmlFor={id}>{label}</label>
+            <label className="cf-label" htmlFor={id}>
+                {label}
+                {required && <span aria-label="required"> *</span>}
+            </label>
             {type === 'textarea' ? (
                 <textarea
                     id={id}
@@ -74,6 +76,8 @@ const Field = ({ label, id, type = 'text', value, onChange, required, placeholde
                     required={required}
                     placeholder={focused ? placeholder : ''}
                     rows={5}
+                    aria-label={label}
+                    aria-required={required}
                 />
             ) : (
                 <input
@@ -87,6 +91,8 @@ const Field = ({ label, id, type = 'text', value, onChange, required, placeholde
                     onBlur={() => setFocused(false)}
                     required={required}
                     placeholder={focused ? placeholder : ''}
+                    aria-label={label}
+                    aria-required={required}
                 />
             )}
             <span className="cf-field-bar" />
@@ -239,10 +245,10 @@ const Contact = () => {
                                 <motion.a
                                     key={label}
                                     href={href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    target={href.startsWith('mailto:') ? undefined : '_blank'}
+                                    rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                                     className="social-chip"
-                                    aria-label={label}
+                                    aria-label={href.startsWith('mailto:') ? label : `${label} (opens in new window)`}
                                     whileHover={{ y: -3 }}
                                     transition={{ type: 'spring', stiffness: 300 }}
                                 >
@@ -350,6 +356,8 @@ const Contact = () => {
                                     type="submit"
                                     className={`cf-submit ${status === 'sending' ? 'is-sending' : ''}`}
                                     disabled={status === 'sending'}
+                                    aria-label={status === 'sending' ? 'Sending message, please wait' : 'Send message'}
+                                    aria-busy={status === 'sending'}
                                     whileHover={status !== 'sending' ? { y: -2 } : {}}
                                     whileTap={status !== 'sending' ? { scale: 0.98 } : {}}
                                 >
