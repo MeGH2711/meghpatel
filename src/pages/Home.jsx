@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import './css/Home.css';
-import resume from '../assets/documents/MeghCV.pdf';
 import { FaReact, FaRobot, FaPalette } from 'react-icons/fa';
 
 /* ── Image Sequence Player ───────────────────────────────── */
@@ -249,7 +248,7 @@ const Home = () => {
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </button>
-                    <a href={resume} download className="btn-secondary">
+                    <a href="/documents/MeghCV.pdf" download className="btn-secondary">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-label='Resume Download Icon'>
                             <path d="M8 2v8M5 7l3 3 3-3M3 13h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>

@@ -1,9 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import './css/Certifications.css';
-import cpim2025 from '../assets/documents/cpim2025.pdf';
-import tcsioncareeredgeyoungprofessional from '../assets/documents/tcsioncareeredgeyoungprofessional.pdf';
-import nationalipawareness from '../assets/documents/nationalipawareness.pdf';
 
 // Icons
 import accentureIcon from '../assets/images/icons/certifications/accenture.avif';
@@ -31,7 +28,7 @@ const certifications = [
         issuer: "SVGU",
         date: "Issued on April 2025",
         sortDate: "2025-04",
-        link: cpim2025,
+        link: "/documents/cpim2025.pdf",
         badge: svguIcon,
     },
     {
@@ -87,7 +84,7 @@ const certifications = [
         issuer: "TCS iON",
         date: "Issued on Jul 2023",
         sortDate: "2023-07",
-        link: tcsioncareeredgeyoungprofessional,
+        link: "/documents/tcsioncareeredgeyoungprofessional.pdf",
         badge: tcsionIcon,
     },
     {
@@ -103,7 +100,7 @@ const certifications = [
         issuer: "IPO & MoE Innovation Cell",
         date: "Issued on Apr 2022",
         sortDate: "2022-04",
-        link: nationalipawareness,
+        link: "/documents/nationalipawareness.pdf",
         badge: nipamIcon,
     },
 ];
