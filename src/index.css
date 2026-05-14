@@ -34,6 +34,99 @@ body {
   background: #000000 !important;
 }
 
+/* ── Focus Visibility - Critical for Keyboard Navigation ── */
+*:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px #3b82f6;
+}
+
+/* Remove default outline for better custom control */
+*:focus {
+  outline: none;
+}
+
+[data-bs-theme="light"] *:focus-visible {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+[data-bs-theme="light"] button:focus-visible,
+[data-bs-theme="light"] a:focus-visible,
+[data-bs-theme="light"] input:focus-visible,
+[data-bs-theme="light"] textarea:focus-visible,
+[data-bs-theme="light"] select:focus-visible {
+  outline: 3px solid #0ea5e9;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px #0ea5e9;
+}
+
+/* ── Contrast Improvements for Text ── */
+/* Ensure minimum contrast ratio of 4.5:1 for normal text (WCAG AA) */
+p, span, li, td, label, button, a {
+  color: inherit;
+}
+
+/* Ensure light background text has sufficient contrast */
+[data-bs-theme="light"] p,
+[data-bs-theme="light"] span,
+[data-bs-theme="light"] li,
+[data-bs-theme="light"] td,
+[data-bs-theme="light"] label,
+[data-bs-theme="light"] a {
+  color: #1f2937;
+}
+
+[data-bs-theme="light"] .btn-primary span{
+  color: #ffffff !important;
+}
+
+/* Improve small text contrast for better readability */
+small, .small-text, .text-sm, .text-muted {
+  color: inherit;
+  font-size: inherit;
+}
+
+[data-bs-theme="light"] small,
+[data-bs-theme="light"] .small-text,
+[data-bs-theme="light"] .text-sm,
+[data-bs-theme="light"] .text-muted {
+  color: #374151;
+}
+
+[data-bs-theme="dark"] small,
+[data-bs-theme="dark"] .small-text,
+[data-bs-theme="dark"] .text-sm,
+[data-bs-theme="dark"] .text-muted {
+  color: #d1d5db;
+}
+
+/* Buttons should have sufficient color contrast */
+button, [role="button"], .btn {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Links should be visually distinct and underlined or otherwise indicated */
+a {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+/* Remove underline from navigation links that use custom styling */
+nav a, .nav-item, .nav-link {
+  text-decoration: none;
+}
+
 /* ── Ambient Orbs ── */
 .orb {
   position: fixed;

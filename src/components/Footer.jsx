@@ -74,9 +74,9 @@ const Footer = () => {
                         </div>
                         <div className="footer-link-group">
                             <span className="link-label">Socials</span>
-                            <a href="https://github.com/megh2711" target="_blank" rel="noreferrer">GitHub</a>
-                            <a href="https://linkedin.com/meghpatel2711" target="_blank" rel="noreferrer">LinkedIn</a>
-                            <a href="https://twitter.com/meghthebaadal" target="_blank" rel="noreferrer">Twitter</a>
+                            <a href="https://github.com/megh2711" target="_blank" rel="noreferrer" aria-label="Visit GitHub (opens in new window)">GitHub</a>
+                            <a href="https://linkedin.com/meghpatel2711" target="_blank" rel="noreferrer" aria-label="Visit LinkedIn (opens in new window)">LinkedIn</a>
+                            <a href="https://twitter.com/meghthebaadal" target="_blank" rel="noreferrer" aria-label="Visit Twitter (opens in new window)">Twitter</a>
                         </div>
                     </div>
                 </div>
@@ -84,9 +84,9 @@ const Footer = () => {
                 <div className="footer-copyright">
                     <span>© {currentYear} Megh Patel. Built with React & Framer Motion.</span>
                     <div className="footer-social-icons">
-                        <a href="https://github.com/megh2711" target="_blank" rel="noreferrer"><FaGithub /></a>
-                        <a href="https://linkedin.com/meghpatel2711" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-                        <a href="https://twitter.com/meghthebaadal" target="_blank" rel="noreferrer"><FaTwitter /></a>
+                        <a href="https://github.com/megh2711" target="_blank" rel="noreferrer" aria-label="GitHub (opens in new window)"><FaGithub /></a>
+                        <a href="https://linkedin.com/meghpatel2711" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in new window)"><FaLinkedin /></a>
+                        <a href="https://twitter.com/meghthebaadal" target="_blank" rel="noreferrer" aria-label="Twitter (opens in new window)"><FaTwitter /></a>
                     </div>
                 </div>
             </div>

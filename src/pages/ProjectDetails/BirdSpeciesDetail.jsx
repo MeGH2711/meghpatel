@@ -341,7 +341,7 @@ const BirdSpeciesDetail = () => {
                         >
                             <div className="bsd-contributor-avatar">
                                 {/* Replace with an actual img tag if you have a URL, otherwise using a stylized icon */}
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-label='Contributor Avatar Icons'>
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" />
                                 </svg>
                             </div>
@@ -362,7 +362,7 @@ const BirdSpeciesDetail = () => {
                     <AnimatedSection className="bsd-content-card">
                         <motion.div className="bsd-card-header" variants={fadeUp}>
                             <div className="bsd-card-icon bsd-icon--green">
-                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-label='Clock Icon'>
                                     <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.3" />
                                     <path d="M8 5v3.5L10 10" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
                                 </svg>
@@ -387,7 +387,7 @@ const BirdSpeciesDetail = () => {
                     <div className="bsd-content-card">
                         <div className="bsd-card-header">
                             <div className="bsd-card-icon bsd-icon--amber">
-                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-label='Progression Icon'>
                                     <polyline points="2,12 5,8 8,10 11,5 14,3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </div>
@@ -407,7 +407,7 @@ const BirdSpeciesDetail = () => {
                     <div className="bsd-content-card">
                         <div className="bsd-card-header">
                             <div className="bsd-card-icon bsd-icon--violet">
-                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-label='Key Features Icon'>
                                     <rect x="2" y="2" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
                                     <rect x="9" y="2" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
                                     <rect x="2" y="9" width="5" height="5" rx="1" stroke="currentColor" strokeWidth="1.3" />
@@ -427,7 +427,7 @@ const BirdSpeciesDetail = () => {
                     <div className="bsd-content-card">
                         <div className="bsd-card-header">
                             <div className="bsd-card-icon bsd-icon--red">
-                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-label='Challenges Icon'>
                                     <path d="M8 2L9.5 6.5H14L10.25 9.25L11.75 13.5L8 10.5L4.25 13.5L5.75 9.25L2 6.5H6.5L8 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round" />
                                 </svg>
                             </div>

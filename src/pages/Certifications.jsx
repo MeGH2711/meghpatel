@@ -163,7 +163,7 @@ const CertCard = ({ title, issuer, date, link, badge, index }) => {
 
             {/* Arrow */}
             <div className="cert-arrow">
-                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-label='Certification Arrow'>
                     <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
             </div>
@@ -253,14 +253,14 @@ const Certifications = () => {
                         {showAll ? (
                             <>
                                 Show less
-                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-label='Show Less Arrow'>
                                     <path d="M4 10l4-4 4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </>
                         ) : (
                             <>
                                 Show {remaining} more
-                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-label='Show More Arrow'>
                                     <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
                             </>

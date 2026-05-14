@@ -245,12 +245,12 @@ const Home = () => {
                 <motion.div className="hero-buttons" variants={fadeUp}>
                     <button className="btn-primary" onClick={(e) => handleScroll(e, 'projects')}>
                         <span>View My Work</span>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-label='View My Work Arrow'>
                             <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                     </button>
                     <a href={resume} download className="btn-secondary">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-label='Resume Download Icon'>
                             <path d="M8 2v8M5 7l3 3 3-3M3 13h10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         <span>Resume</span>
