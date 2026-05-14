@@ -13,8 +13,35 @@ import hackerrankIcon from '../assets/images/icons/certifications/hackerrank.avi
 import nipamIcon from '../assets/images/icons/certifications/nipam.avif';
 import svguIcon from '../assets/images/icons/certifications/svgu.avif';
 import tcsionIcon from '../assets/images/icons/certifications/tcs_ion.avif';
+import ibmIcon from '../assets/images/icons/certifications/ibm.avif';
+import tataIcon from '../assets/images/icons/certifications/tata.avif';
+import greatlearningIcon from '../assets/images/icons/certifications/greatlearning.avif';
 
 const certifications = [
+    {
+        title: "UI/UX for Beginners",
+        issuer: "Great Learning Academy",
+        date: "Issued on June 2024",
+        sortDate: "2024-06",
+        link: "https://www.mygreatlearning.com/certificate/XMLSWIJW",
+        badge: greatlearningIcon,
+    },
+    {
+        title: "Data Visualisation: Empowering Business with Effective Insights",
+        issuer: "Forage",
+        date: "Issued on March 2026",
+        sortDate: "2026-03",
+        link: "https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_LTtwsfyReLSd4FdM8_1776775700751_completion_certificate.pdf",
+        badge: tataIcon,
+    },
+    {
+        title: "Data Science 101",
+        issuer: "IBM SkillsBuild",
+        date: "Issued on March 2026",
+        sortDate: "2026-03",
+        link: "https://courses.yl-ptech.skillsnetwork.site/certificates/d6a05c21196841f9b853f8836620475d",
+        badge: ibmIcon,
+    },
     {
         title: "Prompt Design in Vertex AI",
         issuer: "Google Cloud",
@@ -57,7 +84,7 @@ const certifications = [
     },
     {
         title: "Digital Design & UX Job Simulation",
-        issuer: "BP (British Petroleum)",
+        issuer: "Forage [BP (British Petroleum)]",
         date: "Issued June 2024",
         sortDate: "2024-06",
         link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/bp/uwvgu23YiJ366ipgH_bp_LTtwsfyReLSd4FdM8_1719392323903_completion_certificate.pdf",
