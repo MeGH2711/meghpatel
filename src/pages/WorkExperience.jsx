@@ -1,9 +1,17 @@
 import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { FaLaptopCode, FaPaintBrush, FaMicrophone } from 'react-icons/fa';
+import { motion, transform, useInView } from 'framer-motion';
+import { FaLaptopCode, FaPaintBrush, FaMicrophone, FaSpaceShuttle } from 'react-icons/fa';
 import './css/WorkExperience.css';
 
 const experiences = [
+    {
+        icon: <FaSpaceShuttle style={{transform: `rotate(-45deg)`}} />,
+        company: "Space Application Center, ISRO",
+        title: "Research Intern",
+        date: "May 2026 – Present",
+        description: "At SAC, ISRO I will be working on planetary surface features extraction, 3D Reconstruction of Elevation Maps, generation of high resolution Digital Elevation Maps (DEM) which can be very much helpful for path planning, choosing a landing site for landers on different planets.",
+        tech: ["Research", "GAN"]
+    },
     {
         icon: <FaLaptopCode />,
         company: "Ellkay Software Pvt. Ltd.",
