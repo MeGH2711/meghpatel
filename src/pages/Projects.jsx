@@ -78,30 +78,6 @@ const projects = [
         demo: "https://anchormegh.vercel.app/",
         github: "https://github.com/MeGH2711/anchormegh",
     },
-    {
-        title: "Neoflex",
-        subtitle: "Luxury Watch Brand",
-        description: "Modern responsive showcase for luxury timepieces with product galleries, brand story, and purchase links.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "GSAP"],
-        demo: "https://megh2711.github.io/neoflex.com/",
-        github: "https://github.com/MeGH2711/neoflex.com",
-    },
-    {
-        title: "DFT Alumni Association",
-        subtitle: "Community Platform",
-        description: "Platform for DFT Bhavnagar alumni to reconnect, share memories, and stay updated on events.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-        demo: "https://megh2711.github.io/dftalumini.com/",
-        github: "https://github.com/MeGH2711/dftalumini.com",
-    },
-    {
-        title: "Tree Story",
-        subtitle: "Nature & Environment",
-        description: "Explores the diversity, importance, and fascinating stories of trees in our environment.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
-        demo: "https://megh2711.github.io/treestory.com/",
-        github: "https://github.com/MeGH2711/treestory.com",
-    },
 ];
 
 const fadeUp = {

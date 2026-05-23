@@ -7,7 +7,7 @@ const skills = [
     { icon: <FaReact color="#61DAFB" />, label: 'Frontend Dev', desc: 'React' },
     { icon: <FaRobot color="#3b82f6" />, label: 'AI Engineering', desc: 'LLMs, RAG, Fine-tuning' },
     { icon: <FaPalette color="#fbbf24" />, label: 'UI/UX Design', desc: 'Figma, Design Systems' },
-    { icon: <FaCode color="#a78bfa" />, label: 'Full Stack', desc: 'Node, Python, FastAPI' },
+    { icon: <FaCode color="#a78bfa" />, label: 'Full Stack', desc: 'Node, Python, JavaScript' },
     { icon: <FaBrain color="#f472b6" />, label: 'ML / Deep Learning', desc: 'PyTorch, Transformers' },
     { icon: <FaLayerGroup color="#34d399" />, label: 'Product Thinking', desc: 'Shipping end-to-end' },
 ];
