@@ -34,9 +34,9 @@ const socialLinks = [
     },
     {
         icon: FaYoutube,
-        link: 'https://www.youtube.com/@meghthebaadal',
+        link: 'https://www.youtube.com/@mojilomegh',
         label: 'YouTube',
-        handle: '@meghthebaadal',
+        handle: '@mojilomegh',
         desc: 'Videos & Tutorials',
         color: '#ff0000',
         glow: 'rgba(255,0,0,0.22)',
