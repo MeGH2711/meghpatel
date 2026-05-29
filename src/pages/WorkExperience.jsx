@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import { motion, transform, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { FaLaptopCode, FaPaintBrush, FaMicrophone, FaSpaceShuttle } from 'react-icons/fa';
 import './css/WorkExperience.css';
 
 const experiences = [
     {
-        icon: <FaSpaceShuttle style={{transform: `rotate(-45deg)`}} />,
+        icon: <FaSpaceShuttle style={{ transform: `rotate(-45deg)` }} />,
         company: "Space Application Center, ISRO",
         title: "Research Intern",
         date: "May 2026 – Present",
