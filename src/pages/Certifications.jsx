@@ -43,6 +43,22 @@ const certifications = [
         badge: ibmIcon,
     },
     {
+        title: "Introduction to Large Language Models",
+        issuer: "Google Cloud",
+        date: "Issued on May 2026",
+        sortDate: "2026-05",
+        link: "https://www.skills.google/public_profiles/6cecd4cf-0e66-4554-ba57-add3c469aad6/badges/24516213",
+        badge: googlecloudIcon,
+    },
+    {
+        title: "Introduction to Generative AI",
+        issuer: "Google Cloud",
+        date: "Issued on July 2024",
+        sortDate: "2024-07",
+        link: "https://www.skills.google/public_profiles/6cecd4cf-0e66-4554-ba57-add3c469aad6/badges/9688716",
+        badge: googlecloudIcon,
+    },
+    {
         title: "Prompt Design in Vertex AI",
         issuer: "Google Cloud",
         date: "Issued on April 2026",
