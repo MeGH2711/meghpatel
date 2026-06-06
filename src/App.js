@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SocialSidebar from './components/SocialSidebar';
 import ThemeToggle from './components/ThemeToggle';
-import CustomCursor from './components/CustomCursor';
 import SkipLink from './components/SkipLink';
 
 // Pages
@@ -55,7 +54,6 @@ const App = () => {
   return (
     <>
       <SkipLink />
-      <CustomCursor />
       <div className="orb orb-1" />
       <div className="orb orb-2" />
       <div className="orb orb-3" />
