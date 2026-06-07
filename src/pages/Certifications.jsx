@@ -17,8 +17,17 @@ import ibmIcon from '../assets/images/icons/certifications/ibm.avif';
 import tataIcon from '../assets/images/icons/certifications/tata.avif';
 import greatlearningIcon from '../assets/images/icons/certifications/greatlearning.avif';
 import hpIcon from '../assets/images/icons/certifications/hp.avif';
+import simplilearnIcon from '../assets/images/icons/certifications/simplilearn.avif';
 
 const certifications = [
+    {
+        title: "Artificial Intelligence Beginners Guide",
+        issuer: "Simplilearn",
+        date: "Issued on June 2026",
+        sortDate: "2026-06",
+        link: "https://simpli-web.app.link/e/nD0CAju4L3b",
+        badge: simplilearnIcon,
+    },
     {
         title: "Data Science & Analytics",
         issuer: "HP Life | HP Foundation",
