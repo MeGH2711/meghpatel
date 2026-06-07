@@ -16,8 +16,17 @@ import tcsionIcon from '../assets/images/icons/certifications/tcs_ion.avif';
 import ibmIcon from '../assets/images/icons/certifications/ibm.avif';
 import tataIcon from '../assets/images/icons/certifications/tata.avif';
 import greatlearningIcon from '../assets/images/icons/certifications/greatlearning.avif';
+import hpIcon from '../assets/images/icons/certifications/hp.avif';
 
 const certifications = [
+    {
+        title: "Data Science & Analytics",
+        issuer: "HP Life | HP Foundation",
+        date: "Issued on June 2024",
+        sortDate: "2024-06",
+        link: "https://www.life-global.org/certificate/5e7c8e13-df0c-41e8-aaa6-677df959180a",
+        badge: hpIcon,
+    },
     {
         title: "UI/UX for Beginners",
         issuer: "Great Learning Academy",
