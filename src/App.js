@@ -5,7 +5,6 @@ import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import SocialSidebar from './components/SocialSidebar';
-import ThemeToggle from './components/ThemeToggle';
 import SkipLink from './components/SkipLink';
 
 // Pages
@@ -75,7 +74,6 @@ const App = () => {
       </main>
 
       {!isProjectPage && <Footer />}
-      <ThemeToggle />
     </>
   );
 };

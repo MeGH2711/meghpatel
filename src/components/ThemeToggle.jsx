@@ -28,15 +28,13 @@ const ThemeToggle = () => {
     return (
         <button
             onClick={toggleTheme}
-            className="btn-toggleTheme rounded-circle position-fixed d-flex align-items-center justify-content-center"
+            className="btn-toggleTheme nav-theme-toggle rounded-circle d-flex align-items-center justify-content-center"
             style={{
-                bottom: '1.5rem', // Aligned higher for better thumb reach/visuals
-                right: '3rem',
-                width: '56px',
-                height: '56px',
-                zIndex: 9999,
+                width: '36px',
+                height: '36px',
                 padding: 0,
-                overflow: 'hidden'
+                overflow: 'hidden',
+                flexShrink: 0
             }}
             title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             aria-label={`Toggle ${theme === 'dark' ? 'light' : 'dark'} mode. Currently in ${theme} mode.`}
@@ -52,9 +50,9 @@ const ThemeToggle = () => {
                     className="d-flex align-items-center justify-content-center"
                 >
                     {theme === 'dark' ? (
-                        <FaSun size={20} />
+                        <FaSun size={16} />
                     ) : (
-                        <FaMoon className='text-warning' size={18} />
+                        <FaMoon className='text-warning' size={14} />
                     )}
                 </motion.div>
             </AnimatePresence>

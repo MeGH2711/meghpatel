@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaTwitter, FaLinkedin, FaArrowUp } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaLinkedin, FaArrowUp, FaInstagram } from 'react-icons/fa';
 import './css/Footer.css';
 
 const Footer = () => {
@@ -71,12 +71,18 @@ const Footer = () => {
                             <a href="#home" onClick={(e) => handleScroll(e, 'home')}>Home</a>
                             <a href="#projects" onClick={(e) => handleScroll(e, 'projects')}>Projects</a>
                             <a href="#about" onClick={(e) => handleScroll(e, 'about')}>About</a>
+                            <a href="#techstack" onClick={(e) => handleScroll(e, 'techstack')}>TechStack</a>
+                            <a href="#education" onClick={(e) => handleScroll(e, 'education')}>Education</a>
+                            <a href="#projects" onClick={(e) => handleScroll(e, 'projects')}>Projects</a>
+                            <a href="#experience" onClick={(e) => handleScroll(e, 'experience')}>Experience</a>
+                            <a href="#certifications" onClick={(e) => handleScroll(e, 'certifications')}>Certifications</a>
                         </div>
                         <div className="footer-link-group">
                             <span className="link-label">Socials</span>
                             <a href="https://github.com/megh2711" target="_blank" rel="noreferrer" aria-label="Visit GitHub (opens in new window)">GitHub</a>
                             <a href="https://www.linkedin.com/in/meghpatel2711/" target="_blank" rel="noreferrer" aria-label="Visit LinkedIn (opens in new window)">LinkedIn</a>
                             <a href="https://twitter.com/meghthebaadal" target="_blank" rel="noreferrer" aria-label="Visit Twitter (opens in new window)">Twitter</a>
+                            <a href="https://instagram.com/megh_vekaria" target="_blank" rel="noreferrer" aria-label="Visit Instagram (opens in new window)">Instagram</a>
                         </div>
                     </div>
                 </div>
@@ -87,6 +93,7 @@ const Footer = () => {
                         <a href="https://github.com/megh2711" target="_blank" rel="noreferrer" aria-label="GitHub (opens in new window)"><FaGithub /></a>
                         <a href="https://www.linkedin.com/in/meghpatel2711/" target="_blank" rel="noreferrer" aria-label="LinkedIn (opens in new window)"><FaLinkedin /></a>
                         <a href="https://twitter.com/meghthebaadal" target="_blank" rel="noreferrer" aria-label="Twitter (opens in new window)"><FaTwitter /></a>
+                        <a href="https://instagram.com/megh_vekaria" target="_blank" rel="noreferrer" aria-label="Instagram (opens in new window)"><FaInstagram /></a>
                     </div>
                 </div>
             </div>
