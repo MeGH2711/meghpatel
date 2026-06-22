@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './css/Navbar.css';
 import logoImg from '../assets/images/logoBlack.avif';
-import ThemeToggle from './ThemeToggle'; // adjust path to wherever ThemeToggle.jsx actually lives
+import ThemeToggle from './ThemeToggle';
 
 const HomeNavbar = () => {
     const [activeSection, setActiveSection] = useState('home');
