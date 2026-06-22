@@ -45,7 +45,7 @@ const App = () => {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "Megh Portfolio";
+    document.title = "Megh Patel | Portfolio";
   }, []);
 
   const isProjectPage = location.pathname.startsWith('/projects/');
