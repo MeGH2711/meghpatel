@@ -18,8 +18,17 @@ import tataIcon from '../assets/images/icons/certifications/tata.avif';
 import greatlearningIcon from '../assets/images/icons/certifications/greatlearning.avif';
 import hpIcon from '../assets/images/icons/certifications/hp.avif';
 import simplilearnIcon from '../assets/images/icons/certifications/simplilearn.avif';
+import deloitteIcon from '../assets/images/icons/certifications/deloitte.avif';
 
 const certifications = [
+    {
+        title: "Data Analytics Job Simulation",
+        issuer: "Deloitte | Forage",
+        date: "Issued on June 2026",
+        sortDate: "2026-06",
+        link: "https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_LTtwsfyReLSd4FdM8_1782289413438_completion_certificate.pdf",
+        badge: deloitteIcon,
+    },
     {
         title: "Artificial Intelligence Beginners Guide",
         issuer: "Simplilearn",
