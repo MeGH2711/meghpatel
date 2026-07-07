@@ -140,7 +140,7 @@ const EduEntry = ({ entry, isLast }) => {
         <>
             <div className="edu-entry" ref={ref}>
 
-                {/* Left — oversized index + bar */}
+                {/* Left - oversized index + bar */}
                 <div className="edu-index-col">
                     <motion.span
                         className="edu-index-num"
@@ -153,7 +153,7 @@ const EduEntry = ({ entry, isLast }) => {
                     <div className="edu-index-bar" />
                 </div>
 
-                {/* Right — title + card */}
+                {/* Right - title + card */}
                 <div className="edu-content">
 
                     <motion.div

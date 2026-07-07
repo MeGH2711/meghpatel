@@ -88,7 +88,7 @@ const About = () => {
             {/* ── Main Grid ── */}
             <div className="about-grid">
 
-                {/* Left — Bio Card */}
+                {/* Left - Bio Card */}
                 <motion.div
                     className="bio-card"
                     initial={{ opacity: 0, x: -40 }}
@@ -135,7 +135,7 @@ const About = () => {
                     <div className="bio-card-glow" />
                 </motion.div>
 
-                {/* Right — Skills Grid */}
+                {/* Right - Skills Grid */}
                 <div className="skills-side">
                     <motion.p
                         className="skills-eyebrow"

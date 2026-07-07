@@ -168,7 +168,7 @@ const Contact = () => {
             {/* ── Main Grid ── */}
             <div className="contact-grid">
 
-                {/* ── Left — Socials + info cards ── */}
+                {/* ── Left - Socials + info cards ── */}
                 <motion.div
                     className="contact-left"
                     initial={{ opacity: 0, x: -40 }}
@@ -260,7 +260,7 @@ const Contact = () => {
                     </div>
                 </motion.div>
 
-                {/* ── Right — Form card ── */}
+                {/* ── Right - Form card ── */}
                 <motion.div
                     className="contact-form-card"
                     initial={{ opacity: 0, x: 40 }}

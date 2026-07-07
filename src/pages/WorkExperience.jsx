@@ -138,7 +138,7 @@ const WorkExperience = () => {
                 </motion.h2>
 
                 <motion.p className="work-subheading" variants={fadeUp}>
-                    From health-tech startups to university stages — every role sharpened
+                    From health-tech startups to university stages - every role sharpened
                     a different edge.
                 </motion.p>
             </motion.div>

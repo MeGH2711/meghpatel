@@ -203,7 +203,7 @@ const CertCard = ({ title, issuer, date, link, badge, index }) => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.07, type: 'spring', stiffness: 80 }}
             whileHover={{ y: -5 }}
-            aria-label={`${title} by ${issuer} — View Certificate`}
+            aria-label={`${title} by ${issuer} - View Certificate`}
         >
             {/* Badge */}
             <div className="cert-badge-wrap">

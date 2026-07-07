@@ -446,7 +446,7 @@ const GitHubActivity = () => {
                 </motion.h2>
 
                 <motion.p className="ts-subheading" variants={fadeUp}>
-                    A live snapshot of my open-source presence — commits, repos, and the languages I
+                    A live snapshot of my open-source presence - commits, repos, and the languages I
                     ship in every day.
                 </motion.p>
             </motion.div>

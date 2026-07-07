@@ -245,7 +245,7 @@ const TechStack = () => {
                 </motion.h2>
 
                 <motion.p className="ts-subheading" variants={fadeUp}>
-                    A curated stack I've honed across real projects — from data pipelines to
+                    A curated stack I've honed across real projects - from data pipelines to
                     pixel-perfect interfaces.
                 </motion.p>
             </motion.div>
@@ -277,7 +277,7 @@ const TechStack = () => {
                 </motion.h2>
 
                 <motion.p className="ts-subheading" variants={fadeUp}>
-                    I leverage leading AI assistants daily — for automation, rapid prototyping,
+                    I leverage leading AI assistants daily - for automation, rapid prototyping,
                     and pushing what's possible.
                 </motion.p>
             </motion.div>
