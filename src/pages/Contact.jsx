@@ -100,7 +100,7 @@ const Field = ({ label, id, type = 'text', value, onChange, required, placeholde
     );
 };
 
-const EMAILJS_SERVICE_ID  = 'service_klvdjkg';
+const EMAILJS_SERVICE_ID  = 'service_prr3jdg';
 const EMAILJS_TEMPLATE_ID = 'template_mamjo5u';
 const EMAILJS_PUBLIC_KEY  = 'z6BgnG6_GIWXqMgvj';
 
