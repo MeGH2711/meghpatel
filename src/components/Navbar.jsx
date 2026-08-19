@@ -80,7 +80,7 @@ const HomeNavbar = () => {
                         onClick={(e) => handleScroll(e, 'home')}
                         className="nav-logo-wrapper"
                     >
-                        <img src={logoImg} alt="Logo" className="nav-custom-logo brand-logo" />
+                        <img src={logoImg} alt="Logo" width="105" height="35" className="nav-custom-logo brand-logo" />
                     </a>
 
                     <div className="nav-links">

@@ -403,14 +403,21 @@ const GitHubActivity = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    const sectionRef = useRef(null);
+    const sectionInView = useInView(sectionRef, { once: true, margin: '200px 0px' });
+    const hasFetched = useRef(false);
+
     const headingRef = useRef(null);
     const headingInView = useInView(headingRef, { once: true, margin: '-80px' });
 
     useEffect(() => {
-        fetchGitHubData(GITHUB_USERNAME)
-            .then(d => { setData(d); setLoading(false); })
-            .catch(() => { setError('Failed to load GitHub data.'); setLoading(false); });
-    }, []);
+        if (sectionInView && !hasFetched.current) {
+            hasFetched.current = true;
+            fetchGitHubData(GITHUB_USERNAME)
+                .then(d => { setData(d); setLoading(false); })
+                .catch(() => { setError('Failed to load GitHub data.'); setLoading(false); });
+        }
+    }, [sectionInView]);
 
     const ACCENT = '#61DAFB';
 
@@ -424,7 +431,7 @@ const GitHubActivity = () => {
     ] : [];
 
     return (
-        <section className="gh-section">
+        <section ref={sectionRef} className="gh-section">
 
             {/* ── Header ── */}
             <motion.div

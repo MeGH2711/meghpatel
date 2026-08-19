@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 // Components
@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import SocialSidebar from './components/SocialSidebar';
 import SkipLink from './components/SkipLink';
 
-// Pages
+// Main Pages
 import Home from './pages/Home';
 import About from './pages/About';
 import TechStack from './pages/TechStack';
@@ -19,12 +19,12 @@ import Certifications from './pages/Certifications';
 import Socials from './pages/Socials';
 import Contact from './pages/Contact';
 
-// Project Detail Pages
-import ProjectDetail from './pages/ProjectDetails/ProjectDetail';
-import HIEDetection from './pages/ProjectDetails/HIEDetail';
-import BirdSpeciesDetail from './pages/ProjectDetails/BirdSpeciesDetail';
-import InventuraXDetail from './pages/ProjectDetails/InventuraXDetail';
-import RoadMarkingSegmentation from './pages/ProjectDetails/RoadMarkingDetail';
+// Project Detail Pages (Lazy Loaded for Route Splitting)
+const ProjectDetail = lazy(() => import('./pages/ProjectDetails/ProjectDetail'));
+const HIEDetection = lazy(() => import('./pages/ProjectDetails/HIEDetail'));
+const BirdSpeciesDetail = lazy(() => import('./pages/ProjectDetails/BirdSpeciesDetail'));
+const InventuraXDetail = lazy(() => import('./pages/ProjectDetails/InventuraXDetail'));
+const RoadMarkingSegmentation = lazy(() => import('./pages/ProjectDetails/RoadMarkingDetail'));
 
 // ── Main single-page layout ───────────────────────────────
 const MainLayout = () => (
@@ -63,16 +63,18 @@ const App = () => {
       {!isProjectPage && <Navbar />}
       <SocialSidebar />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<MainLayout />} />
-          <Route path="/projects/:slug" element={<ProjectDetail />} />
-          <Route path="/projects/inventurax" element={<InventuraXDetail />} />
-          <Route path="/projects/birdspeciesdetection" element={<BirdSpeciesDetail />} />
-          <Route path="/projects/hiedetection" element={<HIEDetection />} />
-          <Route path="/projects/roadmarkingsegmentation" element={<RoadMarkingSegmentation />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
+      <main id="main-content" tabIndex="-1">
+        <Suspense fallback={<div className="route-loading-fallback" style={{ minHeight: '60vh' }} />}>
+          <Routes>
+            <Route path="/" element={<MainLayout />} />
+            <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/projects/inventurax" element={<InventuraXDetail />} />
+            <Route path="/projects/birdspeciesdetection" element={<BirdSpeciesDetail />} />
+            <Route path="/projects/hiedetection" element={<HIEDetection />} />
+            <Route path="/projects/roadmarkingsegmentation" element={<RoadMarkingSegmentation />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </Suspense>
       </main>
 
       {!isProjectPage && <Footer />}

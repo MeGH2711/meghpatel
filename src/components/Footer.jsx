@@ -25,7 +25,7 @@ const Footer = () => {
         <footer className="footer-section">
             <div className="footer-container">
                 {/* ── Large Background Brand Text ── */}
-                <div className="footer-bg-text">MEGH</div>
+                <div className="footer-bg-text" aria-hidden="true">MEGH</div>
 
                 {/* ── Top Row: Big CTA ── */}
                 <div className="footer-top">
