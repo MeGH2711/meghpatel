@@ -20,6 +20,7 @@ import Socials from './pages/Socials';
 import Contact from './pages/Contact';
 
 // Project Detail Pages
+import ProjectDetail from './pages/ProjectDetails/ProjectDetail';
 import HIEDetection from './pages/ProjectDetails/HIEDetail';
 import BirdSpeciesDetail from './pages/ProjectDetails/BirdSpeciesDetail';
 import InventuraXDetail from './pages/ProjectDetails/InventuraXDetail';
@@ -65,11 +66,12 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<MainLayout />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/projects/inventurax" element={<InventuraXDetail />} />
           <Route path="/projects/birdspeciesdetection" element={<BirdSpeciesDetail />} />
           <Route path="/projects/hiedetection" element={<HIEDetection />} />
           <Route path="/projects/roadmarkingsegmentation" element={<RoadMarkingSegmentation />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
 
