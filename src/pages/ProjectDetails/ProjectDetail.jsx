@@ -10,6 +10,7 @@ import ProjectPipeline from './components/ProjectPipeline';
 import ProjectArchGrid from './components/ProjectArchGrid';
 import ProjectFeatures from './components/ProjectFeatures';
 import ProjectChallenges from './components/ProjectChallenges';
+import ThemeToggle from '../../components/ThemeToggle';
 import './css/ProjectDetail.css';
 
 const ProjectDetail = ({ slug: propSlug }) => {
@@ -25,10 +26,13 @@ const ProjectDetail = ({ slug: propSlug }) => {
     if (!project) {
         return (
             <section className="pd-page">
-                <button className="pd-back-button" onClick={() => navigate('/')}>
-                    <FaArrowLeft />
-                    <span>Back to Home</span>
-                </button>
+                <div className="pd-top-bar">
+                    <button className="pd-back-button" onClick={() => navigate('/')}>
+                        <FaArrowLeft />
+                        <span>Back to Home</span>
+                    </button>
+                    <ThemeToggle />
+                </div>
                 <div className="pd-content-card" style={{ textAlign: 'center', padding: '3rem 1.5rem' }}>
                     <h2 className="pd-proj-title" style={{ marginBottom: '1rem' }}>
                         Project Not Found
@@ -46,11 +50,14 @@ const ProjectDetail = ({ slug: propSlug }) => {
 
     return (
         <section className={`pd-page ${project.theme || ''}`}>
-            {/* Back Button */}
-            <button className="pd-back-button" onClick={() => navigate('/')}>
-                <FaArrowLeft />
-                <span>Back to Home</span>
-            </button>
+            {/* Top Bar: Back Button + Theme Switch */}
+            <div className="pd-top-bar">
+                <button className="pd-back-button" onClick={() => navigate('/')}>
+                    <FaArrowLeft />
+                    <span>Back to Home</span>
+                </button>
+                <ThemeToggle />
+            </div>
 
             {/* Top Stats Bar */}
             <ProjectStatsBar

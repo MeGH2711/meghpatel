@@ -16,6 +16,16 @@
     gap: 1.75rem;
 }
 
+/* ── Top Bar (Back Button + Theme Switch) ─── */
+.pd-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1rem;
+    z-index: 15;
+}
+
 /* ── Back Button ────────────────────────────────────────── */
 .pd-back-button {
     display: inline-flex;
@@ -1156,3 +1166,349 @@
         font-size: 1.2rem;
     }
 }
+
+/* ── Light Mode Overrides ───────────────────────────────── */
+[data-bs-theme="light"] .pd-page {
+    color: #1e293b;
+}
+
+[data-bs-theme="light"] .pd-back-button {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #334155;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+[data-bs-theme="light"] .pd-back-button:hover {
+    color: #0f172a;
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-bs-theme="light"] .pd-stats-bar {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+[data-bs-theme="light"] .pd-proj-title {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-title-sub {
+    color: #475569;
+}
+
+[data-bs-theme="light"] .pd-proj-subtitle {
+    color: #475569;
+}
+
+/* Badges in Light Mode */
+[data-bs-theme="light"] .pd-badge--green  { background: rgba(5, 150, 105, 0.12); border-color: rgba(5, 150, 105, 0.3); color: #047857; }
+[data-bs-theme="light"] .pd-badge--blue   { background: rgba(37, 99, 235, 0.12); border-color: rgba(37, 99, 235, 0.3); color: #1d4ed8; }
+[data-bs-theme="light"] .pd-badge--violet { background: rgba(124, 58, 237, 0.12); border-color: rgba(124, 58, 237, 0.3); color: #6d28d9; }
+[data-bs-theme="light"] .pd-badge--amber  { background: rgba(217, 119, 6, 0.12); border-color: rgba(217, 119, 6, 0.3); color: #b45309; }
+[data-bs-theme="light"] .pd-badge--teal   { background: rgba(13, 148, 136, 0.12); border-color: rgba(13, 148, 136, 0.3); color: #0f766e; }
+
+/* Metric Cards in Light Mode */
+[data-bs-theme="light"] .pd-metric-card {
+    background: rgba(241, 245, 249, 0.85);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-metric-card:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.16);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="light"] .pd-metric-label {
+    color: #475569;
+    font-weight: 600;
+}
+
+[data-bs-theme="light"] .pd-metric--green .pd-metric-value  { color: #047857; }
+[data-bs-theme="light"] .pd-metric--blue .pd-metric-value   { color: #1d4ed8; }
+[data-bs-theme="light"] .pd-metric--violet .pd-metric-value { color: #6d28d9; }
+[data-bs-theme="light"] .pd-metric--amber .pd-metric-value  { color: #b45309; }
+[data-bs-theme="light"] .pd-metric--teal .pd-metric-value   { color: #0f766e; }
+
+/* Card Icons */
+[data-bs-theme="light"] .pd-icon--blue   { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; border-color: rgba(37, 99, 235, 0.25); }
+[data-bs-theme="light"] .pd-icon--green  { background: rgba(5, 150, 105, 0.12); color: #047857; border-color: rgba(5, 150, 105, 0.25); }
+[data-bs-theme="light"] .pd-icon--violet { background: rgba(124, 58, 237, 0.12); color: #6d28d9; border-color: rgba(124, 58, 237, 0.25); }
+[data-bs-theme="light"] .pd-icon--amber  { background: rgba(217, 119, 6, 0.12); color: #b45309; border-color: rgba(217, 119, 6, 0.25); }
+[data-bs-theme="light"] .pd-icon--teal   { background: rgba(13, 148, 136, 0.12); color: #0f766e; border-color: rgba(13, 148, 136, 0.25); }
+
+/* Sidebar in Light Mode */
+[data-bs-theme="light"] .pd-sidebar-thumb {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+[data-bs-theme="light"] .pd-meta-label {
+    color: #475569;
+    font-weight: 500;
+}
+
+[data-bs-theme="light"] .pd-meta-val {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+[data-bs-theme="light"] .pd-meta-val--live     { color: #047857; }
+[data-bs-theme="light"] .pd-meta-val--research { color: #b45309; }
+[data-bs-theme="light"] .pd-meta-val--dev      { color: #b45309; }
+
+[data-bs-theme="light"] .pd-btn--primary {
+    background: rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.3);
+    color: #1d4ed8;
+}
+
+[data-bs-theme="light"] .pd-btn--primary:hover {
+    background: rgba(37, 99, 235, 0.2);
+    border-color: rgba(37, 99, 235, 0.45);
+    color: #1e40af;
+}
+
+[data-bs-theme="light"] .pd-btn--secondary {
+    background: rgba(241, 245, 249, 0.9);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #334155;
+}
+
+[data-bs-theme="light"] .pd-btn--secondary:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.22);
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-btn--disabled {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #94a3b8;
+}
+
+[data-bs-theme="light"] .pd-sidebar-tech {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="light"] .pd-section-micro-label {
+    color: #475569;
+    font-weight: 600;
+}
+
+[data-bs-theme="light"] .pd-tech-tag {
+    background: rgba(241, 245, 249, 0.9);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: #1e293b;
+    font-weight: 500;
+}
+
+[data-bs-theme="light"] .pd-tech-tag:hover {
+    background: rgba(226, 232, 240, 1);
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-sidebar-contributor {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="light"] .pd-contributor-card {
+    background: rgba(241, 245, 249, 0.7);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-contributor-card:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.16);
+}
+
+[data-bs-theme="light"] .pd-contributor-name {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-contributor-link {
+    color: #475569;
+}
+
+[data-bs-theme="light"] .pd-contributor-avatar {
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #1e293b;
+}
+
+/* Content Cards in Light Mode */
+[data-bs-theme="light"] .pd-content-card {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="light"] .pd-content-card:hover {
+    border-color: rgba(0, 0, 0, 0.16);
+}
+
+[data-bs-theme="light"] .pd-card-title {
+    color: #0f172a;
+}
+
+/* Vision Blocks in Light Mode */
+[data-bs-theme="light"] .pd-vision-block {
+    background: rgba(248, 250, 252, 0.9);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-vision-label--problem  { color: #b91c1c; }
+[data-bs-theme="light"] .pd-vision-label--solution { color: #047857; }
+[data-bs-theme="light"] .pd-vision-label--audience { color: #1d4ed8; }
+
+[data-bs-theme="light"] .pd-vision-text {
+    color: #334155;
+}
+
+/* Milestones in Light Mode */
+[data-bs-theme="light"] .pd-milestone-label {
+    color: #334155;
+    font-weight: 500;
+}
+
+[data-bs-theme="light"] .pd-milestone-acc {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-bar-track {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-milestone-note {
+    background: rgba(248, 250, 252, 0.9);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: #475569;
+}
+
+[data-bs-theme="light"] .pd-milestone-note em {
+    color: #0f172a;
+}
+
+/* Pipeline in Light Mode */
+[data-bs-theme="light"] .pd-pipe--teal   { background: rgba(13, 148, 136, 0.12); border-color: rgba(13, 148, 136, 0.3); color: #0f766e; }
+[data-bs-theme="light"] .pd-pipe--violet { background: rgba(124, 58, 237, 0.12); border-color: rgba(124, 58, 237, 0.3); color: #6d28d9; }
+[data-bs-theme="light"] .pd-pipe--amber  { background: rgba(217, 119, 6, 0.12); border-color: rgba(217, 119, 6, 0.3); color: #b45309; }
+[data-bs-theme="light"] .pd-pipe--green  { background: rgba(5, 150, 105, 0.12); border-color: rgba(5, 150, 105, 0.3); color: #047857; }
+
+[data-bs-theme="light"] .pd-result-chip {
+    background: rgba(248, 250, 252, 0.9);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-result-val {
+    color: #0f766e;
+}
+
+[data-bs-theme="light"] .pd-result-label {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-result-note {
+    color: #475569;
+}
+
+/* Ensemble Architecture in Light Mode */
+[data-bs-theme="light"] .pd-ensemble-card {
+    background: rgba(248, 250, 252, 0.9);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-ensemble-card:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="light"] .pd-ensemble--blue .pd-ensemble-label   { color: #1d4ed8; }
+[data-bs-theme="light"] .pd-ensemble--violet .pd-ensemble-label { color: #6d28d9; }
+[data-bs-theme="light"] .pd-ensemble--green .pd-ensemble-label  { color: #047857; }
+[data-bs-theme="light"] .pd-ensemble--amber .pd-ensemble-label  { color: #b45309; }
+
+[data-bs-theme="light"] .pd-ensemble-desc {
+    color: #334155;
+}
+
+/* Features in Light Mode */
+[data-bs-theme="light"] .pd-feature-item {
+    background: rgba(248, 250, 252, 0.9);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-feature-item:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-bs-theme="light"] .pd-feature-num {
+    color: #1d4ed8;
+    background: rgba(37, 99, 235, 0.12);
+    border-color: rgba(37, 99, 235, 0.25);
+}
+
+[data-bs-theme="light"] .pd-feature-name {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-feature-desc {
+    color: #334155;
+}
+
+/* Challenges in Light Mode */
+[data-bs-theme="light"] .pd-challenge--challenge {
+    background: rgba(239, 68, 68, 0.05);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+[data-bs-theme="light"] .pd-challenge--challenge:hover {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.35);
+}
+
+[data-bs-theme="light"] .pd-challenge--learning {
+    background: rgba(16, 185, 129, 0.05);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+[data-bs-theme="light"] .pd-challenge--learning:hover {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.35);
+}
+
+[data-bs-theme="light"] .pd-tag--challenge {
+    background: rgba(220, 38, 38, 0.12);
+    color: #b91c1c;
+    border-color: rgba(220, 38, 38, 0.3);
+}
+
+[data-bs-theme="light"] .pd-tag--learning {
+    background: rgba(5, 150, 105, 0.12);
+    color: #047857;
+    border-color: rgba(5, 150, 105, 0.3);
+}
+
+[data-bs-theme="light"] .pd-challenge-title {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-challenge-desc {
+    color: #334155;
+}
+
+[data-bs-theme="light"] .pd-arch-row .pd-arch-label {
+    color: #475569;
+}
+
+[data-bs-theme="light"] .pd-arch-row .pd-arch-val {
+    color: #0f172a;
+}
+
