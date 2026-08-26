@@ -6,6 +6,7 @@ import './css/Projects.css';
 import birdspecies from '../assets/images/project_thumbnails/bird_species_detection.avif';
 import roadmarkingsegmentation from '../assets/images/project_thumbnails/road_marking_segmentation.avif';
 import hiedetection from '../assets/images/project_thumbnails/hie_detection_using_deep_learning.avif';
+import shikshaams from '../assets/images/project_thumbnails/shikshaams.avif';
 
 const PROJECT_PALETTES = [
     { from: '#3b82f6', to: '#6366f1' },  // blue → indigo
@@ -61,6 +62,17 @@ const projects = [
         github: "https://github.com/MeGH2711/inventuraxpro",
         path: "/projects/inventurax",
         featured: false,
+    },
+    {
+        title: "ShikshaAMS",
+        subtitle: "Anti-Proxy Dynamic QR Attendance System",
+        description: "Enterprise-grade classroom attendance with 8-second rotating cryptographic QR codes, 1-device hardware fingerprinting, indoor GPS geofencing, and live analytics.",
+        tech: ["React", "Firebase", "Web Crypto", "Geolocation", "Leaflet", "SheetJS"],
+        demo: "",
+        github: "https://github.com/MeGH2711/ShikshaAMS",
+        image: shikshaams,
+        path: "/projects/shikshaams",
+        featured: true,
     },
     {
         title: "De Baker's & More",

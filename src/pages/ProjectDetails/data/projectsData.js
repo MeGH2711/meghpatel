@@ -556,4 +556,167 @@ export const projectsData = {
             },
         ],
     },
+
+    shikshaams: {
+        id: 'shikshaams',
+        title: 'ShikshaAMS',
+        subtitle: 'Anti-Proxy Dynamic QR Attendance System · Full-Stack & Security',
+        demo: '',
+        github: 'https://github.com/MeGH2711/ShikshaAMS',
+        year: '2026',
+        type: 'Web App · EdTech',
+        status: 'Completed',
+        statusVariant: 'live',
+        theme: 'theme-blue',
+        thumb: {
+            type: 'text',
+            initials: 'SA',
+            label: 'ShikshaAMS',
+        },
+        badges: [
+            { label: 'Completed', variant: 'green' },
+            { label: 'Anti-Proxy Engine', variant: 'blue' },
+            { label: 'Open Source', variant: 'violet' },
+        ],
+        metrics: [
+            { label: 'QR Nonce Cycle', value: '8–10s Rotation', accent: 'blue' },
+            { label: 'Device Binding', value: '1-Device-1-Student', accent: 'green' },
+            { label: 'Geofence Engine', value: 'Multi-Sample GPS', accent: 'violet' },
+            { label: 'Storage Sync', value: 'Dual Cloud & Offline', accent: 'amber' },
+        ],
+        tech: [
+            'React',
+            'Vite',
+            'Firebase Firestore',
+            'Web Crypto (SHA-256)',
+            'Canvas & WebGL Fingerprinting',
+            'HTML5 QR Code',
+            'Geolocation API',
+            'Leaflet.js',
+            'SheetJS (XLSX)',
+            'Canvas Confetti',
+        ],
+        vision: {
+            problem:
+                'Traditional college attendance is slow and easily manipulated: calling out roll numbers wastes 15–20 minutes of lecture time, paper sign-in sheets invite forged signatures, and static QR codes get photographed and forwarded to absent classmates on WhatsApp.',
+            solution:
+                'A multi-layered anti-proxy platform featuring high-contrast projector countdowns with dynamic cryptographic QR codes that rotate every few seconds, hybrid device hardware fingerprinting, indoor GPS geofencing, campus Wi-Fi verification, and automated analytics.',
+            audience:
+                'Professors, department heads, and academic institutions who need fast, fraud-proof classroom attendance without purchasing expensive biometric scanners or proprietary hardware.',
+        },
+        archGrid: {
+            title: '4-Layer Anti-Proxy Shield',
+            iconColor: 'blue',
+            cards: [
+                {
+                    label: 'Dynamic Rotating QR',
+                    sub: '8–10s Cryptographic Nonce',
+                    accent: 'blue',
+                    desc: 'Projector generates dynamic SHA-256 tokens on a live countdown timer. WhatsApp screenshot forwarding is rendered obsolete because tokens expire before they can be sent.',
+                },
+                {
+                    label: 'Device Fingerprinting',
+                    sub: '1-Device-1-Student Constraint',
+                    accent: 'green',
+                    desc: 'Combines Canvas rendering, WebGL GPU parameters, and screen traits. Prevents present students from using Incognito or multiple tabs to mark attendance for absent friends.',
+                },
+                {
+                    label: 'Indoor GPS Geofence',
+                    sub: 'Multi-Sample Position Averaging',
+                    accent: 'violet',
+                    desc: 'Averages 3–6 satellite fixes over 2.5 seconds with adaptive accuracy buffers, eliminating indoor GPS drift while strictly blocking remote scans from dorms.',
+                },
+                {
+                    label: 'Campus Wi-Fi Shield',
+                    sub: 'SSID & Subnet Verification',
+                    accent: 'amber',
+                    desc: 'Verifies connection to the campus network and blocks mobile cellular hotspots, ensuring students are connected directly from inside the institutional perimeter.',
+                },
+            ],
+        },
+        features: [
+            {
+                num: '01',
+                name: 'Live Projector Mode with Arrival Ticker',
+                desc: 'Classroom projector view featuring dynamic QR code rotation, animated countdown rings, live turnout gauges, audio chimes, and confetti celebration as students scan.',
+            },
+            {
+                num: '02',
+                name: 'Zero-Install Mobile Scanner & Digital Pass',
+                desc: 'Students access a responsive web scanner directly on their mobile browser without installing any app, receiving an instant cryptographically hashed digital attendance receipt.',
+            },
+            {
+                num: '03',
+                name: 'Anti-Proxy Security Audit Log',
+                desc: 'Real-time security log that flags, blocks, and categorizes unauthorized attempts (expired tokens, duplicate device usage, and out-of-boundary scans) with student details.',
+            },
+            {
+                num: '04',
+                name: 'Interactive Map Geofencing with Leaflet',
+                desc: 'Instructors can pin their exact lecture hall coordinates on an interactive Leaflet map and customize the allowed geofence radius (50m to 150m) in one click.',
+            },
+            {
+                num: '05',
+                name: 'Bulk Roster Importer & Export Suite',
+                desc: 'Drag-and-drop support for Excel (.xlsx, .xls), CSV, and JSON student rosters with automatic column mapping, manual overrides, and one-click audit report exports.',
+            },
+            {
+                num: '06',
+                name: 'Turnout Analytics & 75% Defaulter Warning',
+                desc: 'Real-time course analytics dashboard calculating per-subject attendance percentages, turnout progress bars, and automated alert rosters for students falling below 75%.',
+            },
+            {
+                num: '07',
+                name: 'Dual Cloud & Offline Storage Engine',
+                desc: 'Supports live Firebase Firestore cloud synchronization with real-time listeners, alongside an instant offline demo mode synced across browser tabs via BroadcastChannel.',
+            },
+            {
+                num: '08',
+                name: 'Role-Based Access (Instructor & Student Scopes)',
+                desc: 'Google OAuth authentication with automated role scoping — faculty instructors only view and manage their assigned courses, while students access their personal history.',
+            },
+        ],
+        challenges: [
+            {
+                type: 'challenge',
+                title: 'Eliminating Screenshot Forwarding on Chat Apps',
+                desc: 'In standard QR attendance setups, a student in the hall photographs the screen and sends it on WhatsApp, allowing absent classmates to scan from their dorms.',
+            },
+            {
+                type: 'learning',
+                title: 'Time-Synchronized Rotating Cryptographic Nonces',
+                desc: 'Implemented rolling SHA-256 tokens that regenerate every 8–10 seconds with timestamp and salt validation. Expired tokens are immediately rejected by the verification engine.',
+            },
+            {
+                type: 'challenge',
+                title: 'Preventing Multi-Proxy Marking on a Single Phone',
+                desc: 'A student physically present in class could attempt to log out, switch to Incognito, or use multiple browser tabs to scan on behalf of 5 absent friends.',
+            },
+            {
+                type: 'learning',
+                title: 'Hybrid Hardware & WebGL GPU Fingerprinting',
+                desc: 'Constructed a deterministic device fingerprint combining WebGL GPU vendor/renderer strings, Canvas 2D rasterization, screen depth, and CPU concurrency — enforcing a strict 1-device-per-session rule that persists across Incognito tabs.',
+            },
+            {
+                type: 'challenge',
+                title: 'Indoor GPS Inaccuracy Causing False Rejections',
+                desc: 'Thick concrete walls and indoor lecture halls cause GPS signal bouncing (multipath errors) of ±30m to ±80m, which could incorrectly flag legitimate attendees as out of bounds.',
+            },
+            {
+                type: 'learning',
+                title: 'Multi-Sample Averaging with Adaptive Tolerance',
+                desc: 'Built an inverse-variance weighted GPS engine that collects 3–6 fixes over 2.5 seconds, discards coarse outlier fixes, and applies an accuracy-scaled tolerance buffer so valid students are never blocked while remote proxies (>250m) are reliably caught.',
+            },
+            {
+                type: 'challenge',
+                title: 'Seamless Multi-Tab Sync Without Cloud Lock-in',
+                desc: 'Demonstrations across separate browser windows (Instructor screen, Projector screen, and Student phone) required real-time state synchronization even without active Firebase credentials.',
+            },
+            {
+                type: 'learning',
+                title: 'Dual Engine with BroadcastChannel Cross-Tab Bus',
+                desc: 'Architected a unified storage adapter that transparently switches between Firebase Firestore onSnapshot listeners and a browser BroadcastChannel event bus, ensuring instantaneous live updates in all environments.',
+            },
+        ],
+    },
 };

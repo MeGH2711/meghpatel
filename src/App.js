@@ -25,6 +25,7 @@ const HIEDetection = lazy(() => import('./pages/ProjectDetails/HIEDetail'));
 const BirdSpeciesDetail = lazy(() => import('./pages/ProjectDetails/BirdSpeciesDetail'));
 const InventuraXDetail = lazy(() => import('./pages/ProjectDetails/InventuraXDetail'));
 const RoadMarkingSegmentation = lazy(() => import('./pages/ProjectDetails/RoadMarkingDetail'));
+const ShikshaAMSDetail = lazy(() => import('./pages/ProjectDetails/ShikshaAMSDetail'));
 
 // ── Main single-page layout ───────────────────────────────
 const MainLayout = () => (
@@ -68,6 +69,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<MainLayout />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
+            <Route path="/projects/shikshaams" element={<ShikshaAMSDetail />} />
             <Route path="/projects/inventurax" element={<InventuraXDetail />} />
             <Route path="/projects/birdspeciesdetection" element={<BirdSpeciesDetail />} />
             <Route path="/projects/hiedetection" element={<HIEDetection />} />
