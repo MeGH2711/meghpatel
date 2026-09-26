@@ -1512,3 +1512,559 @@
     color: #0f172a;
 }
 
+/* ============================================================
+   RESEARCH PAPERS & PUBLICATIONS SECTION
+   ============================================================ */
+
+.pd-papers-intro {
+    font-size: 0.88rem;
+    color: var(--text-mid, #94a3b8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pd-papers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.pd-paper-full-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(12px);
+    position: relative;
+    overflow: hidden;
+}
+
+.pd-paper-full-card:hover {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.pd-paper-full-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pd-paper-badge-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pd-paper-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.pd-paper-badge--accent {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #c084fc;
+}
+
+.pd-paper-badge--sub {
+    background: rgba(20, 184, 166, 0.15);
+    border: 1px solid rgba(20, 184, 166, 0.3);
+    color: #2dd4bf;
+}
+
+.pd-paper-metric-pill {
+    font-family: var(--font-disp);
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 3px 10px;
+    border-radius: 8px;
+}
+
+.pd-paper-full-title {
+    font-family: var(--font-disp);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--text-hi, #f8fafc);
+    margin: 0;
+}
+
+.pd-paper-authors-line {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: var(--text-mid, #cbd5e1);
+    border-left: 2px solid rgba(139, 92, 246, 0.5);
+    padding-left: 10px;
+}
+
+.pd-paper-affiliation {
+    color: var(--text-mid, #94a3b8);
+    font-size: 0.75rem;
+}
+
+.pd-paper-mentor {
+    color: #fbbf24;
+    font-size: 0.75rem;
+}
+
+.pd-paper-abstract-box {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 0.9rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pd-paper-abstract-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+    color: var(--text-mid, #94a3b8);
+}
+
+.pd-paper-abstract-text {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--text-mid, #cbd5e1);
+    margin: 0;
+}
+
+.pd-paper-metrics-chips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+}
+
+.pd-paper-chip {
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid;
+}
+
+.pd-chip--teal {
+    background: rgba(20, 184, 166, 0.08);
+    border-color: rgba(20, 184, 166, 0.2);
+}
+.pd-chip--teal .pd-chip-val { color: #2dd4bf; }
+
+.pd-chip--green {
+    background: rgba(16, 185, 129, 0.08);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+.pd-chip--green .pd-chip-val { color: #34d399; }
+
+.pd-chip--amber {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: rgba(245, 158, 11, 0.2);
+}
+.pd-chip--amber .pd-chip-val { color: #fbbf24; }
+
+.pd-chip--blue {
+    background: rgba(59, 130, 246, 0.08);
+    border-color: rgba(59, 130, 246, 0.2);
+}
+.pd-chip--blue .pd-chip-val { color: #60a5fa; }
+
+.pd-chip--violet {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+.pd-chip--violet .pd-chip-val { color: #c084fc; }
+
+.pd-chip-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-mid, #94a3b8);
+}
+
+.pd-chip-val {
+    font-family: var(--font-disp);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.pd-paper-insights {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pd-paper-insights-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-hi, #f8fafc);
+}
+
+.pd-paper-insights-list {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: var(--text-mid, #cbd5e1);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pd-paper-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+.pd-paper-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.22s ease;
+    cursor: pointer;
+}
+
+.pd-paper-btn--view {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.25));
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    color: #e0e7ff;
+}
+
+.pd-paper-btn--view:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(59, 130, 246, 0.4));
+    border-color: rgba(139, 92, 246, 0.7);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.pd-paper-btn--download {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-mid, #cbd5e1);
+}
+
+.pd-paper-btn--download:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-hi, #ffffff);
+    transform: translateY(-2px);
+}
+
+/* ── Sidebar Research Paper Links ── */
+.pd-sidebar-papers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.pd-sidebar-paper-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.pd-sidebar-paper-link:hover {
+    background: rgba(139, 92, 246, 0.08);
+    border-color: rgba(139, 92, 246, 0.25);
+    transform: translateY(-1px);
+}
+
+.pd-sidebar-paper-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #f87171;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pd-sidebar-paper-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.pd-sidebar-paper-badge {
+    font-size: 0.62rem;
+    font-weight: 700;
+    color: #a78bfa;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.pd-sidebar-paper-title {
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--text-hi, #f8fafc);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ============================================================
+   EVALUATION TABLES & BENCHMARK MATRIX
+   ============================================================ */
+
+.pd-eval-desc {
+    font-size: 0.85rem;
+    color: var(--text-mid, #94a3b8);
+    line-height: 1.55;
+    margin: 0;
+}
+
+.pd-eval-tabs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.pd-eval-tab {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.pd-eval-tab:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.16);
+}
+
+.pd-eval-tab--active {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.pd-eval-tab-paper {
+    font-size: 0.62rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a78bfa;
+}
+
+.pd-eval-tab--active .pd-eval-tab-paper {
+    color: #60a5fa;
+}
+
+.pd-eval-tab-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-hi, #f8fafc);
+}
+
+.pd-eval-table-container {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pd-eval-table-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pd-eval-table-heading {
+    font-family: var(--font-disp);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-hi, #f8fafc);
+    margin: 0;
+}
+
+.pd-eval-table-sub {
+    font-size: 0.78rem;
+    color: var(--text-mid, #94a3b8);
+    margin: 0;
+}
+
+.pd-table-scroll {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.pd-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.pd-data-table th {
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-mid, #94a3b8);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pd-data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text-mid, #cbd5e1);
+}
+
+.pd-row--highlight {
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.pd-row--highlight td {
+    color: var(--text-hi, #f8fafc);
+    font-weight: 500;
+}
+
+.pd-cell-primary {
+    font-weight: 600;
+    color: var(--text-hi, #f8fafc);
+}
+
+.pd-table-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.74rem;
+    color: var(--text-mid, #94a3b8);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+}
+
+.pd-table-note-icon {
+    color: #60a5fa;
+    flex-shrink: 0;
+}
+
+/* Light Theme Overrides */
+[data-bs-theme="light"] .pd-paper-full-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-paper-full-card:hover {
+    background: #f8fafc;
+    border-color: rgba(0, 0, 0, 0.16);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-paper-full-title {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-paper-authors-line {
+    color: #334155;
+    border-left-color: #8b5cf6;
+}
+
+[data-bs-theme="light"] .pd-paper-abstract-box {
+    background: #f1f5f9;
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="light"] .pd-paper-abstract-text {
+    color: #334155;
+}
+
+[data-bs-theme="light"] .pd-paper-insights-label {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-paper-insights-list {
+    color: #334155;
+}
+
+[data-bs-theme="light"] .pd-eval-table-container {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-eval-table-heading {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-data-table th {
+    background: #f1f5f9;
+    color: #475569;
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-bs-theme="light"] .pd-data-table td {
+    color: #334155;
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="light"] .pd-cell-primary {
+    color: #0f172a;
+}
+
+[data-bs-theme="light"] .pd-row--highlight {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+[data-bs-theme="light"] .pd-table-note {
+    background: #f8fafc;
+    color: #475569;
+}
+
+

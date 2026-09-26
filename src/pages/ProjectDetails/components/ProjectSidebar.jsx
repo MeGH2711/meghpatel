@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaBrain } from 'react-icons/fa6';
+import { FaGithub, FaBrain, FaFilePdf } from 'react-icons/fa6';
 import { FaArrowUpRightFromSquare } from 'react-icons/fa6';
 
 const ProjectSidebarThumb = ({ thumb = {}, type, status, statusVariant, year }) => {
@@ -107,6 +107,7 @@ const ProjectSidebar = ({
     tech = [],
     modelConfig,
     contributors,
+    papers,
 }) => {
     return (
         <aside className="pd-sidebar">
@@ -118,6 +119,34 @@ const ProjectSidebar = ({
                 statusVariant={statusVariant}
                 year={year}
             />
+
+            {/* Research Papers Quick Access (if research project) */}
+            {papers && papers.length > 0 && (
+                <div className="pd-sidebar-tech pd-arch-card">
+                    <div className="pd-section-micro-label">Research Papers</div>
+                    <div className="pd-sidebar-papers-list">
+                        {papers.map((p, idx) => (
+                            <a
+                                key={p.paperNumber || idx}
+                                href={p.file}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="pd-sidebar-paper-link"
+                                title={`Open Paper #${p.paperNumber}: ${p.title} (PDF)`}
+                            >
+                                <div className="pd-sidebar-paper-icon">
+                                    <FaFilePdf size={13} />
+                                </div>
+                                <div className="pd-sidebar-paper-info">
+                                    <span className="pd-sidebar-paper-badge">Paper #{p.paperNumber}</span>
+                                    <span className="pd-sidebar-paper-title">{p.shortTitle || p.title}</span>
+                                </div>
+                                <FaArrowUpRightFromSquare size={10} className="pd-contributor-arrow" />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            )}
 
             {/* Live Demo Button */}
             {demo ? (

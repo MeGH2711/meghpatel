@@ -10,6 +10,8 @@ import ProjectPipeline from './components/ProjectPipeline';
 import ProjectArchGrid from './components/ProjectArchGrid';
 import ProjectFeatures from './components/ProjectFeatures';
 import ProjectChallenges from './components/ProjectChallenges';
+import ProjectPapers from './components/ProjectPapers';
+import ProjectEvaluationTables from './components/ProjectEvaluationTables';
 import ThemeToggle from '../../components/ThemeToggle';
 import './css/ProjectDetail.css';
 
@@ -82,6 +84,7 @@ const ProjectDetail = ({ slug: propSlug }) => {
                     tech={project.tech}
                     modelConfig={project.modelConfig}
                     contributors={project.contributors}
+                    papers={project.papers}
                 />
 
                 {/* Main Content Sections */}
@@ -89,14 +92,20 @@ const ProjectDetail = ({ slug: propSlug }) => {
                     {/* Vision & Purpose */}
                     <ProjectVision vision={project.vision} />
 
+                    {/* Research Papers (Paper 32 & Paper 38) */}
+                    {project.papers && <ProjectPapers papers={project.papers} />}
+
                     {/* Optional Progression Bar (e.g. Bird Species, Road Marking) */}
                     {project.progression && <ProjectProgression progression={project.progression} />}
 
-                    {/* Optional Architecture Pipeline & Results (e.g. HIE) */}
+                    {/* Optional Architecture Pipeline & Results (e.g. HIE, ISLES) */}
                     {project.pipeline && <ProjectPipeline pipeline={project.pipeline} />}
 
-                    {/* Optional Ensemble Architecture Grid (e.g. Road Marking) */}
+                    {/* Optional Ensemble / Model Architecture Grid */}
                     {project.archGrid && <ProjectArchGrid archGrid={project.archGrid} />}
+
+                    {/* Quantitative Benchmark & Evaluation Tables */}
+                    {project.evaluationTables && <ProjectEvaluationTables data={project.evaluationTables} />}
 
                     {/* Key Features */}
                     <ProjectFeatures features={project.features} />

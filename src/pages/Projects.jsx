@@ -21,6 +21,16 @@ const PROJECT_PALETTES = [
 
 const projects = [
     {
+        title: "MICCAI ISLES'26 Challenge",
+        subtitle: "Ischemic Stroke Lesion Segmentation · Dual Research Papers",
+        description: "Dual research papers on 1,453 multicenter stroke MRIs across 60+ global hospitals: investigating small-lesion failure modes with 3D nnU-Net v2 (Paper #32) and linear O(N) Bottleneck-Mamba SSM (Paper #38).",
+        tech: ["nnU-Net v2", "Mamba SSM", "PyTorch", "3D U-Net", "MONAI", "Medical AI"],
+        demo: "",
+        github: "https://github.com/MeGH2711",
+        path: "/projects/isleschallenge",
+        featured: true,
+    },
+    {
         title: "Hypoxic Ischemic Encephalopathy Lesion Segmentation",
         subtitle: "Deep Learning · Swin-Unet",
         description: "Transformer–based model for fine-grained segmentation task of HIE lesions using the BonBID2023 dataset.",
